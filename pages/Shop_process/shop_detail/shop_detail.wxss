@@ -1,0 +1,170 @@
+/* pages/Shop_process/shop_detail/shop_detail.wxss */
+.container{
+  padding-bottom: 100rpx;
+}
+.banner{
+  width: 100%;
+  height: 610rpx;
+  margin-bottom: 14rpx;
+}
+/* 轮播图 */
+.swiper{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.shop_block{
+  background: #fff;
+  width: 100%;
+  padding: 30rpx;
+}
+.shop_list_padding{
+  padding: 25rpx 5rpx;
+}
+.shop_name_primary{
+  margin-bottom: 10rpx;
+}
+.time_block{
+	width: 80rpx;
+	height: 48rpx;
+	background-color: #e31536;
+	border-radius: 5rpx;
+  margin-top: 25rpx;
+  line-height: 48rpx;
+  color: #fff;
+  text-align: center;
+}
+.activity_time text{
+  width: 20rpx;
+  text-align: center;
+  line-height: 95rpx;
+}
+/* 说明 */
+.shuoming text{
+  margin-right: 20rpx;
+}
+/* 玩法规则 */
+.wanfa_xuhao{
+	width: 40rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	background-color: #9195a6;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 10rpx;
+  color: #fff;
+}
+.process_text{
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+/* 查看往期名单 */
+.mingdan_block{
+	width: 100%;
+	height: 140rpx;
+	background-color: #e31536;
+	border-radius: 10rpx;
+  padding:25rpx 30rpx;
+}
+.icon-gift{
+  line-height: 80rpx;
+  font-size: 60rpx;
+  color: #ffe400;
+  margin-right: 25rpx;
+}
+.mingdan_nav{
+  line-height: 80rpx;
+  padding: 0 10rpx;
+}
+/* 店铺信息 */
+.store_block{
+  height: 110rpx;
+}
+
+.shop_tab_item{
+  width: 100%;
+  line-height: 76rpx;
+  background: #eceef5;
+  text-align: center;
+}
+.shop_tab_item.active{
+  background: #e31536;
+  color: #fff;
+}
+.shop_detail,.shop_detail image{
+  width: 100%;
+}
+.shop_detail image{
+  width: 100%;
+}
+.shop_detail,.parameter{
+  background: #fff;
+}
+/* 底部按钮 */
+.footer{
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+}
+.left_btn{
+  background: #fff;
+  width: 330rpx;
+  text-align: center;
+}
+.left_btn>view{
+  width: 33.33%;
+  position: relative;
+}
+.left_btn .iconfont{color: #a1a1a1}
+.add_cart,.btn_link{
+  width: 220rpx;
+  height: 100rpx !important;
+  line-height: 100rpx !important;
+  color: #fff;
+  font-size: 30rpx;
+}
+.left_btn .iconfont.active{
+  color: #e31536;
+}
+.add_cart{background: #ee6e36;}
+.btn_link{background: #e31536;}
+.add_cart.button-hover{
+  background: #ee5e36;
+}
+.btn_link.button-hover{
+  background: #e32536;
+}
+
+/* 规则内容样式 */
+.guize_content,.van-action-sheet__content{
+  padding: 20rpx 30rpx 50rpx;
+  line-height: 40rxp;
+  font-size: 28rpx;
+}
+/* 规格参数 */
+.parameter{
+  padding: 20rpx;
+}
+.shop_parameter{
+  margin-bottom: 30rpx;
+  width: 100%;
+  border: 1rpx solid #dee0e5;
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+.shop_parameter_line{
+  border-bottom: 1rpx solid #dee0e5;
+}
+.shop_parameter_line:last-child{border-bottom: 0;}
+.shop_parameter_line>view{
+  padding: 0 20rpx;
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+
+
+
+button::after{
+border:none;
+}

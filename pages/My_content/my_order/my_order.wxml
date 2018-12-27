@@ -1,0 +1,263 @@
+<!--pages/My_content/my_order/my_order.wxml-->
+<view class='container'>
+<view class='tabs_flexd'>
+  <van-tabs active="{{ active }}" bind:change="onChange" custom-class="order_tabs">
+    <van-tab title="全部">
+      <scroll-view scroll-y style='height:{{screenHeight}}px;' class='order_list' bindscrolltolower="bindAllscroll">
+        <navigator url='/pages/My_content/order_detail/order_detail?id={{item.order_id}}' class='order_item' wx:for="{{orderAll[0].order_list}}" wx:key="index">
+          <image class='order_headimg' wx:if="{{item.order_type==1}}" src='{{item.original_img}}'></image>
+          <image class='order_headimg' wx:if="{{item.order_type==2}}" src='{{yizhegou_img+"Public/front_img/cash.png"}}'></image>
+          <view class='order_info'>
+            <view  wx:if="{{item.order_type==1}}">
+              <view class='zdw_font28 lines_ellipsis'>{{item.activity_name}}</view>
+              <view class='justify-between marginT20' style='line-height: 30rpx;'>
+                <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                  折扣价<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{item.price}}
+                </view>
+                <view class='zdw_font20 zdw_a5afc5 line-through'>商品原价 ￥{{item.shop_price}}</view>
+              </view>
+            </view>
+            <view  wx:if="{{item.order_type==2}}">
+              <view class='zdw_font28 lines_ellipsis'>{{item.activity_name}} 第{{item.period_num}}期{{item.task_name}}</view>
+              <view class='justify-between marginT20' style='line-height: 30rpx;'>
+                <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                  返现金额<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{item.back_amount}}
+                </view>
+              </view>
+            </view>
+            <view class='justify-between lineHeight40 marginT20'>
+              <view class='justify-start'>
+                <view catchtap='pullEvaluation' data-order_id='{{item.order_id}}' data-activity_id='{{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4}}">发表评价</view>
+                <view catchtap='seeEvaluation' data-='{{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==5}}">查看评价</view>
+                <view catchtap='customerService' data-order_id='{{item.order_id}}' data-activity_id='{{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4||item.order_status==5}}">申请售后</view>
+                <view hover-stop-propagation="true" catchtap='bindConfirm' data-id='{{item.order_id}}' class='label' hover-class='navigator-hover' wx:if="{{item.order_type==1 && item.order_status == 3}}">确认收货</view>
+              </view>
+              <view class='zdw_font24 zdw_76829f'>{{item.order_status_desc}}</view>
+            </view>
+          </view>
+        </navigator>
+        <!--如果无数据，则显示数据-->
+        <view wx:if="{{!orderAll[0].order_list.length}}">
+          <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+        </view>
+        <!-- <view class='order_item'>
+          <image class='order_headimg' src='/img_x/success.png'></image>
+          <view class='order_info'>
+            <view class='zdw_font28 lines_ellipsis'>史密斯(A.O.Smith) 16升 主动防护系统 智能燃气热水器</view>
+            <view class='justify-between marginT20' style='line-height: 30rpx;'>
+              <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                折扣价<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>109.00
+              </view>
+              <view class='zdw_font20 zdw_a5afc5 line-through'>商品原价 ￥1099.00</view>
+            </view>
+            <view class='justify-between lineHeight40 marginT20'>
+              <view class='label' hover-class='navigator-hover'>已兑换</view>
+              <view class='zdw_font24'>待商家确认订单</view>
+            </view>
+          </view>
+        </view> -->
+      </scroll-view>
+    </van-tab>
+    <van-tab title="待确认">
+      <scroll-view scroll-y style='height:{{screenHeight}}px;' class='order_list' bindscrolltolower="bindAllscroll">
+        <navigator url='/pages/My_content/order_detail/order_detail?id={{item.order_id}}' class='order_item' wx:for="{{orderAll[1].order_list}}" wx:key="index">
+          <image class='order_headimg' wx:if="{{item.order_type==1}}" src='{{item.original_img}}'></image>
+          <image class='order_headimg' wx:if="{{item.order_type==2}}" src='{{yizhegou_img+"Public/front_img/cash.png"}}'></image>
+          <view class='order_info'>
+            <view  wx:if="{{item.order_type==1}}">
+              <view class='zdw_font28 lines_ellipsis'>{{item.activity_name}}</view>
+              <view class='justify-between marginT20' style='line-height: 30rpx;'>
+                <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                  折扣价<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{item.price}}
+                </view>
+                <view class='zdw_font20 zdw_a5afc5 line-through'>商品原价 ￥{{item.shop_price}}</view>
+              </view>
+            </view>
+            <view  wx:if="{{item.order_type==2}}">
+              <view class='zdw_font28 lines_ellipsis'>{{item.activity_name}} 第{{item.period_num}}期{{item.task_name}}</view>
+              <view class='justify-between marginT20' style='line-height: 30rpx;'>
+                <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                  返现金额<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{item.back_amount}}
+                </view>
+              </view>
+            </view>
+            <view class='justify-between lineHeight40 marginT20'>
+              <view class='justify-start'>
+              </view>
+              <view class='zdw_font24 zdw_76829f'>{{item.order_status_desc}}</view>
+            </view>
+          </view>
+        </navigator>
+        <!--如果无数据，则显示数据-->
+        <view wx:if="{{!orderAll[1].order_list.length}}">
+          <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+        </view>
+      </scroll-view></van-tab>
+    <van-tab title="待发货">
+      <scroll-view scroll-y style='height:{{screenHeight}}px;' class='order_list' bindscrolltolower="bindAllscroll">
+        <navigator url='/pages/My_content/order_detail/order_detail?id={{item.order_id}}' class='order_item' wx:for="{{orderAll[2].order_list}}" wx:key="index">
+          <image class='order_headimg' wx:if="{{item.order_type==1}}" src='{{item.original_img}}'></image>
+          <image class='order_headimg' wx:if="{{item.order_type==2}}" src='{{yizhegou_img+"Public/front_img/cash.png"}}'></image>
+          <view class='order_info'>
+            <view  wx:if="{{item.order_type==1}}">
+              <view class='zdw_font28 lines_ellipsis'>{{item.activity_name}}</view>
+              <view class='justify-between marginT20' style='line-height: 30rpx;'>
+                <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                  折扣价<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{item.price}}
+                </view>
+                <view class='zdw_font20 zdw_a5afc5 line-through'>商品原价 ￥{{item.shop_price}}</view>
+              </view>
+            </view>
+            <view  wx:if="{{item.order_type==2}}">
+              <view class='zdw_font28 lines_ellipsis'>{{item.activity_name}} 第{{item.period_num}}期{{item.task_name}}</view>
+              <view class='justify-between marginT20' style='line-height: 30rpx;'>
+                <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                  返现金额<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{item.back_amount}}
+                </view>
+              </view>
+            </view>
+            <view class='justify-between lineHeight40 marginT20'>
+              <view>
+              </view>
+              <view class='zdw_font24 zdw_76829f'>{{item.order_status_desc}}</view>
+            </view>
+          </view>
+        </navigator>
+        <!--如果无数据，则显示数据-->
+        <view wx:if="{{!orderAll[2].order_list.length}}">
+          <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+        </view>
+      </scroll-view>
+    </van-tab>
+    <van-tab title="待返现">
+      <scroll-view scroll-y style='height:{{screenHeight}}px;' class='order_list' bindscrolltolower="bindAllscroll">
+        <navigator url='/pages/My_content/order_detail/order_detail?id={{item.order_id}}' class='order_item' wx:for="{{orderAll[3].order_list}}" wx:key="index">
+          <image class='order_headimg' wx:if="{{item.order_type==1}}" src='{{item.original_img}}'></image>
+          <image class='order_headimg' wx:if="{{item.order_type==2}}" src='{{yizhegou_img+"Public/front_img/cash.png"}}'></image>
+          <view class='order_info'>
+            <view  wx:if="{{item.order_type==1}}">
+              <view class='zdw_font28 lines_ellipsis'>{{item.activity_name}}</view>
+              <view class='justify-between marginT20' style='line-height: 30rpx;'>
+                <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                  折扣价<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{item.price}}
+                </view>
+                <view class='zdw_font20 zdw_a5afc5 line-through'>商品原价 ￥{{item.shop_price}}</view>
+              </view>
+            </view>
+            <view  wx:if="{{item.order_type==2}}">
+              <view class='zdw_font28 lines_ellipsis'>{{item.activity_name}} 第{{item.period_num}}期{{item.task_name}}</view>
+              <view class='justify-between marginT20' style='line-height: 30rpx;'>
+                <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                  返现金额<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{item.back_amount}}
+                </view>
+              </view>
+            </view>
+            <view class='justify-between lineHeight40 marginT20'>
+              <view class='justify-start'>
+                <view catchtap='pullEvaluation' data-order_id='{{item.order_id}}' data-activity_id='{{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4}}">发表评价</view>
+                <view catchtap='seeEvaluation' data-='{{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==5}}">查看评价</view>
+                <view catchtap='customerService' data-order_id='{{item.order_id}}' data-activity_id='{{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4||item.order_status==5}}">申请售后</view>
+                <!-- <navigator url='/pages/My_content/writing_evaluation/writing_evaluation?order_id={{item.order_id}}&activity_id={{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4}}">发表评价</navigator>
+                <navigator url='/pages/Shop_process/shop_evaluate/shop_evaluate?id={{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==5}}">查看评价</navigator>
+                <navigator url='/pages/My_content/refun_change_goods/refun_change_goods?order_id={{item.order_id}}&activity_id={{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4||item.order_status==5}}">申请售后</navigator> -->
+              </view>
+              <view class='zdw_font24 zdw_76829f'>{{item.order_status_desc}}</view>
+            </view>
+          </view>
+        </navigator>
+        <!--如果无数据，则显示数据-->
+        <view wx:if="{{!orderAll[3].order_list.length}}">
+          <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+        </view>
+      </scroll-view>
+    </van-tab>
+    <van-tab title="待评价">
+      <scroll-view scroll-y style='height:{{screenHeight}}px;' class='order_list' bindscrolltolower="bindAllscroll">
+        <navigator url='/pages/My_content/order_detail/order_detail?id={{item.order_id}}' class='order_item' wx:for="{{orderAll[4].order_list}}" wx:key="index">
+          <image class='order_headimg' wx:if="{{item.order_type==1}}" src='{{item.original_img}}'></image>
+          <image class='order_headimg' wx:if="{{item.order_type==2}}" src='{{yizhegou_img+"Public/front_img/cash.png"}}'></image>
+          <view class='order_info'>
+            <view  wx:if="{{item.order_type==1}}">
+              <view class='zdw_font28 lines_ellipsis'>{{item.activity_name}}</view>
+              <view class='justify-between marginT20' style='line-height: 30rpx;'>
+                <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                  折扣价<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{item.price}}
+                </view>
+                <view class='zdw_font20 zdw_a5afc5 line-through'>商品原价 ￥{{item.shop_price}}</view>
+              </view>
+            </view>
+            <view  wx:if="{{item.order_type==2}}">
+              <view class='zdw_font28 lines_ellipsis'>{{item.activity_name}} 第{{item.period_num}}期{{item.task_name}}</view>
+              <view class='justify-between marginT20' style='line-height: 30rpx;'>
+                <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                  返现金额<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{item.back_amount}}
+                </view>
+              </view>
+            </view>
+            <view class='justify-between lineHeight40 marginT20'>
+              <view class='justify-start'>
+                <view catchtap='pullEvaluation' data-order_id='{{item.order_id}}' data-activity_id='{{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4}}">发表评价</view>
+                <view catchtap='seeEvaluation' data-='{{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==5}}">查看评价</view>
+                <view catchtap='customerService' data-order_id='{{item.order_id}}' data-activity_id='{{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4||item.order_status==5}}">申请售后</view>
+                <!-- <navigator url='/pages/My_content/writing_evaluation/writing_evaluation?order_id={{item.order_id}}&activity_id={{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4}}">发表评价</navigator>
+
+                <navigator url='/pages/Shop_process/shop_evaluate/shop_evaluate?id={{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==5}}">查看评价</navigator>
+                <navigator url='/pages/My_content/refun_change_goods/refun_change_goods?order_id={{item.order_id}}&activity_id={{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4||item.order_status==5}}">申请售后</navigator> -->
+                <view hover-stop-propagation="true" catchtap='bindConfirm' data-id='{{item.order_id}}' class='label' hover-class='navigator-hover' wx:if="{{item.order_type==1 && item.order_status == 3}}">确认收货</view>
+              </view>
+              <view class='zdw_font24 zdw_76829f'>{{item.order_status_desc}}</view>
+            </view>
+          </view>
+        </navigator>
+        <!--如果无数据，则显示数据-->
+        <view wx:if="{{!orderAll[4].order_list.length}}">
+          <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+        </view>
+      </scroll-view>
+    </van-tab>
+    <van-tab title="已完成">
+      <scroll-view scroll-y style='height:{{screenHeight}}px;' class='order_list' bindscrolltolower="bindAllscroll">
+        <navigator url='/pages/My_content/order_detail/order_detail?id={{item.order_id}}' class='order_item' wx:for="{{orderAll[5].order_list}}" wx:key="index">
+          <image class='order_headimg' wx:if="{{item.order_type==1}}" src='{{item.original_img}}'></image>
+          <image class='order_headimg' wx:if="{{item.order_type==2}}" src='{{yizhegou_img+"Public/front_img/cash.png"}}'></image>
+          <view class='order_info'>
+            <view  wx:if="{{item.order_type==1}}">
+              <view class='zdw_font28 lines_ellipsis'>{{item.activity_name}}</view>
+              <view class='justify-between marginT20' style='line-height: 30rpx;'>
+                <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                  折扣价<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{item.price}}
+                </view>
+                <view class='zdw_font20 zdw_a5afc5 line-through'>商品原价 ￥{{item.shop_price}}</view>
+              </view>
+            </view>
+            <view  wx:if="{{item.order_type==2}}">
+              <view class='zdw_font28 lines_ellipsis'>{{item.activity_name}} 第{{item.period_num}}期{{item.task_name}}</view>
+              <view class='justify-between marginT20' style='line-height: 30rpx;'>
+                <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+                  返现金额<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{item.back_amount}}
+                </view>
+              </view>
+            </view>
+            <view class='justify-between lineHeight40 marginT20'>
+              <view class='justify-start'>
+                <view catchtap='pullEvaluation' data-order_id='{{item.order_id}}' data-activity_id='{{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4}}">发表评价</view>
+                <view catchtap='seeEvaluation' data-='{{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==5}}">查看评价</view>
+                <view catchtap='customerService' data-order_id='{{item.order_id}}' data-activity_id='{{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4||item.order_status==5}}">申请售后</view>
+                <!-- <navigator url='/pages/My_content/writing_evaluation/writing_evaluation?order_id={{item.order_id}}&activity_id={{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4}}">发表评价</navigator>
+                <navigator url='/pages/Shop_process/shop_evaluate/shop_evaluate?id={{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==5}}">查看评价</navigator>
+                <navigator url='/pages/My_content/refun_change_goods/refun_change_goods?order_id={{item.order_id}}&activity_id={{item.activity_id}}' hover-stop-propagation="true" class='label' hover-class='navigator-hover' wx:if="{{item.order_status==4||item.order_status==5}}">申请售后</navigator> -->
+              </view>
+              <view class='zdw_font24 zdw_76829f'>{{item.order_status_desc}}</view>
+            </view>
+          </view>
+        </navigator>
+        <!--如果无数据，则显示数据-->
+        <view wx:if="{{!orderAll[5].order_list.length}}">
+          <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+        </view>
+      </scroll-view>
+    </van-tab>
+    <!-- <van-tab title="退换货">退换货</van-tab> -->
+  </van-tabs>
+</view>
+</view>

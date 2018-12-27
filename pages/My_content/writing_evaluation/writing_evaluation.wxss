@@ -1,0 +1,70 @@
+/* pages/My_content/writing_evaluation/writing_evaluation.wxss */
+page{
+  background: #fff;
+}
+.container{
+  padding: 10rpx 40rpx;
+}
+
+.question_content{
+  width:100%;
+  height:250rpx;
+  background:#E9ECF8;
+  border-radius:10rpx;
+  font-size: 24rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  line-height: 40rpx;
+  margin-bottom: 50rpx;
+}
+.img_upload image,.img_upload .add_image{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+.img_upload .add_image{
+	background-color: #ececf5;
+  position: relative;
+}
+.add_image .shu,.add_image .heng{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #91919D;
+}
+.add_image .shu{
+  width: 2rpx;
+  height: 56rpx;
+  margin-top: -28rpx;
+  margin-left: -1rpx;
+}
+.add_image .heng{
+  width: 56rpx;
+  height: 2rpx;
+  margin-top: -1rpx;
+  margin-left: -28rpx;
+}
+
+.btn_clear{
+  margin-top: 50rpx;
+  width:100%;
+  height:100rpx;
+  background:#e31536;
+  border-radius:10rpx;
+  color: #fff;
+}
+.rate_icon{
+  position: relative;
+  top: -8rpx;
+}
+image{
+  position: relative;
+  overflow: inherit;
+}
+.close_img{
+  position: absolute;
+  top: -15rpx;
+  right: -15rpx;
+  font-size: 40rpx;
+}

@@ -1,0 +1,121 @@
+/* pages/me/me.wxss */
+.container{
+  width: 100%;
+  background: #ebedf3;
+  padding-bottom: 30rpx;
+}
+.top_block{
+  background: #fff;
+  width: 100%;
+  padding: 30rpx 20rpx;
+}
+.top_bg{
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+}
+.bg_img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.icon-shezhi{
+  position: absolute;
+  top:30rpx;
+  right: 30rpx;
+}
+.user_info{
+  position: relative;
+  height: 140rpx;
+  top: 80rpx;
+  left: 55rpx;
+}
+.user_headimg{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin-right: 25rpx;
+}
+.user_name{
+  font-size: 34rpx;
+  color: #fff;
+  margin-bottom: 20rpx;
+}
+.user_name .iconfont{
+  margin-left: 10rpx;
+}
+.user_shiming{
+	width: 180rpx;
+	height: 40rpx;
+  line-height: 40rpx;
+  box-sizing: content-box;
+	background-color: #ffc71c;
+	border-radius: 5rpx;
+  font-size: 22rpx;
+	color: #e31536;
+  text-align: center;
+}
+.user_shiming .iconfont{
+  margin-right:10rpx;
+  vertical-align: middle;
+}
+/* 块标题 */
+.list_title{
+  padding: 30rpx 20rpx 20rpx;
+  color: #272f45;
+  font-size: 30rpx;
+}
+/* 我的活动 */
+.my_activity{
+	height: 162rpx;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+}
+.my_activity_item{
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.my_activity_item .iconfont{
+  font-size: 60rpx;
+  color: #e31536;
+  margin-bottom: 10rpx;
+}
+.my_activity_item .text{
+  font-size: 24rpx;
+  color: #9195a0;
+}
+/* 我的服务 */
+.my_service{
+  width: 100%;
+	background-color: #ffffff;
+	border-radius: 10px;
+  padding: 15rpx 30rpx;
+}
+.my_service_item{
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 5rpx;
+  color: #272f45;
+  border-bottom: 1rpx solid #dee0e5;
+  font-size: 36rpx;
+  font-weight: normal;
+  position: relative;
+}
+.my_service_item:last-child{
+  border-bottom: 0;
+}
+.my_service_item .iconfont{
+  color: #bbc2d6;
+  font-size: 50rpx;
+  margin-right: 35rpx;
+}
+
+.btn_clear::after{
+  border: 0;
+}

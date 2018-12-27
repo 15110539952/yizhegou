@@ -1,0 +1,43 @@
+<!--pages/My_content/refun_change_goods/refun_change_goods.wxml-->
+<view class='container zdw_border_top'>
+  <view class='zdw_bg_white' style='padding:0 20rpx;'>
+    <view class='lineHeight80 zdw_font26 zdw_border_bottom' style='padding:0 40rpx'>订单编号 {{orderDetail.order_sn}}</view>
+    <view class='order_item'>
+      <image class='order_headimg' src='/img_x/success.png'></image>
+      <view class='order_info'>
+        <view class='zdw_font28 lines_ellipsis'>{{orderDetail.activity_name}}</view>
+        <view class='justify-between' style='line-height: 30rpx;'>
+          <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+            折扣价<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{orderDetail.price}}
+          </view>
+          <view class='zdw_font20 zdw_a5afc5 line-through'>商品原价 ￥{{orderDetail.shop_price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view style='padding:0 30rpx;'>
+    <view class='lineHeight100 justify-between'><text class='zdw_font32 zdw_fontbold500'>请选择您的售后类型</text><text class='zdw_font24 zdw_76829f'>该售后由供应商为您提供服务</text></view>
+    <view class='refun_change_block'>
+      <navigator url='/pages/My_content/refun_change_content/refun_change_content?id={{orderDetail.order_id}}&type=1' class='refun_change_item justify-between zdw_font32 zdw_border_bottom' wx:if="{{status.change_status != 0}}">
+        <view class='zdw_fontbold500'><text class='iconfont zdw_font50 icon-huanhuodan marginR20' style='color:#313C6B;'></text>申请换货</view>
+        <view><text class='zdw_font24 zdw_a5afc5' style='margin-right:30rpx;'>已收货,需要更换商品</text><text class='iconfont icon-jiantouyou'></text></view>
+      </navigator>
+      <view class='refun_change_item justify-between zdw_font32 zdw_border_bottom' wx:if="{{status.change_status == 0}}">
+        <view class='zdw_fontbold500'><text class='iconfont zdw_font50 icon-huanhuodan marginR20' style='color:#313C6B;'></text>申请换货</view>
+        <view><text class='zdw_font24 zdw_a5afc5' style='margin-right:30rpx;'>{{status.change_msg}}</text><text class='iconfont icon-jiantouyou'></text></view>
+      </view>
+
+      <navigator url='/pages/My_content/refun_change_content/refun_change_content?id={{orderDetail.order_id}}&type=0' class='refun_change_item justify-between zdw_font32' wx:if="{{status.return_status != 0}}">
+        <view class='zdw_fontbold500'><text class='iconfont zdw_font50 icon-tuihuo marginR20 zdw_e31536'></text>申请退货</view>
+        <view><text class='zdw_font24 zdw_a5afc5 active' style='margin-right:30rpx;'>申请退货</text><text class='iconfont icon-jiantouyou'></text></view>
+      </navigator>
+      <view class='refun_change_item justify-between zdw_font32' wx:if="{{status.return_status == 0}}">
+        <view class='zdw_fontbold500'><text class='iconfont zdw_font50 icon-tuihuo marginR20 zdw_e31536'></text>申请退货</view>
+        <view><text class='zdw_font24 zdw_a5afc5 active' style='margin-right:30rpx;'>{{status.return_msg}}</text><text class='iconfont icon-jiantouyou'></text></view>
+      </view>
+
+
+    </view>
+  </view>
+</view>

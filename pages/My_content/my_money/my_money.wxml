@@ -1,0 +1,35 @@
+<!--pages/My_content/my_money/my_money.wxml-->
+<view class='container'>
+  <view class='top_block'>
+    <view class='money_block'>
+      <image class='top_bg' src="{{yizhegou_img +'Public/front_img/qianbaobg.png'}}" mode="aspectFill"></image>
+      <view class='money_content justify-center'>
+        <view class='money_item zdw_border_right' style='padding-right:40rpx;'>
+          <view class='zdw_font24'>当前可用余额</view>
+          <view class='money_num'>{{moneyDetail.user_money}}</view>
+          <view bindtap='bindCash' hover-class='navigator-hover' class='zdw_font24 nav_btn'>申请提现</view>
+        </view>
+        <view class='money_item' style='padding-left:40rpx;'>
+          <view class='zdw_font24'>活动冻结金额</view>
+          <view class='money_num'>{{moneyDetail.activity_money}}</view>
+          <navigator url="/pages/My_content/frozen_amount/frozen_amount?price={{moneyDetail.activity_money||0.00}}" class='zdw_font24 nav_btn'>查看明细</navigator>
+        </view>
+      </view>
+    </view>
+    <navigator url='/pages/My_content/bind_bank/bind_bank' class='bank_nav' wx:if="{{moneyDetail.card_count==0}}">
+      <view class=''><text class='iconfont icon-tishi zdw_e31536 marginR20'></text>您尚未绑定银行卡，将影响提现操作</view>
+      <view class=''><text>立即绑卡</text><text class='iconfont icon-jiantouyou zdw_a5afc5 zdw_font28'></text></view>
+    </navigator>
+    <navigator wx:if="{{userInfo.card_count>0}}" class='bank_nav' url='/pages/My_content/bank_list/bank_list'><view>银行卡</view><view class='zdw_76829f'>查看绑定的银行卡</view></navigator>
+  </view>
+  <view class='mingxi_title zdw_font32'>账户明细</view>
+  <view class='consume_list'>
+    <view class='consume_item' wx:for="{{accountData}}" wx:key="index">
+      <view class='zdw_font26 left'>
+        <view class='zdw_272f45 zdw_font26 marginB10 lines_ellipsis'>{{item.desc}}</view>
+        <view class='zdw_a5afc5 zdw_font24'>{{item.change_time}}</view>
+      </view>
+      <view class='zdw_font32 consume_num'>{{item.user_money>0?'+'+item.user_money:item.user_money}}</view>
+    </view>
+  </view>
+</view>

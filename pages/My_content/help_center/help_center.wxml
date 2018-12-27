@@ -1,0 +1,32 @@
+<!--pages/My_content/help_center/help_center.wxml-->
+<import src="../../../wxParse/wxParse.wxml"/>
+<view class='container'>
+  <view class='tabbar_list justify-between'>
+    <view class="tabbar_item {{tabbar_active == index ?'zdw_e31536':''}}" wx:for="{{helpCat}}" wx:key="index" bindtap='bindTabbar' data-index='{{index}}'>
+      <view class='iconfont {{item.cat_icon}}'></view>
+      <view class=''>{{item.cat_mobile_name}}</view>
+    </view>
+  </view>
+
+  <scroll-view scroll-y style='height:{{screenHeight}}px;'>
+    <view class="caption-wrap">
+      <i-collapse name="{{name}}" hidden='{{!helpList.length}}'>
+          <i-collapse-item title="{{item.title}}" name="name{{index}}"  wx:for="{{helpList}}" wx:key="index">
+            <view slot="title" class="List_title justify-between {{name=='name'+index?'zdw_e31536':''}}">
+              <text>{{item.title}}</text>
+              <text class="iconfont {{name=='name'+index?'icon-ico_open':'icon-jiantouyou'}}"></text>
+            </view>
+            <view slot="content" class='List_content'>
+                <!-- {{item.content}} -->
+                <template is="wxParse" data="{{wxParseData:item.content.nodes}}" />
+            </view>
+          </i-collapse-item>
+      </i-collapse>
+    </view>
+    
+    <!--如果无数据，则显示数据-->
+    <view wx:if="{{!helpList.length}}">
+      <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+    </view>
+  </scroll-view>
+</view>

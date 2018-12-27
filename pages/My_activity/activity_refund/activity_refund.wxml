@@ -1,0 +1,63 @@
+<!--pages/My_activity/activity_refund/activity_refund.wxml-->
+<view class='container'>
+  <view class='steps_block'>
+    <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#e31536" custom-class="steps_list"></van-steps>
+  </view>
+
+  <!-- 第一步 -->
+  <view style='padding:0 20rpx;' hidden='{{active!=0}}'>
+    <view class='content_block'>
+      <view class='lineHeight100 zdw_font30'>
+        <view class='justify-between zdw_border_bottom'><text>保证金</text><text class='zdw_76829f'>￥{{order.activity_price}}</text></view>
+        <view class='justify-between zdw_border_bottom'><text>运费</text><text class='zdw_76829f'>￥{{order.shipping_price}}</text></view>
+      </view>
+      <view class='zdw_text_center' style='padding:90rpx 0 0'>
+        <view class='zdw_font30'>您申请退款的金额为</view>
+        <view class='cash_amount zdw_e31536'><text class='zdw_font40'>￥</text>{{order.refund_amount}}</view>
+      </view>
+    </view>
+    
+    <view class='bottom_block'>
+      <view class='lineHeight40 zdw_text_center zdw_font24 zdw_76829f'>到账说明：申请提交后工作日24小时我们会将金额返还回您的钱包中,您可在钱包中申请提现</view>
+      <button class='btn_clear one_btn' bindtap='bindBtnCash' hover-class='navigator-hover'>提交申请</button>
+    </view>
+  </view>
+
+  <!-- 第二部 -->
+  <view style='padding:0 20rpx;' hidden='{{active!=1}}'>
+    <view class='content_block'>
+      <view class='zdw_font32 zdw_text_center zdw_76829f' style='margin:50rpx auto 30rpx;width:450rpx;'>我们已将验证码发送到你0652尾号的手机上</view>
+      <view class='zdw_border_bottom' style='padding:10rpx 0;'>
+          <van-cell-group>
+              <van-field
+                value="{{ sms }}"
+                center
+                clearable
+                placeholder="请输入短信验证码"
+                border="{{ false }}"
+                use-button-slot
+              >
+              <button class='verify_btn lineHeight60' slot="button" size="mini">发送验证码</button>
+            </van-field>
+          </van-cell-group>
+      </view>
+    </view>
+    <view class='bottom_block'>
+      <view class='lineHeight40 zdw_text_center zdw_font24 zdw_76829f'>到账说明：申请提交后工作日24小时我们会将金额返还回您的钱包中,您可在钱包中申请提现</view>
+      <button class='btn_clear two_btn' bindtap='bindTwo_btn' hover-class='navigator-hover'>提交申请</button>
+    </view>
+  </view>
+  
+  <!-- 第三部 -->
+  <view style='padding:0 20rpx;'  hidden='{{active!=2}}'>
+    <view class='content_block three_block'>
+      <icon class='icon_success' type="success" color="#09BB07" size="100"></icon>
+      <view class='zdw_font36 zdw_text_center'>申请活动退费成功</view>
+      <view class='zdw_font24 zdw_text_center zdw_a5afc5' style='margin:40rpx auto 80rpx;'>
+        <view>到账说明：申请提交后工作日24小时</view>
+        <view>将款项返还到你的钱包内,请注意消息通知</view>
+      </view>
+      <navigator url='/pages/My_activity/my_activity/my_activity' open-type='reLaunch' class='order_btn'>我的活动</navigator>
+    </view>
+  </view>
+</view>

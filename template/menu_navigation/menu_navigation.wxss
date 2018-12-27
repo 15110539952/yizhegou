@@ -1,0 +1,47 @@
+/* template/menu_navigation/menu_navigation.wxss */
+.menu_navigation_blcok{
+	width: 280rpx;
+	background-color: #ffffff;
+  position: fixed;
+  bottom:110rpx;
+  right: -280rpx;
+  /* right: 0; */
+  z-index: 8;
+  border: 1rpx solid #dee0e5;
+}
+.menu_block{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  font-size: 24rpx;
+}
+.menu_item{
+  padding: 15rpx 0 10rpx;
+  text-align: center;
+  width: 33.33%;
+}
+.menu_item .iconfont{
+  font-size: 32rpx;
+  color: #afafaf;
+}
+
+.menu_btn{
+  position: absolute;
+  top: 60rpx;
+  left: -120rpx;
+	width: 120rpx;
+	height: 70rpx;
+	background-color: #141414;
+	border-radius: 10rpx 0px 0px 10rpx;
+	opacity: 0.87;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 5rpx 0;
+}
+.menu_btn_text{
+  width: 50rpx;
+  line-height: 30rpx;
+}
+.menu_btn .iconfont{
+  line-height: 60rpx;
+}

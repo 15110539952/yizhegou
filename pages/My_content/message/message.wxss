@@ -1,0 +1,54 @@
+/* pages/My_content/message/message.wxss */
+.container{padding-top: 180rpx;}
+.tabs_flexd{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.order_tabs{
+  border-top: 1rpx solid #dee0e5;
+}
+.tab_width{
+  width: 33.33% !important;
+}
+.message_read_block{
+  border-top: 1rpx solid #dee0e5;
+  line-height: 90rpx;
+  padding: 0 25rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+
+.message_list{
+  padding: 0 20rpx;
+}
+.message_item{
+	width: 100%;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+  padding: 30rpx;
+  margin-top: 30rpx;
+  position: relative;
+}
+.message_content{
+  border-top: 1rpx solid #dee0e5;
+  padding-top: 30rpx;
+  margin-top: 20rpx;
+}
+.message_content .shouqi{display: inline-block;}
+.zhangkai{
+  position: absolute;
+  bottom:30rpx;
+  right: 30rpx; 
+}
+.hongdian{
+  display: inline-block;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: #e31536;
+  margin-right: 10rpx;
+}

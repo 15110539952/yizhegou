@@ -1,0 +1,16 @@
+<!--pages/recruit/recruit.wxml-->
+<view class='container'>
+  <view class='zdw_font32' class='recruit_title'>当前共有3个招募活动</view>
+
+  <view class='recruit_list'>
+    <navigator class='recruit_item' url='/pages/Shop_process/recruit_activity_detail/recruit_activity_detail'>
+      <view class='justify-between marginB10 lineHeight50'><view class='zdw_font36 zdw_fontbold zdw_272f45'>5万佣金活动</view><view class='zdw_font28 active'>未开始</view></view>
+      <view class='justify-between lineHeight30'><view class='zdw_font26'>活动保证金： <text class='active'>￥5000.00</text></view><view class='zdw_font28 zdw_e31536'><text class='iconfont icon-redianshijian'></text> 热度 2000</view></view>
+    </navigator>
+    <navigator class='recruit_item'>
+      <view class='justify-between marginB10 lineHeight50'><view class='zdw_font36 zdw_fontbold zdw_272f45'>5万佣金活动</view><view class='zdw_font28 active'>未开始</view></view>
+      <view class='justify-between lineHeight30'><view class='zdw_font26'>活动保证金： <text class='active'>￥5000.00</text></view><view class='zdw_font28 zdw_e31536'><text class='iconfont icon-redianshijian'></text> 热度 2000</view></view>
+    </navigator>
+  </view>
+
+</view>

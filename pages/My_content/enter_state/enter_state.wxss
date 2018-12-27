@@ -1,0 +1,17 @@
+/* pages/My_content/enter_state/enter_state.wxss */
+.container{
+  background: #fff;
+  text-align: center;
+}
+.icon_success{
+  margin: 245rpx auto 40rpx;
+}
+.zhanghu_block{
+  margin: 20rpx auto;
+  width:440rpx;
+  background:#E9ECF8;
+  border-radius:10rpx;
+  padding: 20rpx 40rpx;
+  font-size: 24rpx;
+  text-align: center;
+}

@@ -1,0 +1,26 @@
+<!--pages/My_content/perfect_info/perfect_info.wxml-->
+<view class='container'>
+  <view class='perfect_info_title zdw_fontbold zdwfont_42'>请完善您的个人信息</view>
+  <view class='perfect_list'>
+    <view class='add_block'><van-field bind:change="bindInputchange" value="{{ nickname }}" data-name="nickname" clearable label="昵称" placeholder="请输入昵称"/></view>
+    <view class='add_block'><van-field bind:change="bindInputchange" value="{{ realname }}" data-name="realname" clearable label="姓名" placeholder="请输入姓名"/></view>
+    <view class='add_block'><van-field bind:change="bindInputchange" value="{{ mobile }}" data-name="mobile" clearable label="手机号" placeholder="请输入手机号码"/></view>
+    <van-cell-group>
+        <van-field
+          value="{{ sms }}"
+          center
+          clearable
+          placeholder="请输入短信验证码"
+          border="{{ false }}"
+          use-button-slot
+          bind:change="bindInputchange" data-name="code"
+        >
+        <button class='verify_btn lineHeight60' bindtap='bindCode' slot="button" size="mini">{{verif_text}}</button>
+      </van-field>
+    </van-cell-group>
+  </view>
+  
+    <button class='btn_close' hover-class='navigator-hover' bindtap='bindPerfect'>下一步</button>
+    
+  <view class='xieyi zdw_font24 zdw_272f45' bindtap='bindXieyi'><text class='iconfont icon-xuanze-duoxuan {{xieyi?"zdw_e31536":""}}' style='margin-right:20rpx;'></text><text class='zdw_272f45'>我已阅读并同意《壹折购商城新用户服务协议》</text></view>
+</view>

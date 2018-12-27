@@ -1,0 +1,19 @@
+<!--template/search_detail/search_detail.wxml-->
+<view class='search_detail' hidden='{{show}}'>
+    <view class='top_block justify-between zdw_bg_white'>
+      <input class='search' placeholder='请输入商品名进行搜索' focus="{{!show}}" value='{{search_value}}' confirm-type='search' bindconfirm="btnSearch" bindinput="valueChange"><text class='iconfont icon-sousuo zdw_a5afc5'></text></input>
+      <view class='search_btn' hover-class='navigator-hover' bindtap='btnSearch'>搜索</view>
+    </view>
+    <view class='search_type_block'>
+      <view class='title'>最近搜索</view>
+      <view class='search_list'>
+        <view class='search_item' wx:for="{{nearSearch}}" wx:key="index" hover-class='navigator-hover' bindtap='labelChange' data-content='{{item}}'>{{item}}</view>
+      </view>
+    </view>
+    <view class='search_type_block '>
+      <view class='title'>热门搜索</view>
+      <view class='search_list'>
+        <view class='search_item' wx:for="{{hotSearch}}" wx:key="index" hover-class='navigator-hover' bindtap='labelChange' data-content='{{item}}'>{{item}}</view>
+      </view>
+    </view>
+</view>

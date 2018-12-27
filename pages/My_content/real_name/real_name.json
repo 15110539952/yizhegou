@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "实名认证",
+  "usingComponents": {
+    "van-steps": "/vant/steps/index",
+    "van-field": "/vant/field/index",
+    "van-popup": "/vant/popup/index",
+    "menu-navigator": "/template/menu_navigation/menu_navigation"
+  }
+}

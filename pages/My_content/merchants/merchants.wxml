@@ -1,0 +1,40 @@
+<!--pages/My_content/merchants/merchants.wxml-->
+<view class='container'>
+  <image class='iconfont icon-hezuo-tianchong'></image>
+  <view class='gfhz'>我司正在广泛寻求各类合作  </view>
+  <view class='lianxifangshi'>
+    <view>官方QQ:1462459735</view>
+    <view>官方邮箱:1462459735@qq.com</view>
+  </view>
+</view>
+<view class='container' wx:if="{{false}}">
+  <view class='enter_state'  wx:if="{{apply_state==1}}">
+    <icon class='icon_success' type="success" color="#09BB07" size="100"></icon>
+    <view class='zdw_font36'>恭喜您的认证审核已通过</view>
+    <view class='zdw_font24 zdw_a5afc5' style='margin:50rpx auto 20rpx;width:406rpx'>您可以通过PC端访问商户管理后台</view>
+    <view class='zhanghu_block zdw_a5afc5'>
+      <view>www.yizhego.com/admin.php</view>
+      <view>用户名 {{seller_name}} 初始密码为您的登录密码</view>
+    </view>
+    <view class='zdw_a5afc5 zdw_font24'>请妥善保存</view>
+  </view>
+
+  <view wx:if="{{apply_state!=1}}">
+    <view class='merchants_tip_text'>
+      <view wx:if="{{apply_state==0}}">入驻申请正在审核中，点击修改入驻申请</view>
+      <view wx:if="{{apply_state==2}}">入驻申请审核失败，点击重新申请入驻</view>
+      <view wx:if="{{apply_state=='null'}}"><view>感谢您对壹折购商城的认可</view><view>选择您要入驻的主体类型</view></view>
+    </view>
+    <view class='merchants_select justify-center'>
+      <view class='personal' bindtap='bindJump' data-index='0'>
+        <view class='bg_block iconfont icon-geren6'></view>
+        <view>个人</view>
+      </view>
+      <view class='business' bindtap='bindJump' data-index='1'>
+        <view class='bg_block iconfont icon-web-icon-'></view>
+        <view>企业</view>
+      </view>
+    </view>
+    <view class='xieyi' bindtap='bindxieyi'><text class='iconfont icon-xuanze-duoxuan {{xieyi?"active":""}}'></text> 我已阅读并同意《壹折购商城入驻须知》</view>
+  </view>
+</view>

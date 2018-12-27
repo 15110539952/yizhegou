@@ -1,0 +1,39 @@
+/* pages/My_activity/cashable/cashable.wxss */
+@import "/pages/My_content/withdraw_cash/withdraw_cash.wxss";
+.steps_block{
+  background: #fff;
+  margin-bottom: 35rpx
+}
+.content_block{
+  border-radius:15rpx;
+  padding:60rpx 50rpx 100rpx;
+}
+.cash_amount{
+  font-size: 60rpx;
+}
+.btn_clear{
+  width:100%;
+  margin: 50rpx 0 0;
+}
+
+.bottom_block{
+  padding: 30rpx 50rpx 0;
+}
+
+.three_block{
+  text-align: center;
+}
+.icon_success{
+  margin: 50rpx auto 40rpx;
+}
+.order_btn{
+  width:274rpx;
+  height:88rpx;
+  line-height:88rpx;
+  background:#e31536;
+  border-radius:10rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 30rpx;
+  margin: 0 auto;
+}

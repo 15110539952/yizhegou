@@ -1,0 +1,18 @@
+/* pages/Shop_process/store_shop_class/store_shop_class.wxss */
+.container{
+  padding: 0 20rpx;
+  background: #fff;
+}
+.shop_item{
+  height: 86rpx;
+  line-height: 86rpx;
+  font-size: 32rpx;
+  color: #272f45;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #dee0e5;
+}
+.shop_item:last-child{border-bottom: 0;}
+.icon-jiantouyou{
+  color: #76829f;
+}

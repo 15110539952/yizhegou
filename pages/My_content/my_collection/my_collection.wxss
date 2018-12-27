@@ -1,0 +1,45 @@
+/* pages/My_content/my_collection/my_collection.wxss */
+.tab_width{width: 50%;}
+.store_collection_list{
+  padding: 0 20rpx;
+  background: #fff;
+  border-top: 1rpx solid #dee0e5;
+}
+.store_collection_item{
+  padding: 45rpx 15rpx;
+  border-bottom: 1rpx solid #dee0e5;
+  display: flex;
+  justify-content: flex-start;
+}
+.store_collection_item:last-child{border-bottom: 0;}
+.store_headimg{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+}
+.store_detail{
+  width: 520rpx;
+  height: 120rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.store_label{
+	width: 120rpx;
+	height: 45rpx;
+	background-color: #e31536;
+	border-radius: 5rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 45rpx;
+  font-size: 26rpx;
+}
+/* 商品列表 */
+.shop_list{
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; 
+  padding-bottom:50rpx;
+}

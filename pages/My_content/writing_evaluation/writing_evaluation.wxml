@@ -1,0 +1,23 @@
+<!--pages/My_content/writing_evaluation/writing_evaluation.wxml-->
+<view class='container zdw_border_top'>
+  <view class='justify-between lineHeight100'>
+    <view>
+      <text class='zdw_font36 marginR20'>商品评分</text><i-rate value="{{rank}}" bind:change="bindRank"  i-class="zdw_e31536 rate_icon"></i-rate>
+    </view>
+    <view class='zdw_font30' wx:if="{{rank == 1}}">非常差</view>
+    <view class='zdw_font30' wx:if="{{rank == 2}}">差</view>
+    <view class='zdw_font30' wx:if="{{rank == 3}}">一般</view>
+    <view class='zdw_font30' wx:if="{{rank == 4}}">好</view>
+    <view class='zdw_font30' wx:if="{{rank == 5}}">非常好</view>
+  </view>
+  <textarea class='question_content' bindblur="bindContent" maxlength='1000' placeholder='说说你对产品的使用感受，是否满意，分享给其他人吧'></textarea>
+  <view class='real_block'>
+    <view class='img_upload justify-start flex-wrap'>
+      <image wx:for="{{uploadimg_list}}" wx:key="index" src='{{yizhegou_img+item}}' class=''><view bindtap='bindClose' data-index='{{index}}' class='iconfont icon-shanchu close_img'></view></image>
+      <view class='add_image' wx:if="{{uploadimg_list.length<9}}" hover-class='navigator-hover' bindtap='bindChoose'><view class='shu'></view><view class='heng'></view></view>
+    </view>
+    <view class='zdw_font22 zdw_a5afc5 lineHeight80'>*最多上传9张照片，每张照片大小不超过1M</view>
+  </view>
+    
+  <button class='btn_clear' bindtap='submitOrder' hover-class='navigator-hover'>提交审核</button>
+</view>

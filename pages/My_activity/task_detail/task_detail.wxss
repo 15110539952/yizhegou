@@ -1,0 +1,101 @@
+/* pages/My_activity/task_detail/task_detail.wxss */
+.task_top{
+  background: #fff;
+  padding: 20rpx;
+}
+.tase_block{
+  width: 270rpx;
+  padding-left: 30rpx;
+}
+.task_item{
+  width: 100%;
+  padding: 30rpx;
+}
+.task_title{
+  line-height: 60rpx;
+  border-bottom: 1rpx solid #dee0e5;
+}
+.number_style{
+  font-size:50rpx;
+  font-family:FZCYSK--GBK1-0;
+  font-weight:400;
+  font-style:italic;
+}
+.task_detail{
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  width: 450rpx;
+}
+.btn_yaoqing{
+  padding: 0 20rpx;
+  height:60rpx;
+  line-height:60rpx;
+  background:#e31536;
+  border-radius:10rpx;
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.time_block{
+	width: 50rpx;
+	height: 50rpx;
+	background-color: #e31536;
+	border-radius: 5rpx;
+  margin-top: 5rpx;
+  line-height: 50rpx;
+  color: #fff;
+  text-align: center;
+}
+.activity_time text{
+  width: 20rpx;
+  text-align: center;
+}
+
+.task_block,.make_task{
+  margin-top: 20rpx;
+  padding: 35rpx 50rpx;
+  background: #fff;
+}
+.task_content{
+  margin-top: 40rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+}
+
+/* 做任务 */
+.make_task_content{
+  text-align: center;
+  padding-top: 30rpx;
+}
+.icon_bg{
+  width:120rpx;
+  height:120rpx;
+  line-height:120rpx;
+  border-radius:50%;
+  color: #fff;
+  font-size: 60rpx;
+  margin-bottom: 20rpx;
+}
+.weixin_fenxiao{
+  margin-right: 50rpx;
+}
+.weixin_fenxiao .icon_bg{
+  background:#00AF31;
+  outline: none;
+  border-radius: 50%;
+}
+.baocun_img .icon_bg{
+  background:#EF6500;
+}
+.icon_tip{
+  text-align: center;
+  margin: 0 auto;
+  width:270rpx;
+  height:54rpx;
+  line-height: 54rpx;
+  background:#F6D5DA;
+  border-radius:10rpx;
+  font-size: 24rpx;
+  margin-top: 50rpx;
+  color: #EA7F90;
+}

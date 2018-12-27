@@ -1,0 +1,22 @@
+<!--pages/My_content/express_info/express_info.wxml-->
+<view class='container'>
+  <view class='top_block'>
+    <view class='lineHeight80 zdw_font26'>订单编号:{{order_sn}}</view>
+    <view class='paiming_block'>
+      <image src="{{yizhegou_img +'Public/front_img/kuaidibg.png'}}" class='paiming_bg' mode="aspectFill"></image>
+      <view class='paiming_content'>
+        <view>你的商品已发货</view>
+        <view class='marginB10' wx:if="{{logistics_num}}">{{logistics_type}}</view>
+      </view>
+    </view>
+  </view>
+  <view style='padding:30rpx;'>
+    <view class='express_block'>
+      <view class='zdw_font28' wx:if="{{logistics_num}}">快递公司：{{logistics_type}}</view>
+      <view class='zdw_font28' wx:if="{{logistics_num}}">运单编号：{{logistics_num}}</view>
+      <view class='express_list'>
+        <van-steps steps="{{ steps }}" active="{{ steps.length-1 }}" direction="vertical" active-color="#e31536" custom-class="steps_list"/>
+      </view>
+    </view>
+  </view>
+</view>

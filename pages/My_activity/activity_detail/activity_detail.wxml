@@ -1,0 +1,136 @@
+<!--pages/My_activity/activity_detail/activity_detail.wxml-->
+<view class='container'>
+  <view class='activity_top'>
+    <view class='activity_content justify-between'>
+      <image class='activity_img' mode="aspectFill" src='{{activityDetail.original_img}}'></image>
+      <view class='activity_detail'>
+        <view class='zdw_font28 marginB20 lines_ellipsis'>{{activityDetail.activity_name}}</view>
+        <view class='justify-start lineHeight30'>
+          <view class='zdw_font26 zdw_e31536 zdw_fontbold marginR20'>
+            折扣价<text class='zdw_font20 marginL20'>¥</text>{{activityDetail.price}}
+          </view>
+          <view class='zdw_font20 zdw_a5afc5 line-through'>￥{{activityDetail.shop_price}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='justify-between marginB20'>
+      <view class='activity_type'>第{{activityDetail.period_num}}期活动 <text class='marginL10'>{{activityDetail.activity_status_name}}</text></view>
+      <view class='justify-start zdw_font26 lineHeight60' wx:if="{{activityDetail.end_time!=0 && activityDetail.end_time!=null&& activityDetail.activity_status==2}}">
+          <text class='zdw_272f45 marginR20'>剩余时间</text>
+          <view class='justify-start activity_time'>
+            <view class='time_block'>{{myHour}}</view><text>:</text>
+            <view class='time_block'>{{myMinite}}</view><text>:</text>
+            <view class='time_block'>{{mySecond}}</view>
+          </view>
+        </view>
+    </view>
+    <view class='justify-center'>
+      <view class='jifen_block zdw_font26'>
+        <view>当前总积分</view>
+        <view class='lineHeight50'><text class='zdw_font38 marginR20 zdw_e31536 zdw_fontblod'>{{activityDetail.user_sum_point}}</text><text class='zdw_a5afc5'>您已被{{activityDetail.user_rank}}人超越</text></view>
+      </view>
+      <view class='tase_block'>
+        <view class='zdw_font26'>已发布</view>
+        <view class='lineHeight50 zdw_font36 zdw_fontblod zdw_e31536'>{{activityDetail.task.length+1}}个任务</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 基础任务 -->
+  <view url='/pages/My_activity/task_detail/task_detail?id={{activityDetail.activity_id}}&task_id=0&num=' class='task_item'>
+    <view bindtap='getTaskData' data-index='base' data-id='0'>
+      <view class='task_title justify-between'>
+        <view class='zdw_font30'>基础任务</view>
+        <view class='zdw_font26 zdw_e31536'>已获得{{activityDetail.base_task.point}}积分</view>
+      </view>
+      <view class='task_detail'>
+        <!-- <view class='marginB10'>分享朋友圈，成功邀请{{activityDetail.base_task.invitations_min}}位好友参与活动</view> -->
+        <view>{{activityDetail.base_task.taskDetail.desc}}</view>
+      </view>
+      <view class='task_bottom justify-between zdw_font26 lineHeight60'>
+        <view>
+          <!-- <view class='justify-start' wx:if="{{activityDetail.end_time!=0 && activityDetail.end_time!=null&& activityDetail.activity_status==2}}">
+            <text class='zdw_272f45 marginR20'>剩余时间</text>
+            <view class='justify-start activity_time'>
+              <view class='time_block'>{{myHour}}</view><text>:</text>
+              <view class='time_block'>{{myMinite}}</view><text>:</text>
+              <view class='time_block'>{{mySecond}}</view>
+            </view>
+          </view> -->
+        </view>
+        <button class="btn_clear {{item.invent_count>=item.invitations_min?'bg_blur':''}}">已邀请{{activityDetail.base_task.invent_count}}位</button>
+      </view>
+    </view>
+    <!-- hidden='{{!activityDetail.base_task.taskDetail.is_switch}}' -->
+    <view class='make_task' hidden='{{activityDetail.activity_status>2}}'>
+      <!-- <view class='task_content'>任务说明：{{activityDetail.base_task.taskDetail.desc}}</view> -->
+      <view class='make_task_content justify-center'>
+        <view class='weixin_fenxiao'>
+          <button class='iconfont icon-weixin icon_bg btn_clear' open-type='share' data-index='base'></button>
+          <view class='zdw_font26'>微信</view>
+        </view>
+        <view class='baocun_img' bindtap='bindSaveImg' data-index='base'>
+          <view class='iconfont icon-pengyouquan2 icon_bg'></view>
+          <view class='zdw_font26'>朋友圈</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 分享任务 -->
+  <view url='/pages/My_activity/task_detail/task_detail?id={{activityDetail.activity_id}}&task_id={{item.id}}&num={{index+1}}' class='task_item' wx:for="{{activityDetail.task}}" wx:key="index">
+    <view bindtap='getTaskData' data-index='{{index}}' data-id='{{item.id}}'>
+      <view class='task_title justify-between'>
+        <view class='zdw_font30'><text class='number_style'>{{index+1}}</text> 号任务</view>
+        <view class='zdw_font26 zdw_e31536'>已获得{{item.point?item.point:0}}积分</view>
+      </view>
+      <view class='task_detail'>
+        <!-- <view class='marginB10'>分享朋友圈，成功邀请{{item.invitations_min}}位好友参与活动{{item.name}}</view> -->
+        <view>{{item.description || ''}}</view>
+      </view>
+      <view class='tase_bottom justify-between zdw_font26 lineHeight60'>
+        <view></view>
+        <button class="btn_clear {{item.invent_count>=item.invitations_min?'bg_blur':''}}">已邀请{{item.invent_count}}位</button>
+      </view>
+    </view>
+     <!-- hidden='{{!item.is_switch}}' -->
+    <view class='make_task' hidden='{{activityDetail.activity_status>2}}'>
+      <!-- <view class='task_content'>任务说明：{{item.description || ''}}</view> -->
+      <view class='make_task_content justify-center'>
+        <view class='weixin_fenxiao'>
+          <button class='iconfont icon-weixin icon_bg btn_clear' open-type='share' data-index='{{index}}'></button>
+          <view class='zdw_font26'>微信</view>
+        </view>
+        <view class='baocun_img' bindtap='bindSaveImg' data-index='{{index}}'>
+          <view class='iconfont icon-pengyouquan2 icon_bg'></view>
+          <view class='zdw_font26'>朋友圈</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- <navigator class='task_item'>
+    <view class='task_title justify-between'>
+      <view class='zdw_font30'><text class='number_style'>2</text> 号任务</view>
+      <view class='zdw_font26 zdw_e31536'>已获得100积分</view>
+    </view>
+    <view class='task_detail'>分享朋友圈，成功邀请3位好友参与活动三倍返现</view>
+    <view class='tase_bottom justify-between zdw_font26 lineHeight60'>
+      <view class='justify-start'>
+        <text class='zdw_272f45 marginR20'>剩余时间</text>
+        <view class='justify-start activity_time'>
+          <view class='time_block'>12</view><text>:</text>
+          <view class='time_block'>51</view><text>:</text>
+          <view class='time_block'>30</view>
+        </view>
+      </view>
+      <button class='btn_clear bg_blur'>已邀请1位</button>
+    </view>
+  </navigator> -->
+
+</view>
+<!-- <view class='canvasBlock'>
+  <canvas style="width: 500px; height: 400px;" canvas-id="ShareCanvas"></canvas>
+</view> -->
+
+<!-- 快速导航 -->
+<menu-navigator is="/template/empty_block/empty_block" menu-class="menu_navigation"></menu-navigator>

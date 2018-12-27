@@ -1,0 +1,24 @@
+.shop_item{
+  /* width: 100%; */
+  padding: 30rpx 0;
+  width: 355rpx;
+  height: 490rpx;
+}
+.shop_image{
+  width: 335rpx;
+  height:283rpx;
+  margin: 0 auto;
+  display: block;
+}
+.shop_item_info{
+  padding: 20rpx 10rpx 0;
+}
+.label{
+	width: 86rpx;
+  height: 30rpx;
+	border-radius: 8rpx;
+  text-align: center;
+	border: solid 1px #e31536;
+  box-sizing: content-box;
+  color: #e31536;
+}

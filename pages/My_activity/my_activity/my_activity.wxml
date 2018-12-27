@@ -1,0 +1,266 @@
+<!--pages/My_activity/my_activity/my_activity.wxml-->
+<view class='container'>
+  <view class='tabs_flexd'>
+  <!-- bind:change="onChange" -->
+    <van-tabs active="{{ active }}" custom-class="order_tabs" bind:change="onChange">
+      <van-tab title="全部">
+        <scroll-view scroll-y style='height:{{screenHeight}}px;' class='activity_list' bindscrolltolower="bindAllscroll">
+          <view class='activity_item' wx:for="{{activityAll[0].activity_list}}" wx:key="index">
+            <view class="activity_title {{item.activity_status==1?'one_bg':item.activity_status==2?'two_bg':item.activity_status==3?'three_bg':'four_bg'}} justify-between">
+              <view>第{{item.period_num}}期活动 {{item.activity_status_name}}</view>
+              <navigator url="/pages/My_activity/activity_ranking/activity_ranking?id={{item.activity_id}}" wx:if="{{item.activity_status>2&&item.activity_status!=9}}">第{{item.rank}}名<text class='iconfont icon-jiantouyou '></text></navigator>
+              </view>
+            <navigator url='/pages/My_activity/activity_detail/activity_detail?id={{item.activity_id}}' class='activity_content justify-between'>
+              <image class='activity_img' mode="aspectFill" src='{{item.original_img}}'></image>
+              <view class='activity_detail'>
+                <view class='zdw_font28 marginB20 lines_ellipsis'>{{item.activity_name}}</view>
+                <view class='justify-start lineHeight30'>
+                  <view class='zdw_font26 zdw_e31536 zdw_fontbold marginR20'>
+                    折扣价<text class='zdw_font20 marginL20'>¥</text>{{item.price}}
+                  </view>
+                  <view class='zdw_font20 zdw_a5afc5 line-through'>￥{{item.shop_price}}</view>
+                </view>
+              </view>
+            </navigator>
+            <view class='lineHeight60 justify-between zdw_font26 activity_bottom'>
+              <view>
+              <view class='justify-start zdw_font26 lineHeight60' wx:if="{{item.activity_status==2}}">
+                <text class='zdw_272f45 marginR20'>剩余时间</text>
+                <view class='justify-start activity_time'>
+                  <view class='time_block'>{{item.count_down.myHour}}</view><text>:</text>
+                  <view class='time_block'>{{item.count_down.myMinite}}</view><text>:</text>
+                  <view class='time_block'>{{item.count_down.mySecond}}</view>
+                </view>
+              </view>
+              <view wx:if="{{item.activity_status==3&&item.j==null}}" class='activity_end_error'>加油 下次会成功，这次也就差了几分而已</view>
+              <view wx:if="{{item.activity_status==4}}" class='activity_end_ok'>活动已结束，您已领取奖励</view>
+              <view wx:if="{{item.activity_status==3&&item.order_status!=9&&item.j!=null}}" class='activity_end_success'>恭喜 , 你成功获得{{item.j?item.j.goods[0].goods_name:'现金奖励'}}</view>
+              <!-- <view wx:if="{{item.activity_status==9}}" class='activity_end_error'>抱歉，活动已关闭</view> -->
+              </view>
+              <!-- <view class='zdw_76829f'>
+                <text class='iconfont icon-jifenguizeguankong2 marginR10'>
+                </text>当前积分 <text class='zdw_272f45'>{{item.sum_point}}</text> 
+                <text class='iconfont icon-renwu marginR10 marginL20'></text>
+                {{item.activity_status<3?'正在发布任务':'完成'+item.complete_count+'个任务'}}
+              </view> -->
+              <button class='btn_clear' bindtap='bindTaskbtn' hover-class='navigator-hover' wx:if="{{item.activity_status==3&&item.order_status!=9}}" data-order_id='{{item.activity_order_id}}'  data-id="{{item.activity_id}}" data-index="{{item.j!=Object?1:0}}">{{item.j!=Object?'立即兑付':'申请退费'}}</button>
+              <navigator  url='/pages/My_activity/activity_detail/activity_detail?id={{item.activity_id}}' class='btn_clear zdw_text_center'  wx:if="{{item.activity_status==1||item.activity_status==2}}">查看任务</navigator>
+              <!-- item.complete_count>=item.task_count?'立即兑付':'申请退费' -->
+              <button class='btn_clear duifu' wx:if="{{item.activity_status==4}}">已兑付</button>
+              <button wx:if="{{item.order_status==9}}" class='btn_clear duifu'>已退费</button>
+            </view>
+          </view>
+        <!--如果无数据，则显示-->
+        <view wx:if="{{!activityAll[0].activity_list.length}}">
+          <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+        </view>
+        </scroll-view>
+      </van-tab>
+
+      <van-tab title="未开始">
+        <scroll-view scroll-y style='height:{{screenHeight}}px;' class='activity_list' bindscrolltolower="bindAllscroll">
+          <view class='activity_item' wx:for="{{activityAll[1].activity_list}}" wx:key="index" wx:if="{{item.activity_status==1}}">
+            <view class='activity_title one_bg justify-between'><view>第{{item.period_num}}期活动 {{item.activity_status_name}}</view></view>
+            <navigator url='/pages/My_activity/activity_detail/activity_detail?id={{item.activity_id}}' class='activity_content justify-between'>
+              <image class='activity_img' mode="aspectFill" src='{{item.original_img}}'></image>
+              <view class='activity_detail'>
+                <view class='zdw_font28 marginB20 lines_ellipsis'>{{item.activity_name}}</view>
+                <view class='justify-start lineHeight30'>
+                  <view class='zdw_font26 zdw_e31536 zdw_fontbold marginR20'>
+                    折扣价<text class='zdw_font20 marginL20'>¥</text>{{item.price}}
+                  </view>
+                  <view class='zdw_font20 zdw_a5afc5 line-through'>￥{{item.shop_price}}</view>
+                </view>
+              </view>
+            </navigator>
+            <view class='lineHeight60 justify-between zdw_font26 activity_bottom'>
+              <!-- <view class='zdw_76829f'>
+                <text class='iconfont icon-jifenguizeguankong2 marginR10'>
+                </text>当前积分 <text class='zdw_272f45'>{{item.sum_point}}</text> 
+                <text class='iconfont icon-renwu marginR10 marginL20'></text> 正在发布任务
+              </view> -->
+              <view></view>
+              <navigator  url='/pages/My_activity/activity_detail/activity_detail?id={{item.activity_id}}' class='btn_clear zdw_text_center'>查看任务</navigator>
+            </view>
+          </view>
+          <!--如果无数据，则显示-->
+          <view wx:if="{{!activityAll[1].activity_list.length}}">
+            <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+          </view>
+        </scroll-view>
+      </van-tab>
+
+
+      
+      <van-tab title="进行中">
+        <scroll-view scroll-y style='height:{{screenHeight}}px;' class='activity_list' bindscrolltolower="bindAllscroll">
+          <view class='activity_item' wx:for="{{activityAll[2].activity_list}}" wx:key="index" wx:if="{{item.activity_status==2}}">
+            <view class='activity_title two_bg justify-between'><view>第{{item.period_num}}期活动 {{item.activity_status_name}}</view></view>
+            <navigator url='/pages/My_activity/activity_detail/activity_detail?id={{item.activity_id}}' class='activity_content justify-between'>
+              <image class='activity_img' mode="aspectFill" src='{{item.original_img}}'></image>
+              <view class='activity_detail'>
+                <view class='zdw_font28 marginB20 lines_ellipsis'>{{item.activity_name}}</view>
+                <view class='justify-start lineHeight30'>
+                  <view class='zdw_font26 zdw_e31536 zdw_fontbold marginR20'>
+                    折扣价<text class='zdw_font20 marginL20'>¥</text>{{item.price}}
+                  </view>
+                  <view class='zdw_font20 zdw_a5afc5 line-through'>￥{{item.shop_price}}</view>
+                </view>
+              </view>
+            </navigator>
+            <view class='lineHeight60 justify-between zdw_font26 activity_bottom'>
+              <!-- <view class='zdw_76829f'>
+                <text class='iconfont icon-jifenguizeguankong2 marginR10'>
+                </text>当前积分 <text class='zdw_272f45'>{{item.sum_point}}</text> 
+                <text class='iconfont icon-renwu marginR10 marginL20'></text> 正在发布任务
+              </view> -->
+              <view></view>
+              <navigator  url='/pages/My_activity/activity_detail/activity_detail?id={{item.activity_id}}' class='btn_clear zdw_text_center'>查看任务</navigator>
+            </view>
+          </view>
+          <!--如果无数据，则显示-->
+          <view wx:if="{{!activityAll[2].activity_list.length}}">
+            <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+          </view>
+        </scroll-view>
+      </van-tab>
+
+
+
+      <van-tab title="已结束">
+        <scroll-view scroll-y style='height:{{screenHeight}}px;' class='activity_list' bindscrolltolower="bindAllscroll">
+          <view class='activity_item' wx:for="{{activityAll[3].activity_list}}" wx:key="index" wx:if="{{item.activity_status==3}}">
+            <view class='activity_title three_bg justify-between'>
+              <view>第{{item.period_num}}期活动 {{item.activity_status_name}}</view>
+              <navigator url="/pages/My_activity/activity_ranking/activity_ranking?id={{item.activity_id}}" wx:if="{{item.activity_status>2}}">第{{item.rank}}名<text class='iconfont icon-jiantouyou'></text></navigator>
+            </view>
+            <navigator url='/pages/My_activity/activity_detail/activity_detail?id={{item.activity_id}}' class='activity_content justify-between'>
+              <image class='activity_img' mode="aspectFill" src='{{item.original_img}}'></image>
+              <view class='activity_detail'>
+                <view class='zdw_font28 marginB20 lines_ellipsis'>{{item.activity_name}}</view>
+                <view class='justify-start lineHeight30'>
+                  <view class='zdw_font26 zdw_e31536 zdw_fontbold marginR20'>
+                    折扣价<text class='zdw_font20 marginL20'>¥</text>{{item.price}}
+                  </view>
+                  <view class='zdw_font20 zdw_a5afc5 line-through'>￥{{item.shop_price}}</view>
+                </view>
+              </view>
+            </navigator>
+            <view class='lineHeight60 justify-between zdw_font26 activity_bottom'>
+              <!-- <view class='zdw_76829f'>
+                <text class='iconfont icon-jifenguizeguankong2 marginR10'>
+                </text>当前积分 <text class='zdw_272f45'>{{item.sum_point}}</text> 
+                <text class='iconfont icon-renwu marginR10 marginL20'></text> 完成{{item.complete_count}}个任务
+              </view> -->
+              <view>
+                <view wx:if="{{item.activity_status==3&&item.j==null}}" class='activity_end_error'>抱歉 , 您未能获得兑换资格</view>
+                <view wx:if="{{item.activity_status==4}}" class='activity_end_ok'>活动已结束，您已领取奖励</view>
+              <view wx:if="{{item.activity_status==3&&item.order_status!=9&&item.j!=null}}" class='activity_end_success'>恭喜 , 你成功获得{{item.j!=null?item.j.goods[0].goods_name:'现金奖励'}}</view>
+              </view>
+              <button class='btn_clear' bindtap='bindTaskbtn' hover-class='navigator-hover' wx:if="{{item.activity_status==3&&item.order_status!=9}}" data-order_id='{{item.activity_order_id}}'  data-id="{{item.activity_id}}" data-index="{{item.j!=Object?1:0}}">{{item.j!=Object?'立即兑付':'申请退费'}}</button>
+              <button wx:if="{{item.order_status==9}}" class='btn_clear duifu'>已退费</button>
+            </view>
+          </view>
+
+          <!-- <view class='activity_item'>
+            <view class='activity_title three_bg justify-between'><view>20180912活动 进行中</view><text class='iconfont icon-jiantouyou '></text></view>
+            <view class='activity_content justify-between'>
+              <image class='activity_img' mode="aspectFill" src='/img_x/success.png'></image>
+              <view class='activity_detail'>
+                <view class='zdw_font28 marginB20 lines_ellipsis'>Apple iPhone X (A1865) 64GB 深空色嗯嗯嗯呢</view>
+                <view class='justify-start lineHeight30'>
+                  <view class='zdw_font26 zdw_e31536 zdw_fontbold marginR20'>
+                    折扣价<text class='zdw_font20 marginL20'>¥</text>109.00
+                  </view>
+                  <view class='zdw_font20 zdw_a5afc5 line-through'>￥1099.00</view>
+                </view>
+              </view>
+            </view>
+            <view class='lineHeight60 justify-between zdw_font26 activity_bottom'>
+              <view class='zdw_76829f'>
+                <text class='iconfont icon-jifenguizeguankong2 marginR10'>
+                </text>当前积分 <text class='zdw_272f45'>30000</text> 
+                <text class='iconfont icon-renwu marginR10 marginL20'></text>正在发布任务
+              </view>
+              <button class='btn_clear' hover-class='navigator-hover'>立即兑换</button>
+            </view>
+          </view> -->
+          <!--如果无数据，则显示-->
+          <view wx:if="{{!activityAll[3].activity_list.length}}">
+            <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+          </view>
+        </scroll-view>
+      </van-tab>
+
+      <van-tab title="已兑换">
+        <scroll-view scroll-y style='height:{{screenHeight}}px;' class='activity_list' bindscrolltolower="bindAllscroll">
+          <view class='activity_item' wx:for="{{activityAll[4].activity_list}}" wx:key="index" wx:if="{{item.activity_status==4}}">
+            <view class='activity_title four_bg justify-between'>
+              <view>第{{item.period_num}}期活动 {{item.activity_status_name}}</view>
+              <navigator url="/pages/My_activity/activity_ranking/activity_ranking?id={{item.activity_id}}" wx:if="{{item.activity_status>2}}">第{{item.rank}}名<text class='iconfont icon-jiantouyou'></text></navigator></view>
+            <navigator url='/pages/My_activity/activity_detail/activity_detail?id={{item.activity_id}}' class='activity_content justify-between'>
+              <image class='activity_img' mode="aspectFill" src='{{item.original_img}}'></image>
+              <view class='activity_detail'>
+                <view class='zdw_font28 marginB20 lines_ellipsis'>{{item.activity_name}}</view>
+                <view class='justify-start lineHeight30'>
+                  <view class='zdw_font26 zdw_e31536 zdw_fontbold marginR20'>
+                    折扣价<text class='zdw_font20 marginL20'>¥</text>{{item.price}}
+                  </view>
+                  <view class='zdw_font20 zdw_a5afc5 line-through'>￥{{item.shop_price}}</view>
+                </view>
+              </view>
+            </navigator>
+            <view class='lineHeight60 justify-between zdw_font26 activity_bottom'>
+              <!-- <view class='zdw_76829f'>
+                <text class='iconfont icon-jifenguizeguankong2 marginR10'>
+                </text>当前积分 <text class='zdw_272f45'>{{item.sum_point}}</text> 
+                <text class='iconfont icon-renwu marginR10 marginL20'></text> 完成{{item.complete_count}}个任务
+              </view> -->
+              <view class='activity_end_ok'>活动已结束，您已领取奖励</view>
+              <button class='btn_clear duifu' wx:if="{{item.activity_status==4}}">已兑付</button>
+            </view>
+          </view>
+          <!--如果无数据，则显示-->
+          <view wx:if="{{!activityAll[4].activity_list.length}}">
+            <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+          </view>
+        </scroll-view>
+      </van-tab>
+
+      <van-tab title="已关闭">
+        <scroll-view scroll-y style='height:{{screenHeight}}px;' class='activity_list' bindscrolltolower="bindAllscroll">
+          <view class='activity_item' wx:for="{{activityAll[5].activity_list}}" wx:key="index" wx:if="{{item.activity_status==9}}">
+            <view class='activity_title three_bg justify-between'>
+              <view>第{{item.period_num}}期活动 {{item.activity_status_name}}</view>
+            </view>
+            <navigator url='/pages/My_activity/activity_detail/activity_detail?id={{item.activity_id}}' class='activity_content justify-between'>
+              <image class='activity_img' mode="aspectFill" src='{{item.original_img}}'></image>
+              <view class='activity_detail'>
+                <view class='zdw_font28 marginB20 lines_ellipsis'>{{item.activity_name}}</view>
+                <view class='justify-start lineHeight30'>
+                  <view class='zdw_font26 zdw_e31536 zdw_fontbold marginR20'>
+                    折扣价<text class='zdw_font20 marginL20'>¥</text>{{item.price}}
+                  </view>
+                  <view class='zdw_font20 zdw_a5afc5 line-through'>￥{{item.shop_price}}</view>
+                </view>
+              </view>
+            </navigator>
+            <view class='lineHeight60 justify-between zdw_font26 activity_bottom'>
+              <!-- <view class='zdw_76829f'>
+                <text class='iconfont icon-jifenguizeguankong2 marginR10'>
+                </text>当前积分 <text class='zdw_272f45'>{{item.sum_point}}</text> 
+                <text class='iconfont icon-renwu marginR10 marginL20'></text> 完成{{item.complete_count}}个任务
+              </view> -->
+              <view></view>
+              <button wx:if="{{item.order_status==9}}" class='btn_clear duifu'>已退费</button>
+            </view>
+          </view>
+          <!--如果无数据，则显示-->
+          <view wx:if="{{!activityAll[5].activity_list.length}}">
+            <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+          </view>
+        </scroll-view>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

@@ -1,0 +1,87 @@
+<!--pages/My_content/real_name/real_name.wxml-->
+<view class='container'>
+  <view class='steps_block' wx:if="{{!is_change}}">
+    <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#e31536" custom-class="steps_list"></van-steps>
+  </view>
+
+  <!-- 第一步 -->
+  <view style='padding:0 20rpx;' hidden='{{active!=0}}'>
+    <view class='perfect_list'>
+      <view class='perfect_item'><van-field value="{{ nickname }}" clearable label="用户名" placeholder="请输入用户名"  bind:change="bindInputchange" data-name="nickname"/></view>
+      <!-- <view class='perfect_item'><van-field value="{{ realname }}" clearable label="姓名" placeholder="请输入姓名"  bind:change="bindInputchange" data-name="realname"/></view> -->
+      <!-- <picker class='perfect_item' mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="">
+        <van-field value="{{ region }}" disabled clearable label="区域" placeholder="请选择"/>
+      </picker> -->
+      <!-- <view class='perfect_item'><van-field value="{{ address }}" clearable label="地址" placeholder="请输入详细地址"  bind:change="bindInputchange" data-name="address"/></view> -->
+    <view class='add_block'><van-field bind:change="bindInputchange" value="{{ mobile }}" data-name="mobile" clearable label="手机号" placeholder="请输入手机号码"/></view>
+    <van-cell-group>
+        <van-field
+          value="{{ sms }}"
+          center
+          clearable
+          placeholder="请输入短信验证码"
+          border="{{ false }}"
+          use-button-slot
+          bind:change="bindInputchange" data-name="code"
+        >
+        <button class='verify_btn lineHeight60' bindtap='bindCode' slot="button" size="mini">{{verif_text}}</button>
+      </van-field>
+    </van-cell-group>
+      <!-- <view class='perfect_item justify-between'>
+        <picker mode="date" bindchange="bindDateChange" value="{{date}}" custom-item="" style='width:80%;'>
+          <view class='perfect_item'><van-field value="{{ date }}" disabled title-width="200rpx" clearable label="身份证有效期" placeholder="请输入身份证背面有效期"/></view>
+        </picker>
+        <button class='changqi' bindtap='bindChangqi' hover-stop-propagation="true" hover-class='navigator-hover'>长期</button>
+      </view> -->
+    </view>
+    
+    <button wx:if="{{is_change}}" class='btn_clear one_btn' bindtap='bindOne_btn' hover-class='navigator-hover'>提交修改</button>
+    <button wx:if="{{!is_change}}" class='btn_clear one_btn' bindtap='bindOne_btn' hover-class='navigator-hover'>下一步</button>
+    <view class='xieyi zdw_font24 zdw_272f45' bindtap='bindXieyi'><text class='iconfont icon-xuanze-duoxuan {{xieyi?"zdw_e31536":""}}' style='margin-right:20rpx;'></text><text class='zdw_272f45'>我已阅读并同意《壹折购商城新用户服务协议》</text></view>
+    <!-- <button bindtap='bindTiaoguo' class='marginT20'>跳过</button> -->
+  </view>
+
+  <!-- 第二部 -->
+  <view style='padding:0 20rpx;' hidden='{{active!=1}}'>
+    <view class='perfect_list'>
+      <view class='perfect_item'><van-field value="{{ realname }}" clearable label="姓名" placeholder="请输入姓名"  bind:change="bindInputchange" data-name="realname"/></view>
+      <view class='perfect_item'><van-field value="{{ id_card_code }}" clearable label="身份证号" placeholder="请确保与身份证一致"  bind:change="bindInputchange" data-name="id_card_code"/></view>
+    <view class='perfect_item'><van-field bind:change="bindInputchange" data-name="card_num" value="{{ card_num }}" clearable label="卡号" placeholder="请确保银行卡号码的位数" bind:click-icon="onClickIcon"/></view>
+      <view class='perfect_item'><van-field bind:change="bindInputchange" data-name="open_bank" value="{{ open_bank }}" clearable label="开户行" placeholder="请输入开户行信息" bind:click-icon="onClickIcon"/></view>
+      <view class='perfect_item'><van-field bind:change="bindInputchange" value="{{ mobile }}" data-name="mobile" clearable label="手机号" placeholder="请确保手机号与银行预留号码一致"/></view>
+    </view>
+    <button class='btn_clear two_btn' bindtap='bindReal' hover-class='navigator-hover'>提交审核</button>
+    <button bindtap='bindTiaoguo' class='marginT20'>跳过</button>
+    <view class='two_tip'>为保证申请退款交易的可靠性，请填写您本人真实有效的银行卡信息。</view>
+  </view>
+
+  <!-- <view style='padding:0 20rpx;' hidden='{{active!=1}}'>
+    <view class='real_block'>
+      <view class='lineHeight40 justify-between' style='margin-bottom:50rpx;'>
+        <view class='zdw_font36'>请上传您的身份证照片</view>
+        <view hover-class='navigator-hover' class='zdw_font24 zdw_76829f' bindtap='bindImgtest'><text class='iconfont icon-tishi marginR10'></text><text>查看照片上传范例</text></view>
+      </view>
+      <view class='img_upload justify-start flex-wrap'>
+      <image wx:for="{{uploadimg_list}}" wx:key="index" src='{{yizhegou_img+item}}' class=''><view bindtap='bindClose' data-index='{{index}}' class='iconfont icon-shanchu close_img'></view></image>
+      <view bindtap='bindChoose' class='add_image' wx:if="{{uploadimg_list.length<3}}"  hover-class='navigator-hover'><view class='shu'></view><view class='heng'></view></view>
+      </view>
+      <button class='btn_clear two_btn' bindtap='bindTwo_btn' hover-class='navigator-hover'>上一步</button>
+      <button class='btn_clear two_btn' bindtap='bindReal' hover-class='navigator-hover'>提交审核</button>
+    </view>
+  </view> -->
+  
+  <!-- 第三部 -->
+  <view style='padding:0 20rpx;'  hidden='{{active!=2}}'>
+    <view class='content_block three_block'>
+      <view class='iconfont icon-wancheng' style='margin-bottom:30rpx;'></view>
+      <view class='zdw_font42 marginB20'>认证成功</view>
+      <!-- <view class='zdw_font24 zdw_76829f'>我们会在三个工作日之内审核并通过消息通知您审核结果，请注意查看</view> -->
+    </view>
+  </view>
+</view>
+<van-popup show="{{ id_card_show }}" bind:close="onClose">
+  <image src='{{yizhegou_img+"Public/front_img/id_card_test.jpg"}}' bindtap='onClose' style="width:519rpx;height:832rpx;"></image>
+</van-popup>
+
+<!-- 快速导航 -->
+<menu-navigator is="/template/empty_block/empty_block" menu-class="menu_navigation"></menu-navigator>

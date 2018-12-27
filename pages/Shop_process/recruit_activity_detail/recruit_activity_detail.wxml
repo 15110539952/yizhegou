@@ -1,0 +1,87 @@
+<!--pages/Shop_process/recruit_activity_detail/recruit_activity_detail.wxml-->
+<view class='container'>
+  <view class='banner' style='margin-bottom:0;'>
+    <swiper class='swiper' indicator-dots="ture" indicator-active-color='#ffb8a0' indicator-color='#ad2109' autoplay="true" interval="5000" duration="500">
+        <swiper-item wx:for="{{imgUrls}}" wx:key='item'>
+            <image src="{{item.image}}" mode="aspectFill"  style='width:100%;height:100%;'></image>
+        </swiper-item>
+    </swiper>
+  </view>
+  <view class='shop_block'>
+    <view class='zdw_border_bottom shop_list_padding'>
+      <view class='line_ellipsis zdw_272f45 zdw_font36 marginB10'>5万佣金招募活动</view>
+      <view class='line_ellipsis zdw_e31536 zdw_font34'>活动保证金 <text class='zdw_font24'>￥</text>1698.00</view>
+    </view>
+    <view class='zdw_border_bottom justify-between zdw_font30' style='line-height:100rpx;'>
+      <view class='line_ellipsis zdw_272f45 zdw_font36 marginB10'>活动已进行</view>
+      <view class='justify-start activity_time'>
+        <view class='time_block'>12</view><text>:</text>
+        <view class='time_block'>51</view><text>:</text>
+        <view class='time_block'>30</view>
+        </view>
+      <view class='line_ellipsis zdw_a5afc5 zdw_font24'>已有2550人参与</view>
+    </view>
+    <!-- 说明 -->
+    <view class='zdw_border_bottom shop_list_padding justify-start zdw_272f45' style='line-height:60rpx;'>
+      <view class='zdw_font30' style='width:90rpx;'>说明</view>
+      <view class='line_ellipsis zdw_font26 shuoming'>
+        <view><text class='iconfont icon-zhengque zdw_a5afc5'></text><text>兑换后该商品由第三方店铺发货并提供售后</text></view>
+        <view><text class='iconfont icon-zhengque zdw_a5afc5'></text><text>商品支持7天无理由退换货</text></view>
+        <view><text class='iconfont icon-zhengque zdw_a5afc5'></text><text>商品正品保证</text></view>
+      </view>
+    </view>
+    
+    <!-- 玩法规则 -->
+    <view class='zdw_border_bottom shop_list_padding  zdw_272f45'>
+      <view class='zdw_font30 justify-between' style='margin-bottom:30rpx;'><view class='zdw_font30'>玩法规则</view><view class='zdw_a5afc5 zdw_font24' bindtap='guizeShow'>了解详细规则</view></view>
+      <view class='line_ellipsis zdw_font26 justify-between zdw_272f45' style='line-height:40rpx;'>
+        <view class='justify-start'><view class='wanfa_xuhao'>1</view><text class='process_text'>支付保证金</text><text class='iconfont icon-arrow-right'></text></view>
+        <view class='justify-start'><view class='wanfa_xuhao'>2</view><text class='process_text'>完成任务</text><text class='iconfont icon-arrow-right'></text></view>
+        <view class='justify-start'><view class='wanfa_xuhao'>3</view><view><text class='process_text'>领取奖励</text><view class='zdw_a5afc5'>未得奖励退款</view></view></view>
+      </view>
+    </view>
+    <!-- 往期名单 -->
+    <view class='zdw_border_bottom shop_list_padding'>
+      <view class='mingdan_block justify-between'>
+        <view class='justify-start'>
+          <view class='icon-gift iconfont'></view>
+          <view class='mingdan_total'><view class='zdw_font36 zdw_white'>25000人</view><view class='zdw_a5afc5 zdw_font24'>获得该产品</view></view>
+        </view>
+        <navigator url='/pages/Shop_process/winning_list/winning_list' class='mingdan_nav zdw_a5afc5 zdw_font30'><text>查看往期名单</text><text class='iconfont icon-arrow-right'></text></navigator>
+      </view>
+    </view>
+  </view>
+  <view class='recruit_title'>招募说明</view>
+  <view class='recruit_detail zdw_76829f'>
+    <view>1.建微信群，邀请爱购物的好友进群，购物人群质量精准，在此基础上人数越多越好。</view>
+    <view>2.管理自己的微信群，告诉群友这个群是做什么的？有哪些好处？教群友使用内部优惠券下单；</view>
+    <view>3.解答群友问题，帮群友找活动，完成导购提升收益；</view>
+    <view>【我们提供】</view>
+    <view>1.微信群满100人后，安排发单员进群，每天在群里帮你发商品优惠券信息；</view>
+    <view>2.淘 宝、天猫10-200元的内部优惠券；</view>
+    <view>3.免费帮你开通后台，每天看到自己群内的收益，每笔订单和对应的佣金；</view>
+    <view>【我们的优势】</view>
+    <view>1.无时间地点环境要求，一部手机，熟悉微信、淘 宝既可操作；</view>
+    <view>2.我们不是淘 宝刷 单。帮商家亏本冲销，为亲友省钱，我们还能赚到佣金；三方共赢。</view>
+    <view>3.不收取任何费用，可长期做，积累收益非常可观；</view>
+    <view>4.一对一导师培训，手把手教会建群，加粉，邀请，维护管理群；</view>
+    <view>【盈利效果】</view>
+    <view>1.群内有人下单购买即可获得成交价10%-30%左右的佣金。</view>
+    <view>2.只要你人群够精准，最好是剁手党，群内人群达到200人左右，每天躺着就能赚60元以上，而且并不影响你做其他的事情！</view>
+    <view>微 信： 公众号：淘达人计划</view>
+    <view>报名后可见微信号</view>
+  </view>
+  <!-- 底部按钮 -->
+  <view class='footer justify-between'>
+    <view class='left_btn justify-start zdw_font22'>
+      <view class='justify-center flex-column'><text class='iconfont icon-xiaotuziCduan- zdw_font36'></text><view>客服</view><button class='kefu_button' open-type="contact"></button></view>
+      <view class='justify-center flex-column'><text class='iconfont icon-shoucang zdw_font36'></text><view>收藏</view></view>
+    </view>
+    <navigator url='/pages/Shop_process/shop_cart/shop_cart'><button class='btn_link btn_clear'>立即参与</button></navigator>
+  </view>
+</view>
+
+<!-- 了解详细规则 -->
+<van-action-sheet show="{{ guize_show }}" title="活动规则说明" bind:close="guizeClose">
+  <view class='guize_content'>活动规则说明文字详细描述活动内容及注意事项活动规则说明文字详细描述活动内容及注意事项活动规则说明文字详细描述活动内容及注意事项活动规则说明文字详细描述活动内容及注意事项活动规则说明文字详细描述活动内容及注意事项</view>
+</van-action-sheet>

@@ -1,0 +1,16 @@
+<navigator class='shop_item t-class' url='/pages/Shop_process/shop_detail/shop_detail?id={{shop_item.activity_id}}'>
+  <image class='shop_image' mode='aspectFill' src='{{shop_item.original_img}}'></image>
+  <view class='shop_item_info'>
+    <view class='zdw_font28 zdw_272f45 lines_ellipsis'>{{shop_item.activity_name}}</view>
+    <view class='justify-between' style='margin-top:10rpx;line-height: 30rpx;'>
+      <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+        折扣价<text class='zdw_font20' style='margin-left:10rpx;'>¥</text>{{shop_item.price}}
+      </view>
+      <view class='justify-center'><text class='iconfont zdw_e31536 icon-redianshijian zdw_font22'></text><text class='zdw_font22 zdw_a5afc5'>{{shop_item.sales_sum}}</text></view>
+    </view>
+    <view class='justify-between' style='margin-top:10rpx;line-height: 30rpx;'>
+      <view class='zdw_font20 zdw_a5afc5 line-through'>商品原价 ￥{{shop_item.shop_price}}</view>
+      <view class='label zdw_font24'>{{shop_item.discount/10}}折抢</view>
+    </view>
+  </view>
+</navigator>

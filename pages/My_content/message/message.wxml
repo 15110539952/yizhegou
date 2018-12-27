@@ -1,0 +1,51 @@
+<!--pages/My_content/message/message.wxml-->
+<view class='container'>
+  <view class='tabs_flexd'>
+    <van-tabs active="{{ active }}" bind:change="onChange" custom-class="order_tabs">
+      <van-tab title="新品发布" width-class="tab_width">
+        <view class='message_read_block'>
+          <view class=''>共有35条未读消息</view>
+          <view class='justify-end'>
+            <view hover-class="navigator-hover">全部标记为已读</view>
+            <view hover-class='navigator-hover' class='marginL20'><text class='iconfont icon-qingkong zdw_a5afc5 zdw_font26'> <text class='zdw_272f45'>清空</text></text></view>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="任务消息" width-class="tab_width">
+        <view class='message_read_block'>
+          <view class=''>共有35条未读消息</view>
+          <view class='justify-end'>
+            <view hover-class="navigator-hover">全部标记为已读</view>
+            <view hover-class='navigator-hover' class='marginL20'><text class='iconfont icon-qingkong zdw_a5afc5 zdw_font26'> <text class='zdw_272f45'>清空</text></text></view>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="其他消息" width-class="tab_width">
+        <view class='message_read_block'>
+          <view class=''>共有35条未读消息</view>
+          <view class='justify-end'>
+            <view hover-class="navigator-hover">全部标记为已读</view>
+            <view hover-class='navigator-hover' class='marginL20'><text class='iconfont icon-qingkong zdw_a5afc5 zdw_font26'> <text class='zdw_272f45'>清空</text></text></view>
+          </view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+  <view class='message_list'>
+    <view class='message_item'>
+      <!-- 张开 -->
+      <view class='zhangkai zdw_font24 lineHeight30'  hidden='{{!message[0].content_show}}' bindtap='bindMess_zhangkai'>
+        <text class='hongdian'></text><text class='zdw_e31536'>未读</text>
+        <text class='iconfont icon-jiantouyou zdw_a5afc5'></text>
+      </view>
+      <view class='zdw_font30 lines_ellipsis'>您参与的20180911 小米路由器活动已经开始请到我的活动中领取任务执行任务</view>
+      <view class='zdw_font26 marginT20 zdw_a5afc5'>2018-9-17 17:02:59</view>
+      <view class='message_content' hidden='{{message[0].content_show}}'>
+        <view class='message_detail zdw_font26 zdw_76829f'>您参与的20180911 小米路由器活动已经开始，请到我的活动中领取任务执行您参与的20180911 小米路由器活动已经开始</view>
+        <view style='text-align: right;'>
+          <view class='zdw_font24 shouqi zdw_a5afc5 lineHeight40' hover-class='navigator-hover' data-index='0'  bindtap='bindMess_shouqi'><text class='iconfont icon-ico_back'></text> 收起</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

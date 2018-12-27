@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "shop-item": "../../template/shop_item/shop_item"
+  }
+}

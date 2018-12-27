@@ -1,0 +1,45 @@
+/* pages/My_content/my_order/my_order.wxss */
+.container{padding-top: 90rpx;}
+.tabs_flexd{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.order_tabs{
+  border-top: 1rpx solid #dee0e5;
+}
+.order_list{
+  background: #fff;
+  padding:0 20rpx;
+  border-top: 1rpx solid #dee0e5;
+}
+.order_item{
+  padding: 40rpx 10rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #dee0e5;
+}
+.order_item:last-child{border-bottom: 0;}
+.order_headimg{
+  width:220rpx;
+  height:220rpx;
+  margin-right: 20rpx;
+}
+.order_info{
+  width: 420rpx;
+  height:220rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.order_info .label{
+  height:44rpx;
+  border:1px solid #e31536;
+  border-radius:6rpx;
+  text-align: center;
+  font-size: 22rpx;
+  padding: 0 20rpx;
+  color: #e31536;
+  margin-right: 20rpx;
+}

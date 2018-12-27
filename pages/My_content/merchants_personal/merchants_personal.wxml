@@ -1,0 +1,58 @@
+<!--pages/My_content/merchants_personal/merchants_personal.wxml-->
+<view class='container zdw_border_top'>
+  <view class='steps_block'>
+    <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#e31536" custom-class="steps_list"></van-steps>
+  </view>
+  
+  <view class='info_content' hidden='{{active!=0}}'>
+    <view class='info_title'>卖家入驻联系人信息</view>
+    <view class='info_list'>
+      <view class='info_item'><van-field value="{{ ruleForm.contacts_name }}" data-name='contacts_name' clearable label="姓名" placeholder="请输入联系人姓名 " bind:change="bindInputchange"/></view>
+      <view class='info_item'><van-field value="{{ ruleForm.contacts_mobile }}" data-name="contacts_mobile" clearable label="手机号" placeholder="请输入联系人手机号码" bind:change="bindInputchange"/></view>
+      <view class='info_item'><van-field value="{{ ruleForm.contacts_email }}" data-name="contacts_email" clearable label="电子邮箱" placeholder="请输入联系人电子邮箱" bind:change="bindInputchange"/></view>
+    </view>
+    <button class='btn_clear one_btn' bindtap='bindOne_btn' hover-class='navigator-hover'>下一步</button>
+  </view>
+
+  <view class='info_content' hidden='{{active!=1}}'>
+    <view class='info_title'>店铺信息</view>
+    <view class='info_list'>
+      <view class='info_item'><van-field value="{{ ruleFormTwo.store_name }}" data-name="store_name" clearable label="店铺名称" placeholder="请输入店铺名称 " bind:change="bindInputchange"/></view>
+      <view class='info_item'><van-field value="{{ ruleFormTwo.seller_name }}" data-name="seller_name" clearable label="登录主账号" placeholder="请输入店铺登录主账号 " bind:change="bindInputchange"/></view>
+      <view class='info_item'><van-field value="{{ ruleFormTwo.store_person_name }}" data-name="store_person_name" clearable label="负责人姓名" placeholder="店铺负责人姓名 " bind:change="bindInputchange"/></view>
+      <view class='info_item'><van-field value="{{ ruleFormTwo.store_person_identity }}" data-name="store_person_identity" clearable label="身份证号" placeholder="店铺负责人身份证号 " bind:change="bindInputchange"/></view>
+      <view class='info_item'><van-field value="{{ ruleFormTwo.store_person_mobile }}" data-name="store_person_mobile" clearable label="手机号码" placeholder="请输入负责人手机号码 " bind:change="bindInputchange"/></view>
+      <view class='info_item'><van-field value="{{ ruleFormTwo.store_person_email }}" data-name="store_person_email" clearable label="电子邮箱" placeholder="请输入负责人电子邮箱 " bind:change="bindInputchange"/></view>
+      <view class='info_item'><van-field value="{{ ruleFormTwo.store_address }}" data-name="store_address" clearable label="店铺详细地址" placeholder="请输入店铺详细地址 " bind:change="bindInputchange"/></view>
+      <!-- <view class='info_item'><van-field value="{{ ruleFormTwo.sc_name }}" data-name="sc_name" clearable label="店铺类别" placeholder="请输入店铺类别 " bind:change="bindInputchange"/></view> -->
+
+      <picker class='info_item' bindchange="bindSc_type" range="{{actionsScname}}" range-key="name" >
+        <view><van-field value="{{ ruleFormTwo.sc_name }}" clearable label="店铺类别 " placeholder="请输入店铺类别"/></view>
+      </picker>
+    </view>
+    <button class='btn_clear one_btn' bindtap='bindThree_btn' hover-class='navigator-hover'>下一步</button>
+  </view>
+
+  
+  <view class='info_content' hidden='{{active!=2}}'>
+    <view class='info_list marginT20'>
+      <view class='info_title'>店铺负责人身份证正反面复印件</view>
+      <view class='img_upload justify-start flex-wrap'>
+        <image wx:if="{{uploadimg_list[0]}}" src='{{yizhegou_img + uploadimg_list[0]}}' class=''><view bindtap='bindClose' data-index='0' class='iconfont icon-shanchu close_img'></view></image>
+        <view class='add_image' data-index='0' wx:if="{{!uploadimg_list[0]}}" hover-class='navigator-hover' bindtap='bindChoose'><view class='shu'></view><view class='heng'></view></view>
+      </view>
+
+      <view class='zdw_font24 zdw_76829f lineHeight60'>*请保持照片清晰及完整</view>
+    </view>
+    <button class='btn_clear one_btn' bindtap='bindFour_btn' hover-class='navigator-hover'>提交审核</button>
+  </view>
+  
+  <view class='info_content' hidden='{{active!=3}}'>
+    <view class='info_list three_block'>
+      <view class='iconfont icon-wancheng' style='margin-bottom:30rpx;'></view>
+      <view class='zdw_font42 marginB20'>提交成功</view>
+      <view class='zdw_font24 zdw_76829f'>您提交的申请正在审核中，,请注意消息通知</view>
+    </view>
+  </view>
+
+</view>

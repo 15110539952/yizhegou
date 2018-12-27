@@ -1,0 +1,59 @@
+/* pages/My_content/withdraw_cash/withdraw_cash.wxss */
+.steps_block{padding: 50rpx;}
+.steps_list{
+  background: transparent !important;
+  font-size: 30rpx !important;
+}
+.van-step--horizontal .van-step__circle-container{
+  background: transparent !important;
+}
+.van-step--horizontal .van-step__line{
+  background: #c2c3d7;
+}
+.van-step--horizontal .van-step__title{
+  font-size: 26rpx !important;
+}
+.van-step--horizontal{
+  padding-bottom: 40rpx !important;
+}
+
+.content_block{
+  background: #fff;
+	width: 100%;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+  padding: 60rpx 50rpx 100rpx;
+}
+.amount_block{
+  line-height: 50rpx;
+  margin-bottom: 120rpx;
+}
+.btn_clear{
+	height: 96rpx;
+	background-color: #e31536;
+	border-radius: 10rpx;
+  color: #fff;
+}
+.footer{
+  padding: 40rpx 100rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #76829f;
+  text-align: center;
+}
+.verify_btn{
+  margin-top: 10rpx;
+	border-radius: 10rpx;
+	border: solid 1px #e31536;
+  color: #e31536;
+}
+.van-cell {padding: 10rpx 0 !important;}
+
+.three_block{
+  text-align: center;
+  padding: 150rpx 100rpx 150rpx;
+}
+.icon-wancheng{
+  font-size: 200rpx;
+  color: #09BB07;
+}

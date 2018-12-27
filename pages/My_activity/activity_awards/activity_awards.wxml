@@ -1,0 +1,44 @@
+<!--pages/My_activity/activity_awards/activity_awards.wxml-->
+<view class='container'>
+  <view class='awards_top'>
+    <view class='activity_title'>{{activity.period_num}}期活动</view>
+    <view class='paiming_block'>
+      <image src='{{awards_type==1?yizhegou_img +"Public/front_img/success.png":yizhegou_img+"Public/front_img/lose.png"}}' class='paiming_bg' mode="aspectFill"></image>
+      <view class='paiming_content'>
+        <view>排名{{rank.user_rank}}</view>
+        <view class='zdw_font28 marginB10'>您的活动总积分 {{rank.user_sum_point}}</view>
+        <navigator url='/pages/My_activity/activity_ranking/activity_ranking' class='mingdan_btn'>查看名单</navigator>
+      </view>
+    </view>
+  </view>
+  <view style='padding:20rpx 25rpx;'>
+    <view class='zdw_font32 lineHeight100' hidden='{{!awards_type==1}}'>请选择您领取的奖励</view>
+    <view class='zdw_font32 lineHeight100 zdw_text_center' hidden='{{!awards_type==0}}'>抱歉,您未能获得奖励</view>
+
+    <view class='awards_list'>
+      <navigator url='/pages/My_activity/cashable/cashable?id={{activity.activity_id}}&task_id={{reward.task_id}}' class='awards_item justify-between zdw_border_bottom' hidden='{{reward.type!=2}}'>
+        <view><text class='iconfont icon-CombinedShape marginR20'></text><text class='zdw_font32'>兑换{{reward.name}}</text></view>
+        <text class='iconfont icon-jiantouyou zdw_font36'></text>
+      </navigator>
+
+      <navigator url='/pages/My_activity/cash_shop/cash_shop?id={{activity.activity_id}}' open-type='redirectTo' class='awards_item justify-between' hidden='{{reward.type!=1}}'>
+        <view><text class='iconfont icon-shangpin marginR20'></text><text class='zdw_font32'>领取商品</text></view>
+        <text class='iconfont icon-jiantouyou zdw_font36'></text>
+      </navigator>
+
+      <navigator url='/pages/My_activity/activity_refund/activity_refund?id={{activity_order_id}}' class='awards_item justify-between zdw_border_bottom' open-type='redirectTo' hidden='{{!awards_type==0}}'>
+        <view><text class='iconfont icon-CombinedShape marginR20'></text><text class='zdw_font32'>立即申请退款</text></view>
+        <text class='iconfont icon-jiantouyou zdw_font36'></text>
+      </navigator>
+    </view>
+    
+    <view class='lineHeight40' style='margin-top:50rpx;'>
+      <view class='zdw_font24'>温馨提示:</view>
+      <view class='zdw_font24 zdw_a5afc5'>
+        <view>同一活动中，商品及返现兑付只可选择一个。</view>
+        <view>您选领取奖励后对应，该活动积分将全部清零。</view>
+        <view>超过24小时未选区奖励，系统将选择高价值奖励自动兑付。</view>
+      </view>
+    </view>
+  </view>
+</view>

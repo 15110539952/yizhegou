@@ -1,0 +1,49 @@
+<!--pages/My_activity/task_detail/task_detail.wxml-->
+<view class='container'>
+  <view class='task_top'>
+    <view class='task_item'>
+      <view class='task_title justify-between'>
+        <view class='zdw_font30' wx:if="{{task_id!=0}}"><text class='number_style'>{{num}}</text> 号任务</view>
+        <view class='zdw_font30' wx:if="{{task_id==0}}">基础任务</view>
+        <view class='zdw_font26 zdw_e31536'>已获得{{taskDetail.sum_point}}积分</view>
+      </view>
+      <view class='task_detail'>分享朋友圈，成功邀请{{taskDetail.invitations_min}}位好友参与活动{{taskDetail.name}}</view>
+      <view class='tase_bottom justify-between zdw_font26 lineHeight60'>
+      <view><view class='justify-start' wx:if="{{taskDetail.end_time!=0 && taskDetail.end_time!=null&& taskDetail.activity_status==2}}">
+          <text class='zdw_272f45 marginR20'>剩余时间</text>
+          <view class='justify-start activity_time'>
+            <view class='time_block'>{{myHour}}</view><text>:</text>
+            <view class='time_block'>{{myMinite}}</view><text>:</text>
+            <view class='time_block'>{{mySecond}}</view>
+          </view>
+        </view></view>
+        <button class='btn_yaoqing btn_clear'>已邀请{{taskDetail.invent_count}}位</button>
+      </view>
+    </view>
+  </view>
+
+  <view class='task_block'>
+    <view class='zdw_font32 zdw_fontblod500'>任务说明</view>
+    <view class='task_content'>{{taskDetail.desc}}</view>
+    <!-- 参与任务的用户需点击下方分享按钮，将任务链接分享到自己的朋友圈及好友中，好友收到邀请，成功在平台中参与任何一项活动，即视为分享成功。,分享以为好友个人积分+100，参与任务的用户需点击下方分享按钮，将任务链接分享到自己的朋友圈及好友中，好友收到邀请，成功在平台中参与任何一项活动，即视为分享成功。 -->
+  </view>
+
+  <view class='make_task' wx:if="{{taskDetail.activity_status<=2}}">
+    <view class='zdw_font32 zdw_fontblod500'>执行任务</view>
+    <view class='make_task_content justify-center'>
+      <view class='weixin_fenxiao'>
+        <button class='iconfont icon-weixin icon_bg btn_clear' open-type='share'></button>
+        <view class='zdw_font26'>微信</view>
+      </view>
+      <view class='baocun_img' bindtap='bindSaveImg'>
+        <view class='iconfont icon-weixin icon_bg'></view>
+        <view class='zdw_font26'>保存图片</view>
+      </view>
+    </view>
+    <view class='icon_tip'>点击图标分享完成任务</view>
+  </view>
+</view>
+
+
+<!-- 快速导航 -->
+<menu-navigator is="/template/empty_block/empty_block" menu-class="menu_navigation"></menu-navigator>

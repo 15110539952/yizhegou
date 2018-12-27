@@ -1,0 +1,71 @@
+<!--pages/My_activity/cash_shop/cash_shop.wxml-->
+<view class='container'>
+  <view class='lineHeight100 zdw_text_center zdw_font30'>第{{activity.period_num}}期活动您兑换的商品为</view>
+  <view class='shop_block'>
+    <view class='activity_content justify-between'>
+      <image class='activity_img' src='{{activity.original_img}}'></image>
+      <view class='activity_detail'>
+        <view class='zdw_font28 marginB20 lines_ellipsis'>{{activity.activity_name}}</view>
+        <view class='justify-between lineHeight30'>
+          <view class='zdw_font26 zdw_e31536 zdw_fontbold marginR20'>
+            折扣价<text class='zdw_font20 marginL20'>¥</text>{{activity.price}}
+          </view>
+          <view class='zdw_font20 zdw_a5afc5 line-through'>￥{{activity.shop_price}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='zdw_font26'>
+      <view class='list_item justify-between' hover-class='navigator-hover' bindtap='fenleiShow'><text>型号参数</text><view class='width_60 line_ellipsi text_right'>{{shopgoods_text || '请选择'}}</view></view>
+      
+      <!-- <picker bindchange="bindKuaidiChange" value="{{kuaidi_index}}" range="{{kuaidi_array}}">
+          <view class='list_item justify-between'>
+            <text>配送方式</text><text class='zdw_a5afc5'>{{kuaidi_array[kuaidi_index] || '选择快递'}}</text>
+          </view>
+      </picker> -->
+          <view class='list_item justify-between'>
+            <text>配送方式</text><text class='zdw_a5afc5'>快递</text>
+          </view>
+      <!-- <view class='list_item justify-between' hover-class='navigator-hover' bindtap='fenleiShow'><text>选择分类</text><text class='zdw_a5afc5'>已选择白色</text></view> -->
+      
+      <!-- <picker bindchange="bindFapiaoChange" value="{{fapiao_index}}" range="{{fapiao_array}}">
+          <view class='list_item justify-between'>
+            <text>发票类型</text><text class='zdw_a5afc5'>{{fapiao_array[fapiao_index] || '请选择'}}</text>
+          </view>
+      </picker> -->
+    </view>
+  </view>
+
+  <button class='cash_btn' hover-class='navigator-hover' bindtap='bindCashShop'>立即兑付</button>
+  <view class='zdw_font24 zdw_a5afc5 zdw_text_center'>订单申请剩余时间:{{myHour}}:{{myMinite}}:{{mySecond}}  超时订单未提交将作废</view>
+</view>
+
+
+<!-- 选择分类 -->
+<van-popup show="{{ fenlei_show }}" position="bottom" bind:close="fenleiClose">
+  <view class='fenlei_block'>
+    <view class='fenlei_close' bindtap='fenleiClose'>×</view>
+
+    <view class='fenlei_item_block' wx:for="{{goods}}" wx:if="item.k" wx:key="index">
+        <view class='fenlei_item line_ellipsis'>{{item.goods_name}}</view>
+
+        <block wx:for="{{item.spec}}" wx:key="index2" wx:for-item="itemSpec" wx:for-index="index2">
+          <view class='zdw_font28'>{{itemSpec.spec_name}}</view>
+          <view class='label_block justify-start flex-wrap'>
+            <view class="label_item {{itemItem.selected?'active':''}} {{itemItem.stock==0?'zdw_dee0e5':''}}" data-stock="{{itemItem.stock}}" bindtap='bindGoodsItem' data-index='{{index}}' data-index2='{{index2}}' data-index3='{{index3}}' wx:for="{{itemSpec.item}}" wx:key="index3" wx:for-item="itemItem" wx:for-index="index3">{{itemItem.item}}</view>
+            <!-- <view class='label_item active'>白色</view>
+            <view class='label_item'>蓝色</view>
+            <view class='label_item'>绿色</view> -->
+          </view>
+        </block>
+        <!-- <view class='zdw_font28'>型号选择</view>
+        <view class='label_block justify-start flex-wrap'>
+          <view class='label_item'>CSS123</view>
+          <view class='label_item'>CSS123</view>
+          <view class='label_item'>CSS123</view>
+          <view class='label_item'>文字数量不限制</view>
+        </view> -->
+    </view>
+    <button class='btn_clear' bindtap='bindSelectOk'>确认选择</button>
+  </view>
+</van-popup>

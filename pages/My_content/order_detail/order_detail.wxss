@@ -1,0 +1,65 @@
+/* pages/My_content/order_detail/order_detail.wxss */
+.container{
+  background: #fff;
+}
+
+.order_item{
+  padding: 40rpx 10rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #dee0e5;
+}
+
+.order_headimg{
+  width:220rpx;
+  height:220rpx;
+}
+.order_info{
+  width: 420rpx;
+  height:220rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.order_info .label{
+  height:40rpx;
+  border:1px solid #e31536;
+  border-radius:6rpx;
+  text-align: center;
+  font-size: 22rpx;
+  padding: 0 20rpx;
+}
+
+.activity_qishu{
+  width:100%;
+  height:40rpx;
+  line-height:40rpx;
+  background:#FFE3E7;
+  border-radius:5rpx;
+  padding: 0 20rpx;
+  font-size: 26rpx;
+  color: #e31536;
+}
+.shop_info_title,.order_info_title{
+  width:100%;
+  height:75rpx;
+  line-height:75rpx;
+  background:#e31536;
+  border-radius:10rpx;
+  padding:0 45rpx;
+  color: #fff;
+  font-size: 24rpx;
+  margin: 30rpx 0;
+}
+.order_info_title{
+  font-size: 30rpx;
+  background: #D9E4FC;
+  color: #76829f;
+}
+
+.shop_orderinfo_list{
+  line-height: 70rpx;
+  font-size: 26rpx;
+  padding: 20rpx 30rpx;
+  color: #a5afc5;
+}

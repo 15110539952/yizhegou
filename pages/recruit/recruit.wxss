@@ -1,0 +1,25 @@
+/* pages/recruit/recruit.wxss */
+.container{
+  background: #ECECF5;
+}
+.recruit_title{
+  padding: 30rpx;
+}
+.recruit_list{
+  padding: 0 30rpx;
+}
+.recruit_item{
+  width:694rpx;
+  height:175rpx;
+  background:#fff;
+  border-radius:15rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40rpx;
+  color: #454D59;
+  margin-bottom: 35rpx;
+}
+.recruit_item .active{
+  color: #D81E06;
+}

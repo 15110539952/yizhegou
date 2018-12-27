@@ -1,0 +1,107 @@
+/* pages/class/class.wxss */
+.container{
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 90rpx;
+}
+/* 顶部搜索 */
+.top_block{
+  padding: 10rpx 20rpx 20rpx;
+  line-height: 62rpx;
+}
+.top_block .icon-sousuo{
+  margin-right: 10rpx;
+}
+.search{
+	width: 100%;
+	height: 62rpx;
+	background-color: #f0f0f0;
+	border-radius: 31rpx;
+  font-size: 30rpx;
+  color: #cacaca;
+  padding-left: 60rpx;
+}
+
+/*总体主盒子*/  
+.class_block {
+  position: relative;  
+  width: 100%;  
+  height: 100%;  
+  background: #fff;  
+}
+ /*左侧栏主盒子*/  
+.nav_left{  
+  width: 25%;  
+  height: 100%;
+  text-align: center;  
+  background: #fff;
+  box-sizing: border-box;
+  position: relative;
+}  
+/* 左侧栏右边框 */
+.nav_left_right_line{
+  position: absolute;
+  top:0;right: 0;
+  width: 1rpx;
+  height: 100%;
+  background: #dee0e5;
+}
+/*左侧栏list的item*/  
+.nav_left .nav_left_items{  
+  height: 60rpx;  
+  line-height: 60rpx;  
+  font-size: 28rpx; 
+  color: #272f45;
+  position: relative;
+}  
+/*左侧栏list的item被选中时*/  
+.nav_left .nav_left_items.active{  
+	background-color: #f4f4f4;
+  border-right: 1rpx solid #fff;
+}  
+.nav_left_items.active .red_line,.nav_left_items.active .right_line_fff{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 7rpx;
+  height: 100%;
+  background: #e31536;
+}
+.nav_left_items.active .right_line_fff{
+  width: 1rpx;
+  background: #fff;
+  right: 0;
+  z-index: 99;
+}
+
+/*右侧栏主盒子*/  
+.nav_right{  
+  /*右侧盒子使用了绝对定位*/  
+  position: absolute;  
+  top: 0;  
+  right: 0;  
+  width: 75%;  
+  height: 100%;  
+  box-sizing: border-box;  
+  background: #fff;  
+}  
+/*右侧栏list的item*/  
+.nav_right .nav_right_items{  
+  width: 33.33%;  
+  height: 220rpx;  
+  text-align: center;  
+}  
+.nav_right .nav_right_items image{  
+  width: 120rpx;  
+  height: 120rpx;  
+  margin-top: 25rpx;
+}  
+.nav_right .nav_right_items .shop_name{  
+  margin-top: 25rpx;  
+  font-size: 26rpx;  
+  color: #959aa6;
+  overflow: hidden;  
+  white-space: nowrap;  
+  text-overflow: ellipsis;  
+} 
+

@@ -1,0 +1,20 @@
+<!--pages/Shop_process/address_list/address_list.wxml-->
+<view class='container'>
+  <!-- 收货信息 -->
+  <view class='address_block justify-between' wx:for='{{address_list}}' wx:key="index">
+    <view class='default' wx:if='{{item.is_default==1}}'>默认</view>
+    <view class='left' bindtap='bindSetAddress' data-id='{{item.address_id}}'>
+      <view class='justify-between zdw_font32 zdw_272f45' style='margin-bottom:15rpx;'><view>{{item.consignee}}</view><view>{{item.mobile}}</view></view>
+      <view class='address_text zdw_font26 zdw_a5afc5 lines_ellipsis'>{{item.province+item.city+item.district+item.address}}</view>
+    </view>
+    <navigator url='/pages/Shop_process/add_address/add_address?id={{item.address_id}}' class='iconfont icon-bianji zdw_font40 zdw_a5afc5'></navigator>
+  </view>
+  <!--如果无数据，则显示数据-->
+  <view wx:if="{{!address_list.length}}">
+    <empty-block class='empty_block'><text class=''>地址列表为空</text></empty-block>
+  </view>
+  <view class='btn_block'>
+    <navigator url='/pages/Shop_process/add_address/add_address' class='add_address'>增加新地址</navigator>
+    <!-- <van-button size="large" custom-class="add_address">增加新地址</van-button> -->
+  </view>
+</view>

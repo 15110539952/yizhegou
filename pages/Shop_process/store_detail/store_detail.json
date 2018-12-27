@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "shop-item": "/template/shop_item/shop_item",
+    "menu-navigator": "/template/menu_navigation/menu_navigation",
+    "empty-block": "/template/empty_block/empty_block"
+  }
+}

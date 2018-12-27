@@ -1,0 +1,29 @@
+<!--pages/shop_list/shop_list.wxml-->
+  <!-- 搜索页面 -->
+  <search-detail show="{{search_show}}" nearSearch="{{near_search}}" hotSearch="{{hot_search}}" bindvalueChange="valueChange" bindbtnSearch="btnSearch" ></search-detail>
+  
+<view class='container'>
+  <view class='top_fixed'>
+    <!-- 顶部搜索 -->
+    <view class='top_block justify-between zdw_bg_white' bindtap='searchShow'>
+      <input class='search' disabled placeholder='请输入商品名进行搜索' value='{{search_value}}'><text class='iconfont icon-sousuo zdw_a5afc5'></text></input>
+    </view>
+    <!-- 分类tab -->
+    <i-tabs current="{{ current_scroll }}" scroll bindchange="handleChangeScroll">
+        <i-tab key="all" title="全部"></i-tab>
+        <i-tab key="{{item.cat_id}}" title="{{item.cat_name}}" wx:for="{{store_class}}" wx:key="index"></i-tab>
+    </i-tabs>
+  </view>
+  <!-- 列表 -->
+  <view class='shop_list justify-start flex-wrap' style='padding:0 20rpx {{shop_list.length>0?"50rpx;":""}};'>
+    <view class='line_center'></view>
+    <shop-item t-class='component_shopitem' wx:for="{{shop_list}}" wx:key="index" shop_item="{{item}}"> </shop-item>
+  </view>
+  <!--如果无数据，则显示数据-->
+  <view wx:if="{{!shop_list.length && !is_container}}">
+    <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+  </view>
+</view>
+
+<!-- 快速导航 -->
+<menu-navigator menu-class="menu_navigation"></menu-navigator>

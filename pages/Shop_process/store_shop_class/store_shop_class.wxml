@@ -1,0 +1,5 @@
+<!--pages/Shop_process/store_shop_class/store_shop_class.wxml-->
+<view class='container'>
+  <navigator url='/pages/shop_list/shop_list?type=store&store_id={{store_id}}&cat_id=' class='shop_item'><text>全部</text><text class='iconfont icon-jiantouyou'></text></navigator>
+  <navigator url='/pages/shop_list/shop_list?type=store&store_id={{store_id}}&cat_id={{item.cat_id}}' class='shop_item' wx:for="{{store_class}}" wx:key="index"><text>{{item.cat_name}}</text><text class='iconfont icon-jiantouyou'></text></navigator>
+</view>

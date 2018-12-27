@@ -1,0 +1,36 @@
+<!--pages/class/class.wxml-->
+<!--主盒子-->
+<view class="container">
+  <!-- 顶部搜索 -->
+  <view class='top_block justify-between zdw_bg_white zdw_border_bottom'>
+    <navigator url='/pages/shop_list/shop_list?type=search' class='search'><text class='iconfont icon-sousuo'></text>请输入商品名进行搜索</navigator>
+  </view>
+  <view class='justify-between class_block'>
+    <!--左侧栏-->
+    <scroll-view scroll-y class="nav_left">
+      <view class='nav_left_right_line'></view>
+      <block wx:for="{{class_list}}"  wx:key="index">
+        <!--当前项的id等于item项的id，那个就是当前状态-->
+        <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+        <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-id="{{item.id}}"><text class='red_line'></text>{{item.mobile_name}}<text class='right_line_fff'></text></view>
+      </block>
+    </scroll-view>
+    <!--右侧栏-->
+    <scroll-view scroll-y class="nav_right">
+      <!--如果有数据，才遍历项-->
+      <view wx:if="{{class_content.length}}" class='justify-start flex-wrap'>
+          <view class="nav_right_items"  wx:for="{{class_content}}" wx:key="index">
+          <!--界面跳转 -->
+            <navigator url="/pages/shop_list/shop_list?type=class&id={{item.id}}">
+              <image mode="aspectFill" src="{{item.image}}"></image>
+              <view class='shop_name'>{{item.mobile_name}}</view>
+            </navigator>
+          </view>
+      </view>
+      <!--如果无数据，则显示数据-->
+      <view wx:else>
+        <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+      </view>
+    </scroll-view>
+  </view>
+</view>

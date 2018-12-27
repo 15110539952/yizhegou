@@ -1,0 +1,7 @@
+<!--pages/My_activity/cash_success/cash_success.wxml-->
+<view class='container'>
+  <icon class='icon_success' type="success" color="#09BB07" size="100"></icon>
+  <view class='zdw_font36 zdw_text_center'>购买成功</view>
+  <view class='zdw_font24 zdw_text_center zdw_a5afc5' style='margin:40rpx auto 80rpx;width:406rpx'>您可以在我的订单中查看已购买商品的详细信息</view>
+  <navigator url='/pages/My_content/my_order/my_order' open-type="redirectTo" class='order_btn'>我的订单</navigator>
+</view>

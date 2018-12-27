@@ -1,0 +1,102 @@
+/* pages/My_content/xuanze_Interest/xuanze_Interest.wxss */
+.container{
+  background: #fff;
+  padding: 60rpx 40rpx;
+}
+.interest_block{
+  margin-top: 50rpx;
+}
+.btn_clear{
+  margin-top: 80rpx;
+  width:100%;
+  height:100rpx;
+  background:#e31536;
+  border-radius:10rpx;
+  color: #fff;
+}
+.interest_block{
+  position: relative;
+  height: 600rpx;
+}
+.interest_item{
+  border-radius:50%;
+  text-align: center;
+  position: absolute;
+  font-size: 28rpx;
+}
+.interest_item.active{
+  background: #E31536;
+  color: #fff;
+}
+.inter_item1{
+  width: 164rpx;
+  height: 164rpx;
+  line-height: 164rpx;
+  top: 40rpx;
+  left: 40rpx;
+  background: #e8f3c7;
+  color: #648500;
+}
+.inter_item2{
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  top: 55rpx;
+  left: 280rpx;
+  background: #E4DDFB;
+  color: #7355D7;
+}
+.inter_item3{
+  width: 154rpx;
+  height: 154rpx;
+  line-height: 154rpx;
+  top: 20rpx;
+  left: 450rpx;
+  background: #F6E8C3;
+  color: #DCA000;
+}
+.inter_item4{
+  width: 154rpx;
+  height: 154rpx;
+  line-height: 154rpx;
+  top: 240rpx;
+  left: 120rpx;
+  background: #FFE5D3;
+  color: #ED6400;
+}
+.inter_item5{
+  width: 163rpx;
+  height: 163rpx;
+  line-height: 163rpx;
+  top: 195rpx;
+  left: 340rpx;
+  background: #D9E4FC;
+  color: #3A64BF;
+}
+.inter_item6{
+  width: 170rpx;
+  height: 170rpx;
+  line-height: 170rpx;
+  top: 370rpx;
+  left: 260rpx;
+  background: #FCDFE4;
+  color: #DA2543;
+}
+.inter_item7{
+  width: 124rpx;
+  height: 124rpx;
+  line-height: 124rpx;
+  top: 365rpx;
+  left: 490rpx;
+  background: #D5F8CD;
+  color: #229F04;
+}
+.inter_item8{
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  top: 430rpx;
+  left: 60rpx;
+  background: #F6E8C3;
+  color: #DCA000;
+}

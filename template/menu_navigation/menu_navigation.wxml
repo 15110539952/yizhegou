@@ -1,0 +1,16 @@
+<!--template/menu_navigation/menu_navigation.wxml-->
+<view class='menu_navigation_blcok' animation="{{animationData}}">
+  <view class='menu_block'>
+    <navigator url='/pages/index/index' open-type='switchTab' class='menu_item'><view class='iconfont icon-shouyex'></view><view>首页</view></navigator>
+    <navigator url='/pages/me/me' open-type='switchTab' class='menu_item'><view class='iconfont icon-geren6'></view><view>个人</view></navigator>
+    <navigator url='/pages/My_activity/my_activity/my_activity'  open-type='switchTab' class='menu_item'><view class='iconfont icon-renwu'></view><view>活动</view></navigator>
+    <navigator url='/pages/shop_list/shop_list?type=search' class='menu_item'><view class='iconfont icon-sousuo'></view><view>搜索</view></navigator>
+    <navigator url='/pages/My_content/message/message' class='menu_item'><view class='iconfont icon-ai-message'></view><view>通知</view></navigator>
+    <navigator url='/pages/Shop_process/shop_cart/shop_cart' class='menu_item'><view class='iconfont icon-ai-message'></view><view>购物车</view></navigator>
+  </view>
+  <!-- 展开收起 -->
+  <view class='menu_btn justify-around' bindtap='Menu_btn'>
+    <view class='iconfont {{menu_type?"icon-jiantou_xiangzuoliangci":"icon-jiantou_xiangyouliangci"}}'></view>
+    <view class='menu_btn_text'>快速导航</view>
+  </view>
+</view>

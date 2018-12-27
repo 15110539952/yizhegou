@@ -1,0 +1,85 @@
+/* pages/My_content/merchants/merchants.wxss */
+.container{
+  height: 100%;
+  background: #fff;
+}
+.enter_state{
+  text-align: center;
+}
+.icon_success{
+  margin: 245rpx auto 40rpx;
+}
+.zhanghu_block{
+  margin: 20rpx auto;
+  width:440rpx;
+  background:#E9ECF8;
+  border-radius:10rpx;
+  padding: 20rpx 40rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+
+
+
+.merchants_tip_text{
+  margin:160rpx 0 110rpx;
+  font-size: 32rpx;
+  line-height:60rpx;
+  text-align: center;
+}
+
+.merchants_select{text-align: center;}
+.bg_block{
+  width: 200rpx;
+  height: 200rpx;
+  line-height: 200rpx;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 100rpx;
+  color: #fff;
+  margin-bottom: 30rpx;
+}
+.personal{margin-right: 85rpx;}
+.personal .bg_block{
+  background: #e31536;
+}
+.business .bg_block{
+  background: #1E58FF;
+}
+.xieyi{
+  margin-top: 150rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+.xieyi .active{
+  color: #e31536;
+}
+
+
+/* 我司正在广泛寻求各类合作 */
+.icon-hezuo-tianchong{
+  display: block;
+  margin: 250rpx auto 0;
+  font-size: 200rpx;
+  width: 200rpx;
+  height: 200rpx;
+  color: #BEC5E0;
+}
+.gfhz{
+  margin-top: 50rpx;
+  text-align: center;
+  font-size:36rpx;
+}
+.lianxifangshi{
+  width:510rpx;
+  height:160rpx;
+  background:#E3E7F8;
+  border-radius:10rpx;
+  margin: 40rpx auto;
+  text-align: center;
+  color: #3A4264;
+  padding: 40rpx 0;
+  font-size:28rpx;
+  line-height: 40rpx;
+}

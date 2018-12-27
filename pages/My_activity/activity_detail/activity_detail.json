@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "活动详情",
+  "usingComponents": {
+    "menu-navigator": "/template/menu_navigation/menu_navigation"
+  }
+}

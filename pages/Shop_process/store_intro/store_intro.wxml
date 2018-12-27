@@ -1,0 +1,6 @@
+<!--pages/Shop_process/store_intro/store_intro.wxml-->
+<import src="/wxParse/wxParse.wxml"/>
+<view class='container'>
+    <!-- 通过wxParse转换HTML格式 -->
+    <template is="wxParse" data="{{wxParseData:store_content.nodes}}"/>
+</view>

@@ -1,0 +1,31 @@
+<!--pages/My_content/user_info/user_info.wxml-->
+<view class='container'>
+  <view class='user_head_block justify-between'>
+        <image class='user_headimg' src='{{userInfo.head_pic}}' wx:if="{{userInfo.head_pic}}"></image>
+        <open-data  class='user_headimg' type="userAvatarUrl" wx:if="{{!userInfo.head_pic}}"></open-data>
+    <view bindtap='upload' class='changehead'><text>更换头像</text><text class='iconfont icon-jiantouyou'></text></view>
+  </view>
+  <view style='height:15rpx;background:#f1f1f1;'></view>
+  <view class='user_info_list'>
+    <view class='user_info_item zdw_font32 zdw_272f45'><view>用户名</view><view class='zdw_76829f'>{{userInfo.nickname}}</view></view>
+    <view class='user_info_item zdw_font32 zdw_272f45'><view>姓名</view><view class='zdw_76829f'>{{userInfo.realname?userInfo.realname:''}}</view></view>
+    <view class='user_info_item zdw_font32 zdw_272f45'><view>手机号</view><view class='zdw_76829f'>{{userInfo.mobile?userInfo.mobile:''}}</view></view>
+  </view>
+
+  <view class='nav_btn'>
+    <navigator url='/pages/Shop_process/address_list/address_list' class='btn_block'><view>我的收货地址</view><view class='zdw_76829f'>已添加{{userInfo.address_count}}个收货地址</view></navigator>
+    
+    <!-- <navigator wx:if="{{userInfo.id_card_validated==0||userInfo.id_card_validated==4}}" url='/pages/My_content/real_name/real_name' class='btn_block'>
+      <view>实名认证信息</view>
+      <view class='zdw_76829f'>{{userInfo.id_card_validated==0?'去实名认证':'实名认证失败'}}</view>
+    </navigator>
+
+    <view wx:if="{{userInfo.id_card_validated==1||userInfo.id_card_validated==2}}" class='btn_block'><view>实名认证信息</view><view class='zdw_76829f'>{{userInfo.id_card_validated==1?'审核中':'已实名认证'}}</view></view> -->
+    <navigator url='/pages/My_content/real_name/real_name' class='btn_block'>
+      <view>实名认证信息</view><view class='zdw_76829f'>修改实名认证信息</view>
+    </navigator>
+
+    <navigator wx:if="{{userInfo.card_count == 0}}" url='/pages/My_content/bind_bank/bind_bank' class='btn_block'><view>银行卡</view><view class='zdw_76829f'>立即绑卡</view></navigator>
+    <navigator wx:if="{{userInfo.card_count>0}}" url='/pages/My_content/bank_list/bank_list' class='btn_block'><view>银行卡</view><view class='zdw_76829f'>查看绑定的银行卡</view></navigator>
+  </view>
+</view>

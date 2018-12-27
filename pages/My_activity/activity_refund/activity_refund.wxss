@@ -1,0 +1,2 @@
+/* pages/My_activity/activity_refund/activity_refund.wxss */
+@import "/pages/My_activity/cashable/cashable.wxss";

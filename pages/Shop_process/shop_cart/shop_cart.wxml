@@ -1,0 +1,101 @@
+<!--pages/Shop_process/shop_cart/shop_cart.wxml-->
+<view class='container' hidden='{{is_container}}'>
+   <!-- <view class='store_name zdw_font26'><text class='iconfont icon-dianpu'></text><text>供货商：苹果一折购旗舰店</text></view>
+  <view class='store_block zdw_bg_white' bindlongtap='bindDeleteCart'>
+    <view class='store_item justify-start'>
+      <view class='iconfont icon-xuanze-duoxuan zdw_font38'></view>
+      <image src='/img/me_top_bg.jpg' class='store_img'></image>
+      <view class='store_content justify-around flex-column'>
+        <view class='zdw_272f45 zdw_font28 lines_ellipsis'>Apple iPhone X (A1865) 64GB </view>
+        <view class='zdw_e31536 zdw_font26'><text>折扣价 ￥629.00</text><text class='zdw_a5afc5 line-through zdw_font22'>￥3455.00</text></view>
+      </view>
+    </view>
+    <view class='store_item justify-start'>
+      <view class='iconfont icon-xuanze-duoxuan zdw_font38 active'></view>
+      <image src='/img/me_top_bg.jpg' class='store_img'></image>
+      <view class='store_content justify-around flex-column'>
+        <view class='zdw_272f45 zdw_font28 lines_ellipsis'>Apple iPhone X (A1865) 64GB 深空灰色 </view>
+        <view class='zdw_e31536 zdw_font26'><text style='margin-right:20rpx;'>折扣价 ￥629.00</text><text class='zdw_a5afc5 line-through zdw_font22'>￥3455.00</text></view>
+      </view>
+    </view>
+  </view>  -->
+  <block wx:if="{{activity}}">
+    <view class='store_name zdw_font26'><text class='iconfont icon-dianpu'></text><text>供货商：{{activity.store.store_name}}</text></view>
+    <view class='store_block zdw_bg_white'>
+      <view class='store_item justify-start'>
+        <view class='iconfont icon-xuanze-duoxuan zdw_font38 active'></view>
+        <image src='{{activity.activity.original_img}}' class='store_img'></image>
+        <view class='store_content justify-around flex-column'>
+          <view class='zdw_272f45 zdw_font28 lines_ellipsis'>{{activity.activity.activity_name}}</view>
+          <view class='zdw_e31536 zdw_font26'><text style='margin-right:20rpx;'>折扣价 ￥{{activity.activity.price}}</text><text class='zdw_a5afc5 line-through zdw_font22'>￥{{activity.activity.shop_price}}</text></view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+
+  <block wx:for="{{cart_list}}" wx:key="list_index" wx:for-index="list_index"  wx:for-item="list_item">
+    <view class='store_name zdw_font26'><text class='iconfont icon-dianpu'></text><text>供货商：{{list_item.store_name}}</text></view>
+    <view class='store_block zdw_bg_white'>
+      <view class='store_item justify-start' wx:for="{{list_item.cartList}}" wx:key="index"  wx:for-item="item"  bindlongtap='bindDeleteCart' data-id='{{item.id}}'>
+        <view class='iconfont icon-xuanze-duoxuan zdw_font38 {{item.is_select?"active":""}}'  bindtap='bindSelect' data-listindex='{{list_index}}' data-index='{{index}}'></view>
+        <image src='{{item.image}}' class='store_img'></image>
+        <view class='store_content justify-around flex-column'>
+          <view class='zdw_272f45 zdw_font28 lines_ellipsis'>{{item.activity_name}}</view>
+          <view class='zdw_e31536 zdw_font26'><text style='margin-right:20rpx;'>折扣价 ￥{{item.price}}</text><text class='zdw_a5afc5 line-through zdw_font22'>￥{{item.shop_price}}</text></view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!--如果无数据，则显示-->
+  <view wx:if="{{!cart_list.length && !activity}}">
+    <empty-block class='empty_block'><text class=''>购物车是空的</text></empty-block>
+  </view>
+
+  <view hidden='{{!cart_list.length && !activity}}'>
+    <!-- 收货信息 -->
+    <view class='zdw_272f45 cart_block_title'>收货信息</view>
+    <navigator url='/pages/Shop_process/address_list/address_list' class='address_block justify-between'>
+      <view wx:if="{{!address_id}}" class='zdw_font32 zdw_a5afc5'>请选择收货地址</view>
+      <view class='left' wx:if="{{address_id}}">
+        <view class='justify-between zdw_font32 zdw_272f45' style='margin-bottom:15rpx;'><view>{{address.consignee}}</view><view>{{address.mobile}}</view></view>
+        <view class='address_text zdw_font26 zdw_a5afc5 line_ellipsis'>{{address.province+address.city+address.district+address.address}}</view>
+      </view>
+      <view class='iconfont icon-jiantouyou zdw_font40 zdw_a5afc5' style='line-height: 80rpx;'></view>
+    </navigator>
+    
+    <!-- 支付费用明细 -->
+    <view class='zdw_272f45 cart_block_title'>支付费用明细</view>
+    <view class='pay_block'>
+      <view class='justify-between zdw_272f45' style='margin-bottom:15rpx;'>
+        <view class='zdw_font28'>保证金：</view>
+        <view class='zdw_font26'>￥{{price_list.total_fee}}</view>
+      </view>
+      <view class='justify-between zdw_272f45' style='margin-bottom:15rpx;'>
+        <view class='zdw_font28'>服务费：</view>
+        <view class='zdw_font26'>￥{{price_list.service_price}}</view>
+      </view>
+      <view class='justify-between zdw_272f45' style='margin-bottom:15rpx;'>
+        <view class='zdw_font28'>活动门票：</view>
+        <view class='zdw_font26'>￥{{price_list.ticket_price}}</view>
+      </view>
+      <view class='justify-between zdw_272f45' style='margin-bottom:15rpx;'>
+        <view class='zdw_font28'>手续费：</view>
+        <view class='zdw_font26'>￥{{price_list.commission_price}}</view>
+      </view>
+      <view class='justify-between zdw_272f45' style='margin-bottom:15rpx;'>
+        <view class='zdw_font28'>邮费：</view>
+        <view class='zdw_font26'>￥{{price_list.shipping_price}}</view>
+      </view>
+    </view>
+
+    <van-submit-bar price="{{total_price}}" button-text="微信支付" bind:submit="onSubmit" label="总计：" button-class="order_btn">
+      <view wx:if="{{cart_list.length}}" class='all_select' bindtap='bindSelectAll'><text class='iconfont icon-xuanze-duoxuan zdw_font38 {{selectAll?"zdw_e31536":"zdw_a5afc5"}}'></text><text class='zdw_font22 zdw_272f45'>全选</text></view>
+    </van-submit-bar>
+  </view>
+
+
+</view>
+
+<!-- 快速导航 -->
+<!-- <menu-navigator menu-class="menu_navigation"></menu-navigator> -->

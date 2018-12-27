@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "通知中心",
+  "usingComponents": {
+    "van-tab": "/vant/tab/index",
+    "van-tabs": "/vant/tabs/index"
+  }
+}

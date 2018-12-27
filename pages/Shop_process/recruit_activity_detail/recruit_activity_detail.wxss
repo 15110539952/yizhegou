@@ -1,0 +1,19 @@
+/* pages/Shop_process/recruit_activity_detail/recruit_activity_detail.wxss */
+@import "/pages/Shop_process/shop_detail/shop_detail.wxss"; 
+.recruit_title{
+  line-height: 76rpx;
+  text-align: center;
+  color: #272f45;
+}
+.recruit_detail{
+  padding: 45rpx 50rpx;
+  background: #fff;
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+.footer{
+  background: #fff;
+}
+.footer .left_btn>view{
+  position: relative;
+}

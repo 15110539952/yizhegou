@@ -1,0 +1,37 @@
+/* pages/My_content/bind_bank/bind_bank.wxss */
+@import "/pages/Shop_process/add_address/add_address.wxss";
+page{
+  background: #fff;
+}
+.container {
+  padding: 0;
+}
+
+.user_info_list{
+  padding: 10rpx 0;
+  height: 600rpx;
+}
+.add_block:last-child{border-bottom: 0;}
+
+.one_btn,.two_btn{
+	width: 580rpx;
+	height: 95rpx;
+	line-height: 95rpx;
+	background-color: #e31536;
+	border-radius: 10rpx;
+  color: #fff;
+  margin: 0 auto;
+}
+.footer{
+  width: 580rpx;
+  font-size: 24rpx;
+  text-align: center;
+  margin: 80rpx auto 0;
+  line-height: 50rpx;
+}
+.verify_btn{
+  margin-top: 10rpx;
+	border-radius: 10rpx;
+	border: solid 1px #e31536;
+  color: #e31536;
+}

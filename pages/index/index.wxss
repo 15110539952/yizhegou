@@ -1,0 +1,127 @@
+/**index.wxss**/
+.top_block{
+  padding: 10rpx 20rpx 20rpx;
+  line-height: 62rpx;
+}
+.top_block .icon_nav{
+  font-size: 40rpx;
+	color: #e31536;
+}
+.top_block .icon-gouwucheman{
+  color: #76829f;
+}
+.top_block .icon-sousuo{
+  margin-right: 10rpx;
+}
+.search{
+	width: 530rpx;
+	height: 62rpx;
+	background-color: #f0f0f0;
+	border-radius: 31rpx;
+  font-size: 30rpx;
+  color: #cacaca;
+  padding-left: 98rpx;
+}
+.swiper_block{
+  padding: 0 20rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+/* 轮播图 */
+.swiper{
+  width: 710rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+/* 消息提醒 */
+.message_block{
+  width: 100%;
+  height: 86rpx;
+  padding: 23rpx 25rpx;
+  line-height: 40rpx;
+}
+.icon-lingdang{
+  color: #e31536;
+  font-size: 36rpx;
+}
+.message_content{
+  color: #383a3f;
+  font-size: 24rpx;
+  width: 650rpx;
+}
+.message{
+  width: 490rpx;
+}
+/* 最新活动 */
+.recommend_block,.hot_activity,.guess_like{
+  margin-top: 13rpx;
+  padding: 0 20rpx 50rpx;
+  width: 100%;
+  background: #fff;
+}
+.block_title{
+  width:100%;
+  font-size: 32rpx;
+  color: #383a3f;
+  padding: 30rpx 0;
+}
+.recommend_block image{
+  height:255rpx;
+  border-radius:10rpx;
+}
+.recommend_block .title text,.hot_activity .title text{
+  margin-left: 10rpx;
+}
+/* 热门活动 */
+.hot_activity .title{
+  border-bottom: 1rpx solid #dee0e5;
+}
+.activity_one{
+  width: 100%;
+  padding: 45rpx 20rpx 0;
+}
+.activity_one_content{
+  padding-top: 15rpx;
+  width: 360rpx;
+  height: 205rpx;
+}
+.activity_one_img{
+  width: 250rpx;
+	height: 205rpx;
+}
+
+.label{
+	width: 86rpx;
+  height: 30rpx;
+	border-radius: 5rpx;
+  text-align: center;
+	border: solid 1px #e31536;
+  box-sizing: content-box;
+  color: #e31536;
+}
+
+.shop_list{
+  border-top: 1rpx solid #dee0e5;
+  width: 100%;
+  background: #fff;
+  padding: 50rpx 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* 底部加载更多 */
+.addmore{
+  margin: 50rpx auto 0;
+	width: 220rpx;
+	height: 67rpx;
+  line-height: 67rpx;
+  box-sizing: content-box;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+	border: solid 1rpx #939393;
+  font-size: 30rpx;
+  color: #272f45;
+  text-align: center;
+}

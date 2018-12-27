@@ -1,0 +1,21 @@
+/* pages/Shop_process/pay_success/pay_success.wxss */
+page{
+  background: #fff;
+}
+.container{
+  padding: 160rpx 120rpx 0;
+  text-align: center;
+}
+.success_icon{
+  font-size: 180rpx;
+  color: #23B900;
+}
+.succ_btn{
+  width:100%;
+  line-height:100rpx;
+  background:rgba(227,21,54,1);
+  border-radius:10rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 38rpx;
+}

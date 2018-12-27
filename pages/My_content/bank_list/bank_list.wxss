@@ -1,0 +1,32 @@
+/* pages/My_content/bank_list/bank_list.wxss */
+.container{
+  padding: 0 30rpx;
+}
+.top_text{
+  line-height: 100rpx;
+  font-size:32rpx;
+  color: #181818;
+}
+.bank_block{
+  background: #fff;
+  padding: 30rpx 40rpx;
+}
+.card_num{
+  color: #272F44;
+  font-size: 42rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+}
+.account_name{
+  font-size: 28rpx;
+  color: #272F44;
+}
+.change_bank{
+  margin-top: 160rpx;
+  width:100%;
+  line-height:100rpx;
+  background: #e31536;
+  border-radius:10rpx;
+  text-align: center;
+  color: #fff;
+}

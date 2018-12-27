@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "帮助中心",
+  "usingComponents": {
+    "i-collapse": "/iview/collapse/index",
+    "i-collapse-item": "/iview/collapse-item/index",
+    "menu-navigator": "/template/menu_navigation/menu_navigation",
+    "empty-block": "/template/empty_block/empty_block"
+  }
+}

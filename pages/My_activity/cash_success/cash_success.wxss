@@ -1,0 +1,21 @@
+/* pages/My_activity/cash_success/cash_success.wxss */
+page{
+  background: #fff;
+}
+.container{
+  text-align: center;
+}
+.icon_success{
+  margin: 245rpx auto 40rpx;
+}
+.order_btn{
+  width:274rpx;
+  height:88rpx;
+  line-height:88rpx;
+  background:#e31536;
+  border-radius:10rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 30rpx;
+  margin: 0 auto;
+}

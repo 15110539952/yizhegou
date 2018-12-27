@@ -1,0 +1,67 @@
+<!--pages/Shop_process/winning/winning.wxml-->
+<view class='container'>
+  <!-- 获奖名单 -->
+  <view class='top_block'>
+    <view class='zdw_font38 marginB10'>本商品共有{{period_list.length}}次活动</view>
+    <view class='zdw_font26 zdw_a5afc5'>请选择您要查看的活动期数</view>
+  </view>
+
+    <i-collapse name="{{col_name}}" bindComponentIcon="ComponentIcon" data-index='{{index}}' data-id='{{item.activity_id}}' accordion wx:for="{{period_list}}" wx:key="index">
+      <i-collapse-item name="{{index}}" i-class='win_list'>
+        <view slot="title" class="activity_header justify-between {{col_name==index?'active':''}}">
+          <view>
+            <view class='zdw_font30 zdw_white'>第{{item.period_num}}期活动用户名单</view>
+            <view class='zdw_font24 zdw_a5afc5 duihuan_type'><text>总人数 {{item.all_count}}</text><text>兑换实物 {{item.goods_count}}</text><text>兑换任务奖励 {{item.task_count}}</text></view>
+          </view>
+          <view class="iconfont  {{col_name==index?'icon-ico_open':'icon-jiantouyou'}}  zdw_font30 zdw_white lineHeight60"></view>
+        </view>
+        <view slot="content" class='list_content'>
+          <view class='list_header justify-between'><view class='width_25'>用户</view><view class='width_25'>积分</view><view class='width_50'>获得奖励</view></view>
+          <view class='win_list_item justify-between' wx:for="{{item.ranking}}" wx:for-item="ranking" wx:key="ranking_index">
+            <view class='width_25'>{{ranking.nickname}}</view><view class='width_25'>{{ranking.sum_point}}</view><view class='width_50'>{{ranking.type ==1?'（实物）'+ranking.goods[0].goods_name:ranking.type ==2?'（任务）'+ranking.task_name:''}} {{!ranking.type?'未中奖':''}}</view>
+          </view>
+          <!-- <view class='win_list_item justify-between'>
+            <view class='width_25'>张三</view><view class='width_25'>50000</view><view class='width_50'>（实物）魅族手机魅族手机</view>
+          </view> -->
+        </view>
+      </i-collapse-item>
+
+      <!-- <i-collapse-item name="name2" i-class='win_list'>
+        <view slot="title" class="activity_header justify-between {{col_name=='name2'?'active':''}}">
+          <view>
+            <view class='zdw_font30 zdw_white'>201810期活动用户名单</view>
+            <view class='zdw_font24 zdw_a5afc5 duihuan_type'><text>总人数 2000</text><text>兑换实物 25</text><text>兑换任务奖励 85</text></view>
+          </view>
+          <view class="iconfont {{col_name=='name2'?'icon-ico_open':'icon-jiantouyou'}} zdw_font30 zdw_white lineHeight60"></view>
+        </view>
+        <view slot="content" class='list_content'>
+          <view class='list_header justify-between'><view class='width_25'>用户</view><view class='width_25'>积分</view><view class='width_50'>获得奖励</view></view>
+          <view class='win_list_item justify-between'>
+            <view class='width_25'>张三</view><view class='width_25'>50000</view><view class='width_50'>（实物）魅族手机</view>
+          </view>
+          <view class='win_list_item justify-between'>
+            <view class='width_25'>张三</view><view class='width_25'>50000</view><view class='width_50'>（实物）魅族手机魅族手机</view>
+          </view>
+        </view>
+      </i-collapse-item>
+
+      <i-collapse-item name="name3" i-class='win_list'>
+        <view slot="title" class="activity_header justify-between {{col_name=='name3'?'active':''}}">
+          <view>
+            <view class='zdw_font30 zdw_white'>201810期活动用户名单</view>
+            <view class='zdw_font24 zdw_a5afc5 duihuan_type'><text>总人数 2000</text><text>兑换实物 25</text><text>兑换任务奖励 85</text></view>
+          </view>
+          <view class="iconfont {{col_name=='name3'?'icon-ico_open':'icon-jiantouyou'}} zdw_font30 zdw_white lineHeight60"></view>
+        </view>
+        <view slot="content" class='list_content'>
+          <view class='list_header justify-between'><view class='width_25'>用户</view><view class='width_25'>积分</view><view class='width_50'>获得奖励</view></view>
+          <view class='win_list_item justify-between'>
+            <view class='width_25'>张三</view><view class='width_25'>50000</view><view class='width_50'>（实物）魅族手机</view>
+          </view>
+          <view class='win_list_item justify-between'>
+            <view class='width_25'>张三</view><view class='width_25'>50000</view><view class='width_50'>（实物）魅族手机魅族手机</view>
+          </view>
+        </view>
+      </i-collapse-item> -->
+    </i-collapse>
+</view>

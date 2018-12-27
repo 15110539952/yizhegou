@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "获奖名单",
+  "usingComponents": {
+    "i-collapse": "/iview/collapse/index",
+    "i-collapse-item": "/iview/collapse-item/index"
+  }
+}

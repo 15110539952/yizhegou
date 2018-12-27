@@ -1,0 +1,89 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='top_block justify-between zdw_bg_white'>
+    <navigator url='/pages/My_content/message/message' class='iconfont icon-ai-message icon_nav'></navigator>
+    <navigator url='/pages/shop_list/shop_list?type=search' class='search'><text class='iconfont icon-sousuo'></text>请输入商品名进行搜索</navigator>
+    <navigator url='/pages/Shop_process/shop_cart/shop_cart' class='iconfont icon-gouwucheman icon_nav'></navigator>
+  </view>
+  <!-- 轮播图 -->
+  <view class='zdw_bg_white swiper_block'>
+    <swiper class='swiper' indicator-dots="ture" indicator-active-color='#ffb8a0' indicator-color='#ad2109' autoplay="true" interval="5000" duration="500" style='height:330rpx;'>
+        <swiper-item wx:for="{{banner}}" wx:key='item'>
+            <image src="{{item.ad_code}}" mode="aspectFill"  style='width:100%;height:330rpx;' bindtap='bindBannerUrl' data-index='{{item.media_type}}' data-url='{{item.ad_link}}'></image>
+        </swiper-item>
+    </swiper>
+  </view>
+  <!-- 消息提醒 -->
+  <view class='message_block zdw_bg_white justify-between'>
+    <view class='iconfont icon-lingdang'></view>
+    <view class='message_content justify-between' bindtap='bindBannerUrl' data-index='{{gonggao_detail.media_type}}' data-url='{{gonggao_detail.ad_link}}'>
+      <view class='message line_ellipsis'>{{gonggao_detail.ad_name}}</view><view>点击参与></view>
+    </view>
+  </view>
+  <!-- 最新推荐 -->
+  <view class='recommend_block'>
+    <view class='block_title zdw_272f45'>最新推荐<text class='iconfont icon-jiantouyou zdw_76829f'></text></view>
+
+    <view  bindtap='bindBannerUrl' data-index='{{recommend[0].media_type}}' data-url='{{recommend[0].ad_link}}' style='margin-bottom:10rpx;'><image class='' mode='aspectFill' src='{{recommend[0].ad_code}}' style='width:100%;height:255rpx;border-radius:10rpx;'></image></view>
+    <view class='justify-between'>
+      <view wx:if="{{recommend[1]}}" bindtap='bindBannerUrl' data-index='{{recommend[1].media_type}}' data-url='{{recommend[1].ad_link}}'><image class='' mode='aspectFill' src='{{recommend[1].ad_code}}' style='width:348rpx;'></image></view>
+      <view wx:if="{{recommend[1]}}" bindtap='bindBannerUrl' data-index='{{recommend[2].media_type}}' data-url='{{recommend[2].ad_link}}'><image class='' mode='aspectFill' src='{{recommend[2].ad_code}}' style='width:348rpx;'></image></view>
+    </view>
+  </view>
+  <!-- 热门活动 -->
+  <view class='hot_activity' wx:if="{{hot_activity[0]}}">
+    <view class='block_title zdw_272f45'>热门活动<text class='zdw_76829f zdw_font24'>人气优选推荐</text></view>
+    <navigator class='activity_one justify-between' url='/pages/Shop_process/shop_detail/shop_detail?id={{hot_activity[0].activity_id}}'>
+      <view class='activity_one_content'>
+        <view class='zdw_font30 zdw_272f45 lines_ellipsis'>{{hot_activity[0].activity_name}}</view>
+        <view class='justify-between' style='margin-top:20rpx;line-height: 30rpx;'>
+          <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+            折扣价<text class='zdw_font20' style='margin-left:20rpx;'>¥</text>{{hot_activity[0].price}}
+          </view>
+          <view class='label zdw_font24'>{{hot_activity[0].discount/10}}折抢</view>
+        </view>
+        <view class='justify-between' style='margin-top:10rpx;line-height: 30rpx;'>
+          <view class='zdw_font20 zdw_a5afc5 line-through'>商品原价 ￥{{hot_activity[0].shop_price}}</view>
+          <view class='justify-center'><text class='iconfont zdw_e31536 icon-redianshijian zdw_font22'></text><text class='zdw_font22 zdw_a5afc5'>{{hot_activity[0].sales_sum}}</text></view>
+        </view>
+      </view>
+      <image class='activity_one_img' mode='aspectFill' src='{{hot_activity[0].original_img}}'></image>
+    </navigator>
+    <view class='shop_list justify-start flex-wrap' wx:if="{{hot_activity[1]}}">
+      <view class='line_center'></view>
+      <shop-item t-class='component_shopitem' shop_item="{{hot_activity[1]}}" wx:if="{{hot_activity[1]}}"></shop-item>
+      <shop-item t-class='component_shopitem' shop_item="{{hot_activity[2]}}" wx:if="{{hot_activity[2]}}"></shop-item>
+    </view>
+  </view>
+
+
+  <!-- 热门商家推荐 -->
+  <view class='recommend_block'>
+    <view class='block_title zdw_272f45'>热门商家推荐<text class='iconfont icon-jiantouyou zdw_76829f'></text></view>
+
+    <view bindtap='bindBannerUrl' data-index='{{item.media_type}}' data-url='{{item.ad_link}}' wx:for="{{seller}}" wx:key="index" style='margin-bottom:10rpx;'><image class='' mode='aspectFill' src='{{item.ad_code}}' style='width:100%;height:255rpx;border-radius:10rpx;'></image></view>
+
+    <!-- <navigator url='/pages/shop_list/shop_list' style='margin-bottom:10rpx;'><image class='' mode='aspectFill' src='{{seller[0].ad_code}}' style='width:100%;height:255rpx;border-radius:10rpx;'></image></navigator>
+    <navigator url='/pages/shop_list/shop_list' style='margin-bottom:10rpx;'><image class='' mode='aspectFill' src='{{imgUrls[2].image}}' style='width:100%;height:255rpx;border-radius:10rpx;'></image></navigator> -->
+  </view>
+  <!-- 猜你喜欢 -->
+  <view class='guess_like'>
+    <view class='block_title zdw_272f45'>猜你喜欢<text class='iconfont icon-jiantouyou zdw_76829f'></text></view>
+    <view class='shop_list justify-start flex-wrap zdw_border_top'>
+      <view class='line_center'></view>
+      <shop-item t-class='component_shopitem' wx:for="{{like_activity}}" wx:key="index" shop_item="{{item}}"></shop-item>
+    </view>
+    <!-- <navigator class='addmore'>加载更多 <text class='iconfont icon-more zdw_a5afc5'></text></navigator> -->
+  </view>
+
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+</view>

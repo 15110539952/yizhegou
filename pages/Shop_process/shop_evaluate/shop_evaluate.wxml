@@ -1,0 +1,54 @@
+<!--pages/Shop_process/shop_evaluate/shop_evaluate.wxml-->
+<view class='container'>
+  <view class='tab_list_blcok justify-between'>
+    <view class="tab_item {{tab_index==1?'active':''}}" data-index='1'  bindtap='bindTabChange'>
+      <view class='zdw_font24'>全部评价</view>
+      <view class='zdw_font30'>({{evaluate_num.all_count}})</view>
+    </view>
+    <view class="tab_item {{tab_index==2?'active':''}}" data-index='2'  bindtap='bindTabChange'>
+      <view class='zdw_font24'>好评</view>
+      <view class='zdw_font30'>({{evaluate_num.hao_count}})</view>
+    </view>
+    <view class="tab_item {{tab_index==3?'active':''}}" data-index='3'  bindtap='bindTabChange'>
+      <view class='zdw_font24'>中评</view>
+      <view class='zdw_font30'>({{evaluate_num.zhong_count}})</view>
+    </view>
+    <view class="tab_item {{tab_index==4?'active':''}}" data-index='4'  bindtap='bindTabChange'>
+      <view class='zdw_font24'>差评</view>
+      <view class='zdw_font30'>({{evaluate_num.cha_count}})</view>
+    </view>
+    <view class="tab_item {{tab_index==5?'active':''}}" data-index='5'  bindtap='bindTabChange'>
+      <view class='zdw_font24'>有图</view>
+      <view class='zdw_font30'>({{evaluate_num.tu_count}})</view>
+    </view>
+  </view>
+
+  <view class='evaluate_content'>
+    <view class='evaluate_item' wx:for="{{evaluate_list}}" wx:key="index">
+      <view class='user_content'>
+        <image class='user_headimg' src="{{item.head_pic}}"></image>
+        <view class='user_info'>
+          <view class='justify-between lineHeight50'>
+            <view><text class='zdw_font32 marginR20'>{{item.nickname}}</text><text class='zdw_font24 zdw_a5afc5'>第{{item.period_num}}期兑换用户</text></view>
+            <view class='zdw_font30' bindtap='bindZan' data-id='{{item.comment_id}}' data-index='{{index}}'><text class='iconfont icon-shoucang zdw_e31536 marginR10'></text><text>{{item.zan_num}}</text></view>
+          </view>
+          <view class='justify-between zdw_font24 lineHeight30'>
+            <i-rate value="{{item.rank}}" i-class="zdw_e31536"></i-rate>
+            <view class='zdw_font26 zdw_a5afc5'>{{item.add_time}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='user_evaluate zdw_font28 marginT20'>{{item.content}}</view>
+      <view class='user_evaluate_img marginT20'>
+        <image src='{{item.img}}'></image>
+      </view>
+    </view>
+  </view>
+    <!--如果无数据，则显示数据-->
+    <view wx:if="{{!evaluate_list.length}}">
+      <empty-block class='empty_block'><text class=''>暂无数据</text></empty-block>
+    </view>
+</view>
+
+<!-- 快速导航 -->
+<menu-navigator menu-class="menu_navigation"></menu-navigator>

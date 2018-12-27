@@ -1,0 +1,27 @@
+<!--pages/My_activity/activity_ranking/activity_ranking.wxml-->
+<view class='container'>
+  <view class='zdw_bg_white' style='padding:30rpx;'>
+    <view class='top_block justify-between'>
+      <text class='zdw_font46 zdw_white'>排名{{ranking.user_rank}}</text><text class='zdw_font28' style='color:#FFD1CB;'>您的活动总积分 {{ranking.user_sum_point}}</text>
+    </view>
+  </view>
+
+  <view class='marginT20 zdw_bg_white'>
+    <view class='list_content'>
+      <view class='list_header justify-between'><view class='width_10'></view><view class='width_20 text_left'>用户</view><view class='width_20'>积分</view><view class='width_50'>获得奖励</view></view>
+
+      <view class='win_list_item justify-between' wx:for="{{ranking.ranking}}" wx:key="index">
+        <view class="width_10 iconfont {{item.is_login_user?'icon-morentouxiang':''}} zdw_font26 zdw_e31536"></view>
+        <view class='width_20 text_left'>{{item.nickname}}</view>
+        <view class='width_20'>{{item.sum_point}}</view>
+        <view class='width_50 text_right'>{{item.type ==1?item.goods[0].goods_name:item.type ==2?item.task_name:''}}</view>
+        <!-- <view class='width_50 text_right'>{{item.type ==1?'（实物）'+item.goods[0].goods_name:item.type ==2?'（任务）'+item.task_name:''}} {{!item.type?'正在领取奖励':''}}</view> -->
+      </view>
+
+      <!-- <view class='win_list_item justify-between'>
+        <view class='width_10 iconfont zdw_font26 zdw_e31536'></view>
+        <view class='width_20 text_left'>张三张三</view><view class='width_20'>50000</view><view class='width_50 text_right'>（实物）魅族手机魅族手机</view>
+      </view> -->
+    </view>
+  </view>
+</view>

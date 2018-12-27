@@ -1,0 +1,63 @@
+<!--pages/My_content/withdraw_cash/withdraw_cash.wxml-->
+<view class='container'>
+  <view class='steps_block'>
+    <van-steps steps="{{ steps }}" active="{{ active }}" active-color="#e31536" custom-class="steps_list"></van-steps>
+  </view>
+
+  <!-- 第一步 -->
+  <view style='padding:0 20rpx;' hidden='{{active!=0}}'>
+    <view class='content_block'>
+      <view class='zdw_font34' style='margin-bottom:50rpx;'>您当前可提现总额为：{{user_money}}</view>
+      <view class='zdw_font24' style='margin-bottom:20rpx;'>请输入您要提现的金额</view>
+      <view class='zdw_border_bottom amount_block justify-start'>
+        <text class='zdw_font36 lineHeight60'>￥</text>
+          <van-field
+            value="{{ money }}"
+            placeholder="请输入提现金额"
+            border="{{ false }}"
+            type="digit"
+            bind:input="bindInputchange"
+            bind:blur="bindInputBlur"
+             data-name="money"
+          />
+          <!-- <input type="digit" bindinput="bindInputchange" data-name="money" value='{{money}}'></input> -->
+        </view>
+      <button class='btn_clear one_btn' bindtap='bindOne_btn' hover-class='navigator-hover'>下一步</button>
+    </view>
+  </view>
+
+  <!-- 第二部 -->
+  <view style='padding:0 20rpx;' hidden='{{active!=1}}'>
+    <view class='content_block'>
+      <!-- <view class='zdw_font34' style='margin-bottom:80rpx;'>已将短信验证码发送到您0096手机号码</view> -->
+      <view class='zdw_border_bottom' style='margin-bottom:120rpx;'>
+          <van-cell-group>
+              <van-field
+                value="{{ sms }}"
+                center
+                clearable
+                placeholder="请输入短信验证码"
+                border="{{ false }}"
+                use-button-slot
+                bind:change="bindInputchange" data-name="code"
+              >
+              <button class='verify_btn lineHeight60' slot="button" bindtap='bindCode' size="mini" disabled='{{is_verif}}'>{{verif_text}}</button>
+            </van-field>
+          </van-cell-group>
+      </view>
+      <button class='btn_clear two_btn' bindtap='bindBackpage' hover-class='navigator-hover' style='margin-bottom:20rpx;'>上一步</button>
+      <button class='btn_clear two_btn' bindtap='bindBtnCash' hover-class='navigator-hover'>提交申请</button>
+    </view>
+  </view>
+  
+  <!-- 第三部 -->
+  <view style='padding:0 20rpx;'  hidden='{{active!=2}}'>
+    <view class='content_block three_block'>
+      <view class='iconfont icon-wancheng' style='margin-bottom:50rpx;'></view>
+      <view class='zdw_font24'>您提交的提现申请，我们会在3个工作日之内将钱款打到您绑定的银行卡中,请注意消息通知</view>
+    </view>
+  </view>
+
+  <view class='footer' hidden='{{active==2}}'>说明：您提交的提现申请，我们会在3个工作日之内将
+钱款打到您绑定的银行卡中</view>
+</view>

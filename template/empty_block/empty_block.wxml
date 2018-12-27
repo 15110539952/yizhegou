@@ -1,0 +1,5 @@
+<!--template/empty_block/empty_block.wxml-->
+<view class='empty_block t-class'>
+  <image src='/img/logo_grad.png'></image>
+  <view class='empty_text'><slot></slot></view>
+</view>

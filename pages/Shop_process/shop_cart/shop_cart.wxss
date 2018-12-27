@@ -1,0 +1,60 @@
+/* pages/Shop_process/shop_cart/shop_cart.wxss */
+.container{
+  padding-bottom: 100rpx;
+}
+.store_name{
+	width: 100%;
+	height: 65rpx;
+	line-height: 65rpx;
+	background-color: #edf0fa;
+  padding-left: 30rpx;
+}
+.store_name .iconfont{
+  margin-right: 20rpx;
+  color: #0089d8;
+}
+.store_item{
+  padding: 35rpx 0 35rpx 25rpx;
+}
+.store_item .icon-xuanze-duoxuan{
+  line-height: 160rpx;
+  margin-right: 20rpx;
+  color: #a5afc5;
+}
+.icon-xuanze-duoxuan.active{
+  color: #e31536;
+}
+.store_img{
+  width: 210rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+}
+.store_content{
+  width: 420rpx
+}
+
+.cart_block_title{
+  padding: 0 30rpx;
+  line-height: 72rpx;
+  background: #fff;
+  margin-top: 15rpx;
+  border-bottom: 1rpx solid #dee0e5;
+  font-size: 28rpx;
+}
+/* 收货信息 */
+.address_block,.pay_block{
+  background: #fff;
+  padding: 30rpx;
+}
+.pay_block{
+  line-height: 50rpx;
+}
+.all_select{
+  margin-left:20rpx;
+}
+.all_select .iconfont{
+  margin-right: 10rpx;
+}
+.order_btn{
+  background: #e31536 !important;
+}

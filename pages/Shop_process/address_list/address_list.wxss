@@ -1,0 +1,36 @@
+/* pages/Shop_process/address_list/address_list.wxss */
+page{
+  background: #fff;
+}
+.address_block{
+  width: 100%;
+  padding: 30rpx;
+  border-top: 1rpx solid #dee0e5;
+  position: relative;
+}
+.address_block .left{
+  width: 580rpx;
+}
+.icon-bianji{
+  text-align: center;
+  width: 110rpx;
+  line-height: 100rpx;
+}
+.btn_block{margin-top: 100rpx;padding: 0 30rpx;}
+.add_address{
+	width: 100%;
+	height: 100rpx;
+	line-height: 100rpx;
+	background-color: #e31536;
+	border-radius: 10rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 38rpx;
+}
+/* 默认地址 */
+.default{
+  position: absolute;
+  top: 5rpx;
+  right: 10rpx;
+  font-size: 24rpx;
+}

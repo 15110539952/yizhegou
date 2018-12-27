@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "个人商家入驻",
+  "usingComponents": {
+    "van-steps": "/vant/steps/index",
+    "van-field": "/vant/field/index"
+  }
+}

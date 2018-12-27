@@ -1,0 +1,100 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/me/me",
+    "pages/class/class",
+    "pages/recruit/recruit",
+    "pages/shop_list/shop_list",
+    "pages/My_activity/my_activity/my_activity",
+    "pages/My_content/user_info/user_info",
+    "pages/My_content/my_money/my_money",
+    "pages/Shop_process/shop_cart/shop_cart",
+    "pages/Shop_process/shop_detail/shop_detail",
+    "pages/Shop_process/store_detail/store_detail",
+    "pages/Shop_process/store_shop_class/store_shop_class",
+    "pages/Shop_process/shop_evaluate/shop_evaluate",
+    "pages/Shop_process/winning_list/winning_list",
+    "pages/Shop_process/address_list/address_list",
+    "pages/Shop_process/add_address/add_address",
+    "pages/Shop_process/pay_success/pay_success",
+    "pages/Shop_process/recruit_activity_detail/recruit_activity_detail",
+    "pages/My_content/my_collection/my_collection",
+    "pages/My_content/my_order/my_order",
+    "pages/My_content/message/message",
+    "pages/My_content/merchants/merchants",
+    "pages/My_content/merchants_personal/merchants_personal",
+    "pages/My_content/merchants_business/merchants_business",
+    "pages/My_content/help_center/help_center",
+    "pages/My_content/frozen_amount/frozen_amount",
+    "pages/My_content/withdraw_cash/withdraw_cash",
+    "pages/My_content/bind_bank/bind_bank",
+    "pages/My_content/perfect_info/perfect_info",
+    "pages/My_content/xuanze_Interest/xuanze_Interest",
+    "pages/My_content/real_name/real_name",
+    "pages/My_activity/activity_detail/activity_detail",
+    "pages/My_activity/task_detail/task_detail",
+    "pages/My_activity/activity_awards/activity_awards",
+    "pages/My_activity/cash_shop/cash_shop",
+    "pages/My_activity/cash_success/cash_success",
+    "pages/My_activity/cashable/cashable",
+    "pages/My_activity/activity_refund/activity_refund",
+    "pages/My_activity/activity_ranking/activity_ranking",
+    "pages/My_content/order_detail/order_detail",
+    "pages/My_content/express_info/express_info",
+    "pages/My_content/refun_change_goods/refun_change_goods",
+    "pages/My_content/refun_change_content/refun_change_content",
+    "pages/My_content/writing_evaluation/writing_evaluation",
+    "pages/My_content/updata_head/updata_head",
+    "pages/My_content/enter_state/enter_state",
+    "pages/Shop_process/store_intro/store_intro",
+    "pages/My_content/bank_list/bank_list",
+    "pages/web_view/web_view"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "一折购物商城",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#858a96",
+    "selectedColor": "#e31536",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/homeactive.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/class/class",
+        "iconPath": "img/class.png",
+        "selectedIconPath": "img/classactive.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/My_activity/my_activity/my_activity",
+        "iconPath": "img/activty.png",
+        "pageTum": "navigate",
+        "selectedIconPath": "img/activtyactive.png",
+        "text": "活动"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "img/me.png",
+        "selectedIconPath": "img/meactive.png",
+        "text": "个人"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

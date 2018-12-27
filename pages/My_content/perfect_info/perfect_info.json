@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "完善个人信息",
+  "usingComponents": {
+    "van-field": "/vant/field/index"
+  }
+}

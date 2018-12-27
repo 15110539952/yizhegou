@@ -1,0 +1,12 @@
+<!--pages/My_content/enter_state/enter_state.wxml-->
+<view class='container'>
+  <icon class='icon_success' type="success" color="#09BB07" size="100"></icon>
+  <view class='zdw_font36'>恭喜您的认证审核已通过</view>
+  <view class='zdw_font24 zdw_a5afc5' style='margin:50rpx auto 20rpx;width:406rpx'>您可以通过PC端访问商户管理后台</view>
+  <view class='zhanghu_block zdw_a5afc5'>
+    <view>www.yizhego.com/admin.php</view>
+    <view>用户名 leishe 初始密码 888888</view>
+  </view>
+  <view class='zdw_a5afc5 zdw_font24'>请妥善保存</view>
+</view>
+

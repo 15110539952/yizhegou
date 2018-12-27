@@ -1,0 +1,29 @@
+<!--pages/My_content/frozen_amount/frozen_amount.wxml-->
+<view class='container'>
+  <view class='top_block'>
+    <view class='money_block'>
+      <image class='top_bg' src="{{yizhegou_img +'Public/front_img/dongjiebg.png'}}" mode="aspectFill"></image>
+      <view class='money_content'>
+        <view class='zdw_font24'>活动冻结金额</view>
+        <view class='money_num'>{{price}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='mingxi_title zdw_font32'>冻结明细</view>
+  <view class='consume_list'>
+    <view class='consume_item' wx:for="{{activity_frozen}}" wx:key="index">
+      <view class='zdw_font26 left'>
+        <view class='zdw_272f45 zdw_font26 marginB10 lines_ellipsis'>{{item.activity_name}}</view>
+        <view class='zdw_a5afc5 zdw_font24'>{{item.add_time}}</view>
+      </view>
+      <view class='zdw_font32 consume_num'>{{item.addAmount}}</view>
+    </view>
+    <!-- <view class='consume_item'>
+      <view class='zdw_font26 left'>
+        <view class='zdw_272f45 zdw_font26 marginB10 lines_ellipsis'>用户参与3倍返现活动用户参与3倍返现活动用户参与兑</view>
+        <view class='zdw_a5afc5 zdw_font24'>2018.9.26 16:25:30</view>
+      </view>
+      <view class='zdw_font32 consume_num green'>+568.00</view>
+    </view> -->
+  </view>
+</view>

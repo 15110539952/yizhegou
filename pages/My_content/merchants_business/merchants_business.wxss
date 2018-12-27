@@ -1,0 +1,107 @@
+/* pages/My_content/merchants_business/merchants_business.wxss */
+.steps_block{
+  padding: 50rpx 0;
+  background: #fff;
+}
+.steps_list{
+  font-size: 30rpx !important;
+}
+.van-step--horizontal .van-step__circle-container{
+  background: transparent !important;
+}
+.van-step--horizontal .van-step__line{
+  background: #c2c3d7;
+}
+
+.info_content{
+  padding: 0 20rpx;
+}
+.info_title{
+  font-size: 32rpx;
+  line-height: 100rpx;
+  padding: 0 10rpx;
+}
+.info_list{
+  width:100%;
+  background: #fff;
+  border-radius:15rpx;
+  padding: 20rpx 45rpx;
+}
+.info_item{
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #dee0e5;
+  display: flex;
+  justify-content: space-between;
+}
+.info_item:last-child{border-bottom: 0;}
+
+.info_item_date{
+  line-height: 60rpx;
+  border-bottom: 1rpx solid #dee0e5;
+  font-size: 28rpx;
+  padding:10px 15px;
+}
+.info_item_date .picker{
+  color: #999;
+}
+.btn_clear{
+  margin: 80rpx auto;
+	width: 100%;
+	height: 100rpx;
+	background-color: #e31536;
+	border-radius: 10rpx;
+  color: #fff;
+}
+
+.three_block{
+  margin-top: 30rpx;
+  text-align: center;
+  padding: 150rpx 100rpx 150rpx;
+}
+.icon-wancheng{
+  font-size: 200rpx;
+  color: #09BB07;
+}
+
+
+/* 上传图片 */
+.img_upload image,.img_upload .add_image{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+.img_upload .add_image{
+	background-color: #ececf5;
+  position: relative;
+}
+.add_image .shu,.add_image .heng{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #91919D;
+}
+.add_image .shu{
+  width: 2rpx;
+  height: 56rpx;
+  margin-top: -28rpx;
+  margin-left: -1rpx;
+}
+.add_image .heng{
+  width: 56rpx;
+  height: 2rpx;
+  margin-top: -1rpx;
+  margin-left: -28rpx;
+}
+
+
+image{
+  position: relative;
+  overflow: inherit;
+}
+.close_img{
+  position: absolute;
+  top: -15rpx;
+  right: -15rpx;
+  font-size: 40rpx;
+}

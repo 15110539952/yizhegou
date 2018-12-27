@@ -1,0 +1,30 @@
+/* pages/My_content/refun_change_goods/refun_change_goods.wxss */
+.order_item{
+  padding: 40rpx 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.order_headimg{
+  width:220rpx;
+  height:220rpx;
+}
+.order_info{
+  width: 420rpx;
+  height:220rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.refun_change_block{
+  width: 100%;
+  border-radius:10rpx;
+  background: #fff;
+  line-height: 130rpx;
+}
+.refun_change_item .active{
+  color: #e31536;
+}
+.refun_change_item{
+  padding: 0 45rpx;
+}

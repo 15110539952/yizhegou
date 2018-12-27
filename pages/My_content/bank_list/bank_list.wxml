@@ -1,0 +1,14 @@
+<!--pages/My_content/bank_list/bank_list.wxml-->
+<view class='container'>
+  <view class='top_text'>以下为您绑定的银行卡信息</view>
+
+  <view class='bank_block marginB20' wx:for="{{cardData}}" wx:key="index">
+    <view class='justify-between zdw_border_bottom lineHeight60 zdw_font36'>
+      <view></view><!-- {{item.bank_name}} -->
+      <view>{{item.account_name}}</view>
+    </view>
+    <view class='card_num'>{{item.card_num}}</view>
+    <view class='account_name'>开户行:  {{item.open_bank}}</view>
+  </view>
+  <navigator url='/pages/My_content/bind_bank/bind_bank?id={{cardData[0].id}}' class='change_bank'>更换银行卡</navigator>
+</view>

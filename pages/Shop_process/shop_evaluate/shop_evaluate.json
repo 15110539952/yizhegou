@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "评论",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "i-rate": "/iview/rate/index",
+    "menu-navigator": "/template/menu_navigation/menu_navigation",
+    "empty-block": "/template/empty_block/empty_block"
+  }
+}

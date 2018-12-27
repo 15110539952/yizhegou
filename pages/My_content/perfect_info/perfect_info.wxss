@@ -1,0 +1,29 @@
+/* pages/My_content/perfect_info/perfect_info.wxss */
+@import "/pages/Shop_process/add_address/add_address.wxss";
+page{background: #fff;}
+.container{
+  padding: 0;
+}
+.perfect_info_title{
+  padding: 80rpx 50rpx 100rpx;
+}
+.perfect_list{
+  padding: 0 30rpx;
+}
+.verify_btn{
+  margin-top: 10rpx;
+	border-radius: 10rpx;
+	border: solid 1px #e31536;
+  color: #e31536;
+}
+.btn_close{
+  margin: 200rpx auto 50rpx;
+	width: 670rpx;
+	height: 100rpx;
+	background-color: #e31536;
+	border-radius: 10rpx;
+  color: #fff;
+}
+.xieyi{
+  text-align: center;
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的活动",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "van-tab": "/vant/tab/index",
+    "van-tabs": "/vant/tabs/index",
+    "empty-block": "/template/empty_block/empty_block"
+  }
+}

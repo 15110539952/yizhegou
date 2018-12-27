@@ -1,0 +1,16 @@
+/* template/empty_block/empty_block.wxss */
+.empty_block{
+  width: 100%;
+  text-align: center;
+  margin: 100rpx 0;
+}
+.empty_block image{
+  width: 213rpx;
+  height: 169rpx;
+}
+.empty_text{
+  text-align: center;
+  color: #acb4c8;
+  font-size: 36rpx;
+  margin-top: 50rpx;
+}

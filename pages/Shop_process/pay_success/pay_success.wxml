@@ -1,0 +1,14 @@
+<!--pages/Shop_process/pay_success/pay_success.wxml-->
+<view class='container' hidden='{{is_container}}'>
+    <view class='success_icon iconfont icon-wancheng'></view>
+    <view class='zdw_font28 marginT20 marginB20'>订单编号：{{order_id}}</view>
+    <view class='zdw_font38 zdw_fontbold500'>支付成功</view>
+    <view wx:if="{{userInfo.mobile}}">
+      <view class='zdw_font28 zdw_76829f' style='margin:90rpx 0 30rpx;'>您可以到我的活动中完成任务领取奖励</view>
+      <navigator class='succ_btn' url='/pages/My_activity/my_activity/my_activity' open-type='switchTab'>完成任务</navigator>
+    </view>
+    <view wx:if="{{!userInfo.mobile}}">
+      <view class='zdw_font28 zdw_76829f' style='margin:120rpx 0 30rpx;'>您尚未完善个人信息，为方便兑奖</view>
+      <navigator url='/pages/My_content/real_name/real_name' class='succ_btn'>完善个人信息(5)</navigator>
+    </view>
+</view>

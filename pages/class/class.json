@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "empty-block": "/template/empty_block/empty_block"
+  }
+}

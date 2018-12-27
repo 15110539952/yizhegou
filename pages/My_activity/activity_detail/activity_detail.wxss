@@ -1,0 +1,141 @@
+/* pages/My_activity/activity_detail/activity_detail.wxss */
+.activity_top{
+  border-top: 1rpx solid #dee0e5;
+  background: #fff;
+  padding: 10rpx 20rpx 50rpx;
+}
+.activity_content{
+  padding: 20rpx 15rpx;
+}
+.activity_img{
+  width: 184rpx;
+  height: 184rpx;
+  
+}
+.activity_detail{
+  width: 470rpx;
+  height: 184rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.activity_type{
+  width: 54%;
+	line-height: 60rpx;
+  height: 60rpx;
+	background-color: #fde2e0;
+	border-radius: 30rpx;
+  color: #e31536;
+  padding: 0 20rpx;
+  font-size: 26rpx;
+}
+.jifen_block{
+  height: 80rpx;
+}
+.jifen_block{
+  width: 380rpx;
+  padding-right: 30rpx;
+  border-right: 2rpx solid #dee0e5;
+}
+.tase_block{
+  width: 270rpx;
+  padding-left: 30rpx;
+}
+
+.task_item{
+  width: 710rpx;
+  margin: 30rpx auto 0;
+  background: #fff;
+  padding: 30rpx;
+	border-radius: 20rpx;
+}
+.task_title{
+  line-height: 60rpx;
+  border-bottom: 1rpx solid #dee0e5;
+}
+.number_style{
+  font-size:50rpx;
+  font-family:FZCYSK--GBK1-0;
+  font-weight:400;
+  font-style:italic;
+}
+.task_detail{
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  /* width: 450rpx; */
+  line-height: 40rpx;
+}
+.btn_clear{
+  padding: 0 20rpx;
+  height:60rpx;
+  line-height:60rpx;
+  background:#e31536;
+  border-radius:10rpx;
+  font-size: 26rpx;
+  color: #fff;
+}
+.btn_clear.bg_blur{
+  background: #006be3;
+}
+
+.time_block{
+	width: 50rpx;
+	height: 50rpx;
+	background-color: #e31536;
+	border-radius: 5rpx;
+  margin-top: 5rpx;
+  line-height: 50rpx;
+  color: #fff;
+  text-align: center;
+}
+.activity_time text{
+  width: 20rpx;
+  text-align: center;
+}
+
+/* 做任务 */
+.make_task{
+  border-top:1px solid #EBEDF3;
+  margin-top: 30rpx;
+}
+/* 任务说明 */
+.task_content{
+  color: #9094AC;
+  font-size: 24rpx;
+  padding: 20rpx 5rpx 0;
+  line-height:50rpx;
+  text-align: left;
+}
+
+/* 任务分享 */
+.make_task_content{
+  text-align: center;
+  padding-top: 30rpx;
+}
+.icon_bg{
+  width:120rpx;
+  height:120rpx;
+  line-height:120rpx;
+  border-radius:50%;
+  color: #fff;
+  font-size: 60rpx;
+  margin-bottom: 20rpx;
+}
+.weixin_fenxiao{
+  margin-right: 100rpx;
+}
+.weixin_fenxiao .icon_bg{
+  background:#00AF31;
+  outline: none;
+  border-radius: 50%;
+}
+.baocun_img .icon_bg{
+  background:#02C26A;
+}
+
+.canvasBlock{
+  position: fixed;
+  top:0;
+  right: -1000px;
+}

@@ -1,0 +1,41 @@
+/* pages/My_content/express_info/express_info.wxss */
+.top_block{
+  padding: 0 30rpx 50rpx;
+  background: #fff;
+}
+.paiming_block{
+  width:100%;
+  height:210rpx;
+  position: relative;
+}
+.paiming_bg,.paiming_content{
+  position: absolute;
+  top: 0;left: 0;
+  width:100%;
+  height:100%;
+}
+.paiming_bg{border-radius:10rpx;}
+.paiming_content{
+  padding-top: 60rpx;
+  padding-left: 360rpx;
+  color:#fff;
+  z-index: 1;
+  font-size: 32rpx;
+}
+.express_block{
+  background: #fff;
+  padding: 30rpx;
+  border-radius:10rpx;
+}
+.express_list{
+  margin-top: 30rpx;
+}
+.steps_list{
+  position: relative;
+  left: -30rpx;
+}
+vant-express-title{font-size: 24rpx;}
+.vant-express-bottom{
+  font-size: 24rpx;
+  color: #a5afc5;
+}

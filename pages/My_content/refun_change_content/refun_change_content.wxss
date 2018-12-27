@@ -1,0 +1,72 @@
+/* pages/My_content/refun_change_content/refun_change_content.wxss */
+.container{
+  background: #fff;
+  padding: 0 20rpx;
+}
+.order_item{
+  padding: 40rpx 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.order_headimg{
+  width:220rpx;
+  height:220rpx;
+}
+.order_info{
+  width: 420rpx;
+  height:220rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.list_item{
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  border-top: 1rpx solid #dee0e5;
+  font-size: 26rpx;
+}
+.question_detail{
+  padding: 0 20rpx;
+}
+.question_content{
+  width:100%;
+  height:250rpx;
+  background:#E9ECF8;
+  border-radius:10rpx;
+  font-size: 28rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  line-height: 40rpx;
+  margin-bottom: 30rpx;
+}
+.refun_address_blcok{
+  padding: 0 20rpx;
+  border-top: 1rpx solid #dee0e5;
+}
+.refun_btn{
+  width:100%;
+  line-height:100rpx;
+  background:#e31536;
+  border-radius:10rpx;
+  text-align: center;
+  margin: 80rpx 0 50rpx;
+  color: #fff;
+}
+
+.img_upload image{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+image{
+  position: relative;
+  overflow: inherit;
+}
+.close_img{
+  position: absolute;
+  top: -15rpx;
+  right: -15rpx;
+  font-size: 40rpx;
+}

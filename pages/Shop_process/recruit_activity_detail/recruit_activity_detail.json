@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "招募活动",
+  "usingComponents": {
+    "i-button": "/iview/button/index",
+    "van-action-sheet": "/vant/action-sheet/index"
+  }
+}

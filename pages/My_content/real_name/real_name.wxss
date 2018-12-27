@@ -1,0 +1,101 @@
+/* pages/My_content/real_name/real_name.wxss */
+@import "/pages/My_content/withdraw_cash/withdraw_cash.wxss";
+page{
+  background: #fff;
+}
+.perfect_item{
+  padding: 10rpx 0;
+  /* border-bottom: 1rpx solid #dee0e5; */
+}
+.changqi{
+  margin-top: 10rpx;
+  width: 120rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  background-color:#e31536;
+  color: #fff;
+}
+.perfect_item:last-child{border-bottom: 0;}
+
+.perfect_list{
+  padding: 0 30rpx;
+}
+.btn_clear{
+  margin: 50rpx auto;
+	width: 670rpx;
+	height: 100rpx;
+	background-color: #e31536;
+	border-radius: 10rpx;
+  color: #fff;
+}
+.xieyi{
+  text-align: center;
+}
+.real_block{
+  padding: 0 30rpx;
+}
+
+.img_upload image,.img_upload .add_image{
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+.img_upload .add_image{
+	background-color: #ececf5;
+  position: relative;
+}
+.add_image .shu,.add_image .heng{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #91919D;
+}
+.add_image .shu{
+  width: 2rpx;
+  height: 56rpx;
+  margin-top: -28rpx;
+  margin-left: -1rpx;
+}
+.add_image .heng{
+  width: 56rpx;
+  height: 2rpx;
+  margin-top: -1rpx;
+  margin-left: -28rpx;
+}
+image{
+  position: relative;
+  overflow: inherit;
+}
+.close_img{
+  position: absolute;
+  top: -15rpx;
+  right: -15rpx;
+  font-size: 40rpx;
+}
+
+.two_tip{
+  width:570rpx;
+  font-size:24rpx;
+  color:#83839A;
+  line-height:48rpx;
+  margin: 50rpx auto 0;
+  text-align: center;
+}
+/* 手机号 验证码 */
+.verify_btn{
+  margin-top: 10rpx;
+	border-radius: 10rpx;
+	border: solid 1px #e31536;
+  color: #e31536;
+}
+.btn_close{
+  margin: 200rpx auto 50rpx;
+	width: 670rpx;
+	height: 100rpx;
+	background-color: #e31536;
+	border-radius: 10rpx;
+  color: #fff;
+}

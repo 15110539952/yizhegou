@@ -1,0 +1,20 @@
+<!--pages/My_content/xuanze_Interest/xuanze_Interest.wxml-->
+<view class='container'>
+  <view class='justify-between lineHeight50'>
+    <text class='zdw_font40 zdw_fontbold'>请选择您的兴趣偏好</text>
+    <view class='zdw_font28 zdw_a5afc5' hover-class='navigator-hover'><text class='iconfont icon-jiaohuan marginR10'></text>换一换</view>
+  </view>
+  <view class='zdw_font28 marginT20 zdw_a5afc5'>请选择至少3项(已选1项)</view>
+
+  <view class='interest_block'>
+    <view class='interest_item inter_item1'>数码科技</view>
+    <view class='interest_item inter_item2'>音乐</view>
+    <view class='interest_item inter_item3'>吃货</view>
+    <view class='interest_item inter_item4'>家具家电</view>
+    <view class='interest_item inter_item5'>潮流时尚</view>
+    <view class='interest_item inter_item6'>美食</view>
+    <view class='interest_item inter_item7'>吃货</view>
+    <view class='interest_item inter_item8'>美食</view>
+  </view>
+  <button class='btn_clear' hover-class='navigator-hover'>下一步</button>
+</view>

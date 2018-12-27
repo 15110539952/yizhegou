@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商品兑换",
+  "usingComponents": {
+    "van-popup": "/vant/popup/index"
+  }
+}

@@ -1,0 +1,39 @@
+<!--pages/My_content/order_detail/order_detail.wxml-->
+<view class='container zdw_border_top'>
+  <view class='lineHeight80 zdw_font26 zdw_border_bottom' style='padding:0 40rpx'>订单编号 {{orderDetail.order_sn}}</view>
+  <view style='padding:0 20rpx'>
+    <view class='order_item'>
+      <image class='order_headimg' src='{{orderDetail.original_img}}'></image>
+      <view class='order_info'>
+        <view class='activity_qishu'>第{{orderDetail.period_num}}期活动</view>
+        <view class='zdw_font28 lines_ellipsis'>{{orderDetail.activity_name}}</view>
+        <view class='justify-between' style='line-height: 30rpx;'>
+          <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+            折扣价<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{orderDetail.price}}
+          </view>
+          <view class='zdw_font20 zdw_a5afc5 line-through'>商品原价 ￥{{orderDetail.shop_price}}</view>
+        </view>
+        <view class='justify-between lineHeight40 zdw_font24 zdw_76829f'>{{orderDetail.order_status_desc}}</view>
+      </view>
+    </view>
+    <navigator url='/pages/My_content/express_info/express_info?order_id={{orderDetail.order_id}}' wx:if="{{orderDetail.order_status >= 3 && orderDetail.order_status !=9}}" class='shop_info_title justify-between'><text>商家已发货</text><text>{{orderDetail.shipping_info[0].shipping_name}}></text></navigator>
+    <view class='shop_orderinfo_list zdw_border_top'>
+      <view class='zdw_border_bottom'>
+        <view class='justify-between'><text>商品总价</text><text>￥{{orderDetail.activity_price}}</text></view>
+        <view class='justify-between'><text>运费（快递）</text><text>￥{{orderDetail.shipping_price}}</text></view>
+        <view class='justify-between'><text>服务费</text><text>￥{{orderDetail.service_price}}</text></view>
+        <view class='justify-between'><text>门票</text><text>￥{{orderDetail.ticket_price}}</text></view>
+        <view class='justify-between'><text>手续费</text><text>￥{{orderDetail.shouxu_price}}</text></view>
+      </view>
+      <view class='justify-between zdw_font32 zdw_fontbold500'><text class='zdw_272f45'>实付款</text><text class='zdw_e31536'>￥{{orderDetail.total_amount}}</text></view>
+    </view>
+    <view class='order_info_title'>订单信息</view>
+    <view class='shop_orderinfo_list'>
+      <view class='justify-between'><text>订单编号</text><text>{{orderDetail.order_sn}}</text></view>
+      <!-- <view class='justify-between'><text>发票</text><text>个人</text></view> -->
+      <view class='justify-between'><text>创建时间</text><text>{{orderDetail.add_time}}</text></view>
+      <!-- <view class='justify-between'><text>付款时间</text><text>{{orderDetail.}}</text></view> -->
+      <view class='justify-between' wx:if="{{data.shipping_time}}"><text>发货时间</text><text>{{orderDetail.shipping_time}}</text></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "兑换现金",
+  "usingComponents": {
+    "van-steps": "/vant/steps/index",
+    "van-field": "/vant/field/index"
+  }
+}

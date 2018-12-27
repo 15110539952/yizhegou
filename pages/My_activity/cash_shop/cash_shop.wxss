@@ -1,0 +1,96 @@
+/* pages/My_activity/cash_shop/cash_shop.wxss */
+.shop_block{
+  width: 710rpx;
+  margin: 0 auto;
+  background: #fff;
+  border-radius:15rpx;
+  padding: 40rpx 25rpx;
+}
+
+
+.activity_img{
+  width: 220rpx;
+  height: 220rpx;
+}
+.activity_detail{
+  width: 420rpx;
+  height: 220rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.activity_bottom{
+  line-height: 60rpx;
+}
+.activity_content{margin-bottom:50rpx;}
+.list_item{
+  line-height: 80rpx;
+  padding: 0 15rpx;
+  border-top: 1rpx solid #dee0e5;
+}
+.cash_btn{
+  width:680rpx ;
+  height:100rpx;
+  line-height:100rpx;
+  background:#e31536;
+  border-radius:10rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  margin:150rpx auto 45rpx;
+}
+
+
+/* 选择分类 */
+.fenlei_block{
+  width: 100%;
+  padding: 80rpx 40rpx;
+  font-size: 30rpx;
+  color:#272f45;
+  position: relative;
+}
+.label_block{
+  margin: 30rpx 0 20rpx;
+}
+.label_item{
+  padding: 0 30rpx;
+	height: 50rpx;
+	line-height: 50rpx;
+	background-color: #e4e4e7;
+	border-radius: 10rpx;
+  color:#404040;
+  font-size: 26rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+.label_item.active{
+  background: #e31536;
+  color: #fff;
+}
+.fenlei_close{
+  position: absolute;
+  top: 0rpx;
+  right: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+  text-align: center;
+  font-size: 50rpx;
+}
+.btn_clear{
+  color:#fff;
+	width: 100%;
+	height: 100rpx;
+	line-height: 100rpx;
+	background-color: #e31536;
+	border-radius: 10rpx;
+}
+.fenlei_item{
+  width:100%;
+  height:55rpx;
+  line-height:55rpx;
+  font-size: 32rpx;
+  background:rgba(225,231,244,1);
+  padding:0 30rpx;
+  margin-bottom: 20rpx;
+}

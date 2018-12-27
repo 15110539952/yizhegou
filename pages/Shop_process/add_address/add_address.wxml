@@ -1,0 +1,22 @@
+<!--pages/Shop_process/add_address/add_address.wxml-->
+<view class='container'>
+  <view class='add_block'><van-field value="{{ consignee }}" clearable label="姓名" placeholder="请输入用户名" bind:change="inputChange" data-name="consignee"  maxlength="20"/></view>
+  <view class='add_block'><van-field type="number" value="{{ mobile }}" clearable label="联系电话" placeholder="请输入手机号码" bind:change="inputChange" data-name="mobile" maxlength="11" error-message="{{error_phone}}"/></view>
+  <view class='add_block' bindtap='bindRegionShow'><van-field value="{{region_text}}" disabled clearable label="省市区" placeholder="请选择"/></view>
+  <view class='add_block'><van-field value="{{ address }}" clearable label="详细地址" placeholder="街道门牌信息" bind:change="inputChange" data-name="address" maxlength="50"/></view>
+  <view class='add_block'><van-field type="number" value="{{ zipcode }}" clearable label="邮政编码" placeholder="请输入邮编号码" bind:change="inputChange"  data-name="zipcode" maxlength="6"/></view>
+  <!-- <view class='add_block'><view class='label'>姓名</view><input placeholder='请输入姓名'></input></view> -->
+
+  <view class='address_default zdw_font28 zdw_272f45' bindtap='setDefaultAddress'><text class='iconfont icon-xuanze-duoxuan {{is_default?"zdw_e31536":"zdw_a5afc5"}}' style='margin-right:20rpx;'></text><text class='zdw_272f45'>将该地址设为默认收货地址</text></view>
+
+  <view class='btn_block'>
+    <button class='add_address' hover-class='navigator-hover' bindtap='bindAddress'>保存</button>
+    <button class='close_address' bindtap='binDeleteAddress' hidden='{{!address_id}}'>删除地址</button>
+  </view>
+</view>
+
+<van-popup show="{{regionShow}}" bind:close="bindRegionHide" position="bottom">
+  <van-area area-list="{{ region_list }}" value="{{address_list.areaCode}}" bindconfirm="bindRegionConfirm" bindcancel="bindRegionHide"/>
+</van-popup>
+
+  <!-- <picker class='add_block' mode="multiSelector" bindchange="bindRegionChange" value="{{region_index}}" range="{{region}}" range-key="name" bindcolumnchange="bindRegionChangeColumn" bindcancel="bindCancelRegion">  </picker> -->

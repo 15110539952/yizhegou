@@ -1,0 +1,47 @@
+<!--pages/My_content/bind_bank/bind_bank.wxml-->
+<view class='container'>
+  <view class='user_info_list one_list' hidden='{{active!=0}}'>
+    <view class='add_block'><van-field bind:change="bindInputchange" data-name="account_name" value="{{ account_name }}" clearable label="姓名" placeholder="请输入姓名" bind:click-icon="onClickIcon"/></view>
+      <view class='perfect_item'><van-field value="{{ id_card_code }}" clearable label="身份证号" placeholder="请输入身份证号"  bind:change="bindInputchange" data-name="id_card_code"/></view>
+    <view class='add_block'><van-field bind:change="bindInputchange" data-name="card_num" value="{{ card_num }}" clearable label="卡号" placeholder="请输入银行卡号" bind:click-icon="onClickIcon"/></view>
+    <!-- <view class='add_block'><van-field bind:change="bindInputchange" data-name="bank_name" value="{{ bank_name }}" clearable label="所在银行" placeholder="请输入银行名称" bind:click-icon="onClickIcon"/></view> -->
+    <view class='add_block'><van-field bind:change="bindInputchange" data-name="open_bank" value="{{ open_bank }}" clearable label="开户行" placeholder="请输入开户行信息" bind:click-icon="onClickIcon"/></view>
+    <view class='add_block'><van-field bind:change="bindInputchange" data-name="phone" value="{{ phone }}" clearable label="手机号" placeholder="请输入手机号" bind:click-icon="onClickIcon"/></view>
+          <van-cell-group>
+              <van-field
+                value="{{ code }}"
+                center
+                clearable
+                placeholder="请输入短信验证码"
+                border="{{ false }}"
+                use-button-slot
+                bind:change="bindInputchange" data-name="code"
+              >
+              <button class='verify_btn lineHeight60' slot="button" bindtap='bindCode' size="mini" disabled='{{is_verif}}'>{{verif_text}}</button>
+            </van-field>
+          </van-cell-group>
+  </view>
+  <!-- <view class='user_info_list two_list' hidden='{{active!=1}}'>
+    <view class='add_block'><van-field bind:change="bindInputchange" data-name="phone" value="{{ phone }}" clearable label="手机号" placeholder="请输入手机号" bind:click-icon="onClickIcon"/></view>
+          <van-cell-group>
+              <van-field
+                value="{{ code }}"
+                center
+                clearable
+                placeholder="请输入短信验证码"
+                border="{{ false }}"
+                use-button-slot
+                bind:change="bindInputchange" data-name="code"
+              >
+              <button class='verify_btn lineHeight60' slot="button" bindtap='bindCode' size="mini" disabled='{{is_verif}}'>{{verif_text}}</button>
+            </van-field>
+          </van-cell-group>
+  </view> -->
+
+  <!-- <button class='btn_close one_btn' bindtap='bindOne_btn' hover-class='navigator-hover' hidden='{{active!=0}}'>下一步</button>
+  <button class='btn_close one_btn' bindtap='bindTwo_btn' hover-class='navigator-hover' hidden='{{active!=1}}' style='margin-bottom:30rpx;'>上一步</button> -->
+  <button class='btn_close two_btn' bindtap='bindBank' hover-class='navigator-hover'>提交</button>
+  
+  <view class='zdw_font24 zdw_76829f footer'>为保证申请退款交易的可靠性，请填写您本人真实有效的银行卡信息，不支持绑定信用卡。</view>
+
+</view>

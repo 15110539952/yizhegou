@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "快递信息查询",
+  "usingComponents": {
+    "van-steps": "/vant/steps/index"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "申请活动退费",
+  "usingComponents": {
+    "van-steps": "/vant/steps/index",
+    "van-field": "/vant/field/index"
+  }
+}

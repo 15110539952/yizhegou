@@ -1,0 +1,94 @@
+/* pages/My_activity/my_activity/my_activity.wxss */
+.container{padding-top: 90rpx;}
+.tabs_flexd{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.order_tabs{
+  border-top: 1rpx solid #dee0e5;
+}
+.activity_list{
+  background: #fff;
+  padding:0 20rpx;
+  border-top: 1rpx solid #dee0e5;
+}
+.activity_item{
+  /* padding: 30rpx 0 50rpx; */
+  padding: 15rpx 0;
+  /* margin-bottom: 15rpx; */
+  /* border-bottom: 1rpx solid #dee0e5; */
+  border-bottom: 0;
+}
+.activity_title{
+  width:100%;
+  line-height:60rpx;
+  background:rgba(253,226,224,1);
+  border-radius:10rpx;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+}
+.activity_title.one_bg{background: #C9E7F1;color: #008EBD;}
+.activity_title.two_bg{background: #FDE2E0;color: #E31536;}
+.activity_title.three_bg{background: #C9E7F1;color: #509E67;}
+.activity_title.four_bg{background: #E9EBF3;color: #575C6E;}
+.activity_content{
+  padding: 20rpx 15rpx;
+}
+.activity_img{
+  width: 184rpx;
+  height: 184rpx;
+}
+.activity_detail{
+  width: 470rpx;
+  height: 184rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.activity_bottom{
+  line-height: 60rpx;
+}
+.btn_clear{
+  width:160rpx;
+  height:60rpx;
+  line-height:60rpx;
+  background:#e31536;
+  border-radius:10rpx;
+  font-size: 26rpx;
+  color: #fff;
+}
+.btn_clear.duifu{background: #E9EBF3;color:#575C6E;}
+
+/* 剩余时间 */
+.time_block{
+	width: 50rpx;
+	height: 50rpx;
+	background-color: #e31536;
+	border-radius: 5rpx;
+  margin-top: 5rpx;
+  line-height: 50rpx;
+  color: #fff;
+  text-align: center;
+}
+.activity_time text{
+  width: 20rpx;
+  text-align: center;
+}
+
+/* 活动已结束样式 */
+.activity_end_success{
+  color: #E31536;
+  font-size: 26rpx;
+}
+/* 活动已结束失败样式 */
+.activity_end_error{
+  color: #8B8E99;
+  font-size: 26rpx;
+}
+/* 活动已结束领取奖励样式 */
+.activity_end_ok{
+  color: #8B8E99;
+  font-size: 26rpx;
+}

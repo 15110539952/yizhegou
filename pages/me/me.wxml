@@ -1,0 +1,57 @@
+<!--pages/me/me.wxml-->
+<view class='container'>
+  <!-- 顶部模块 -->
+  <view class='top_block'>
+    <view class='top_bg'>
+      <image class='bg_img' src='{{yizhegou_img+"Public/front_img/me_top_bg.png"}}'></image>
+      <view bindtap='bindSetting' data-is_phone="{{userInfo.mobile}}" class='iconfont icon-shezhi zdw_font40 zdw_white'></view>
+      <view class='user_info justify-start'>
+        <image class='user_headimg' src='{{userInfo.head_pic}}' wx:if="{{userInfo.head_pic}}"></image>
+        <view class='user_headimg' style='overflow:hidden;' wx:if="{{!userInfo.head_pic}}"><open-data style="width:100%;height:100%;" type="userAvatarUrl"></open-data></view>
+        <view class='justify-center flex-column'>
+          <view class='user_name'><text wx:if="{{userInfo.nickname}}">{{userInfo.nickname}}</text><open-data type="userNickName"  wx:if="{{!userInfo.nickname}}"></open-data> <navigator class='iconfont icon-bianji'  url="/pages/My_content/real_name/real_name?change=1" style='display:inline;'></navigator></view>
+          <view class='user_shiming'><text class='iconfont icon-Id zdw_font32'></text><text>{{userInfo.id_card_validated==2?'已实名认证':'未实名认证'}}</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style='padding:0 20rpx;'>
+    <!-- 我的活动 -->
+    <view class='list_title'>我的活动</view>
+    <view class='justify-between my_activity'>
+      <view bindtap='bindActivityTab' class='my_activity_item' data-tab='1'>
+        <text class='iconfont icon-ai254'></text>
+        <view class='text'>未开始</view>
+      </view>
+      <view bindtap='bindActivityTab' class='my_activity_item' data-tab='2'>
+        <text class='iconfont icon-update'></text>
+        <view class='text'>进行中</view>
+      </view>
+      <view bindtap='bindActivityTab' class='my_activity_item' data-tab='3'>
+        <text class='iconfont icon-wancheng1'></text>
+        <view class='text'>已结束</view>
+      </view>
+      <view bindtap='bindActivityTab' class='my_activity_item' data-tab='4'>
+        <text class='iconfont icon-duihuanqingkuang'></text>
+        <view class='text'>已兑换</view>
+      </view>
+      <view bindtap='bindActivityTab' class='my_activity_item' data-tab='6'>
+        <text class='iconfont icon-close'></text>
+        <view class='text'>已关闭</view>
+      </view>
+    </view>
+
+    <!-- 我的服务 -->
+    <view class='list_title'>我的服务</view>
+    <view class='my_service'>
+      <navigator url='/pages/My_content/my_order/my_order' class='justify-start my_service_item'><text class='iconfont icon-dingdan'></text>我的订单</navigator>
+      <navigator url='/pages/My_content/message/message' class='justify-start my_service_item'><text class='iconfont icon-ai-message'></text>消息中心</navigator>
+      <navigator url='/pages/My_content/my_money/my_money' class='justify-start my_service_item'><text class='iconfont icon-qianbao'></text>我的钱包</navigator>
+      <navigator url='/pages/Shop_process/address_list/address_list' class='justify-start my_service_item'><text class='iconfont icon-shouhuodizhi'></text>地址管理</navigator>
+      <navigator url='/pages/My_content/my_collection/my_collection' class='justify-start my_service_item'><text class='iconfont icon-star'></text>我的收藏</navigator>
+      <navigator url='/pages/My_content/merchants/merchants' class='justify-start my_service_item'><text class='iconfont icon-hezuo-tianchong'></text>招商合作</navigator>
+      <navigator url='/pages/My_content/help_center/help_center' class='justify-start my_service_item'><text class='iconfont icon-bangzhu'></text>帮助中心</navigator>
+      <view class='justify-start my_service_item' open-type="contact" bindcontact="handleContact"><text class='iconfont icon-xiaotuziCduan-'></text>在线客服<button class='kefu_button' open-type="contact"></button></view> 
+    </view>
+  </view>
+</view>

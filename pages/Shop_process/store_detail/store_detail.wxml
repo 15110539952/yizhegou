@@ -1,0 +1,39 @@
+<!--pages/Shop_process/store_detail/store_detail.wxml-->
+<view class='container'>
+  <!-- 首页顶部 -->
+  <view class='justify-between store_top_block'>
+    <view class='justify-start'>
+      <image class='store_headimg' src='{{store_detail.store_logo}}'></image>
+      <view class='store_info justify-center flex-column'>
+        <view class='zdw_white zdw_font30 line_ellipsis' style='margin-bottom:20rpx;'>{{store_detail.store_name}}</view>
+        <view class='justify-start zdw_font24' style='line-height: 40rpx;'><text class='zdw_a5afc5' style='margin-right:20rpx;'>{{store_detail.is_collect}}人收藏</text><view class='store_shoucang' bindtap='bindCollect' hover-class='navigator-hover'>{{is_collection?'取消收藏':'加入收藏'}}</view></view>
+      </view>
+    </view>
+    <view><navigator url='/pages/shop_list/shop_list?type=store_search&store_id={{store_id}}&cat_id=' class='iconfont icon-sousuo zdw_white zdw_font40'></navigator></view>
+  </view>
+  <!-- 商店tab -->
+  <view class='store_tab justify-between'>
+    <!-- <view class='store_tab_item' hover-class="navigator-hover">首页</view> -->
+    <navigator class='store_tab_item' url='/pages/Shop_process/store_shop_class/store_shop_class?id={{store_detail.store_id}}&title={{store_detail.store_name}}'>分类</navigator>
+    <navigator url='/pages/shop_list/shop_list?hot=hot&type=store&store_id={{store_id}}&cat_id=' class='store_tab_item' hover-class='navigator-hover'>热销</navigator>
+    <navigator url='/pages/shop_list/shop_list?type=store&store_id={{store_id}}&cat_id=' class='store_tab_item' hover-class="navigator-hover">商品</navigator>
+    <navigator class='store_tab_item' url='/pages/Shop_process/store_intro/store_intro?id={{store_detail.store_id}}' hover-class="navigator-hover">我们</navigator>
+  </view>
+  <!-- 商品轮播 -->
+  <view class='banner' wx:if='{{imgUrls.length}}'>
+    <swiper class='swiper' indicator-dots="ture" indicator-active-color='#ffb8a0' indicator-color='#ad2109' autoplay="true" interval="5000" duration="500">
+        <swiper-item wx:for="{{imgUrls}}" wx:key='item'>
+            <image src="{{item}}" mode="aspectFill"  style='width:100%;height:100%;'></image>
+        </swiper-item>
+    </swiper>
+  </view>
+  
+  <!-- 列表 -->
+  <view class='shop_list justify-start flex-wrap'>
+    <view class='line_center'></view>
+    <shop-item t-class='component_shopitem' wx:for="{{store_detail.goods}}" wx:key="index" shop_item="{{item}}"></shop-item>
+  </view>
+</view>
+
+<!-- 快速导航 -->
+<menu-navigator is="/template/empty_block/empty_block" menu-class="menu_navigation"></menu-navigator>

@@ -1,0 +1,431 @@
+/**app.wxss**/
+/* @import "style/weui.wxss";  */
+/* 快速导航 */
+      /* {
+        "pagePath": "pages/recruit/recruit",
+        "iconPath": "img/recruit.png",
+        "selectedIconPath": "img/recruitactive.png",
+        "text": "招募"
+      }, */
+page{
+  background:#f0f0f0;
+  width: 100%;
+  height: 100%;
+   overflow-x: hidden; 
+  /* font-size: 32rpx; */
+} 
+.container{
+  width: 100%;
+  overflow-x: hidden; 
+  color: #272f45;
+}
+view,navigator,scroll-view{
+  box-sizing: border-box;
+}
+image,.iconfont{
+  vertical-align: middle;
+}
+.hoverClass{
+  background: rgba(0,0,0,0.1);
+}
+
+/* flex布局 */
+.flex{
+  display: flex;
+}
+.justify-center{
+  display: flex;
+  justify-content: center;
+}
+.justify-around{
+  display: flex;
+  justify-content: space-around;
+}
+.justify-between{
+  display: flex;
+  justify-content: space-between;
+}
+.justify-start{
+  display: flex;
+  justify-content: flex-start;
+}
+.justify-end{
+  display: flex;
+  justify-content: flex-end;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-reverse{
+  flex-direction:row-reverse;
+}
+
+/* 按钮btn清楚默认样式 */
+.btn_clear{
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+  background-color: #fff;
+}
+/* 跳转客服回话button样式 */
+.kefu_button{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  left: 0;
+  top: 0;
+}
+/* 中划线 */
+.line-through{
+  text-decoration:line-through;
+}
+/* 单行多余省略。。。。。 */
+.line_ellipsis{
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+/* 两行行多余省略 */
+.lines_ellipsis{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+/* 定位 */
+.zdw_fixed{
+  position: fixed;
+}
+/* 字体居中 */
+.middle{
+  vertical-align: middle;
+}
+.text_bottom{
+  vertical-align: text-bottom;
+}
+.zdw_text_center,.text_center{
+  text-align: center;
+}
+.text_right{
+  text-align: right;
+}
+.zdw-boxsizing{
+  box-sizing: border-box;
+}
+/*清除浮动与隐藏*/
+.zdw-overflow {
+    overflow: hidden;
+}
+/* 背景 */
+.zdw_bg_white {
+    background-color: #fff;
+}
+/*字体颜色*/
+.zdw_white {
+    color: #fff;
+}
+.zdw_e31536{
+  color: #e31536 !important;
+}
+.zdw_272f45{
+  color: #272f45 !important;
+}
+.zdw_76829f{
+  color: #76829f !important;
+}
+.zdw_a5afc5{
+  color: #a5afc5 !important;
+}
+.zdw_dee0e5{
+  color: #dee0e5 !important;
+}
+.zdw_09BB07{
+  color: #09BB07 !important;
+}
+/* 上下左右边框 */
+.zdw_border_right{border-right: 1rpx solid #dee0e5;}
+.zdw_border_top{border-top: 1rpx solid #dee0e5;}
+.zdw_border_left{border-left: 1rpx solid #dee0e5;}
+.zdw_border_bottom{border-bottom: 1rpx solid #dee0e5;}
+/* 边距 */
+.marginR10{margin-right: 10rpx;}
+.marginR20{margin-right: 20rpx;}
+.marginL10{margin-left: 10rpx;}
+.marginL20{margin-left: 20rpx;}
+.marginT10{margin-top: 10rpx;}
+.marginT20{margin-top: 20rpx;}
+.marginB10{margin-bottom: 10rpx;}
+.marginB20{margin-bottom: 20rpx;}
+/* 行高 */
+.lineHeight30{line-height: 30rpx}
+.lineHeight40{line-height: 40rpx}
+.lineHeight50{line-height: 50rpx}
+.lineHeight60{line-height: 60rpx}
+.lineHeight80{line-height: 80rpx}
+.lineHeight100{line-height: 100rpx}
+/* 字体大小 */
+.zdw_fontbold {
+  font-weight: bold;
+}
+.zdw_fontbold500{font-weight:500;}
+.zdw_font20 {font-size: 20rpx !important;}
+.zdw_font22 {font-size: 22rpx !important;}
+.zdw_font24 {font-size: 24rpx !important;}
+.zdw_font26 {font-size: 26rpx !important;}
+.zdw_font28 {font-size: 28rpx !important;}
+.zdw_font30 {font-size: 30rpx !important;}
+.zdw_font32 {font-size: 32rpx !important;}
+.zdw_font34 {font-size: 34rpx !important;}
+.zdw_font36 {font-size: 36rpx !important;}
+.zdw_font38 {font-size: 38rpx !important;}
+.zdw_font40 {font-size: 40rpx !important;}
+.zdw_font42 {font-size: 42rpx !important;}
+.zdw_font46 {font-size: 46rpx !important;}
+.zdw_font50 {font-size: 50rpx !important;}
+.zdw_font80 {font-size: 80rpx !important;}
+/* 百分比宽度 */
+.width_10{
+  width: 10%;
+}
+.width_20{
+  width: 20%;
+}
+.width_25{
+  width: 25%;
+}
+.width_30{
+  width: 30%;
+}
+.width_33{
+  width: 33.33%;
+}
+.width_40{
+  width: 40%;
+}
+.width_50{
+  width: 50%;
+}
+.width_60{
+  width: 60%;
+}
+.width_70{
+  width: 70%;
+}
+.width_80{
+  width: 80%;
+}
+.width_90{
+  width: 90%;
+}
+.width_100{
+  width: 100%;
+}
+
+/* 商品列表中间线 */
+.line_center{
+  position: absolute;
+  top: -50rpx;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  margin-left: -1px;
+  background: #dee0e5;
+}
+
+.component_shopitem{
+  width: 355rpx;
+  border-bottom: 1rpx solid #dee0e5;
+}
+
+
+@font-face {
+  font-family: 'iconfont';  /* project id 855721 */
+  src: url('//at.alicdn.com/t/font_855721_toilqya2ne.eot');
+  src: url('//at.alicdn.com/t/font_855721_toilqya2ne.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_855721_toilqya2ne.woff') format('woff'),
+  url('//at.alicdn.com/t/font_855721_toilqya2ne.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_855721_toilqya2ne.svg#yigo') format('svg');
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pengyouquan2:before { content: "\e7be"; }
+.icon-close:before { content: "\e61d"; }
+.icon-gouwucheman:before { content: "\e605"; }
+
+.icon-dianpu:before { content: "\e600"; }
+
+.icon-chenggong:before { content: "\e625"; }
+
+.icon-star:before { content: "\e61a"; }
+
+.icon-zhanghu1:before { content: "\e666"; }
+
+.icon-shangpin:before { content: "\e624"; }
+
+.icon-weibo:before { content: "\e62f"; }
+
+.icon-zhifubao:before { content: "\e63b"; }
+
+.icon-qq:before { content: "\e6a0"; }
+
+.icon-3:before { content: "\e604"; }
+
+.icon-iconzhengpin:before { content: "\e640"; }
+
+.icon-arrow-right:before { content: "\e602"; }
+
+.icon-dingdan:before { content: "\e63c"; }
+
+.icon-danxuan:before { content: "\e71f"; }
+
+.icon-dizhi01:before { content: "\e62c"; }
+
+.icon-zhaopianphotos11:before { content: "\e613"; }
+
+.icon-07jiantouxiangzuofill:before { content: "\e619"; }
+
+.icon-jiantouyou:before { content: "\e616"; }
+
+.icon-zhaopianphoto182:before { content: "\e73f"; }
+
+.icon-sousuo:before { content: "\e652"; }
+
+.icon-xiazai50:before { content: "\e61f"; }
+
+.icon-bangzhu:before { content: "\e61b"; }
+
+.icon-wancheng:before { content: "\e62b"; }
+
+.icon-hetongguizeguankong:before { content: "\e6a8"; }
+
+.icon-geren6:before { content: "\e627"; }
+
+.icon-shoucang:before { content: "\e60a"; }
+
+.icon-ai-message:before { content: "\e661"; }
+
+.icon-jifenguizeguankong2:before { content: "\e671"; }
+
+.icon-jiantou-copy:before { content: "\e667"; }
+
+.icon-tijiaochenggongduigou:before { content: "\e65f"; }
+
+.icon-more:before { content: "\e62e"; }
+
+.icon-shouye:before { content: "\e633"; }
+
+.icon-yonghuming:before { content: "\e6c0"; }
+
+.icon-morentouxiang:before { content: "\e677"; }
+
+.icon-ai254:before { content: "\e6f2"; }
+
+.icon-changyonglogo28:before { content: "\e715"; }
+
+.icon-Id:before { content: "\e6d7"; }
+
+.icon-more1:before { content: "\e6a3"; }
+
+.icon-weixin:before { content: "\e62d"; }
+
+.icon-gift:before { content: "\e60e"; }
+
+.icon-redianshijian:before { content: "\e6ec"; }
+
+.icon-qita:before { content: "\e62a"; }
+
+.icon-shouhuodizhi:before { content: "\e662"; }
+
+.icon-renwu:before { content: "\e615"; }
+
+.icon-duihuanqingkuang:before { content: "\e708"; }
+
+.icon-qianbao:before { content: "\e610"; }
+
+.icon-huanhuodan:before { content: "\e63a"; }
+
+.icon-link:before { content: "\e63f"; }
+
+.icon-shouhouwuyou:before { content: "\e63d"; }
+
+.icon-update:before { content: "\e909"; }
+
+.icon-duoxuanshixin:before { content: "\e629"; }
+
+.icon-wancheng1:before { content: "\e844"; }
+
+.icon-zhengque:before { content: "\e69e"; }
+
+.icon-lingdang:before { content: "\e8c0"; }
+
+.icon-jia:before { content: "\e607"; }
+
+.icon-web-icon-:before { content: "\e6cd"; }
+
+.icon-yinhang-yinlian-:before { content: "\e614"; }
+
+.icon-hezuo-tianchong:before { content: "\e65b"; }
+
+.icon-xuanze-duoxuan:before { content: "\e660"; }
+
+.icon-wxpay:before { content: "\e611"; }
+
+.icon-shanchu:before { content: "\e675"; }
+
+.icon-bianji:before { content: "\e651"; }
+
+.icon-liwu:before { content: "\e674"; }
+
+.icon-pengyouquan:before { content: "\e684"; }
+
+.icon-shezhi:before { content: "\e68e"; }
+
+.icon-fenxiang:before { content: "\e6d5"; }
+
+.icon-ico_back:before { content: "\e653"; }
+
+.icon-ico_open:before { content: "\e663"; }
+
+.icon-tuihuo:before { content: "\e608"; }
+
+.icon-CombinedShape:before { content: "\e601"; }
+
+.icon-xiashuangjiantou:before { content: "\e617"; }
+
+.icon-qingkong:before { content: "\e678"; }
+
+.icon-tishi:before { content: "\e635"; }
+
+.icon-shouyex:before { content: "\e606"; }
+
+.icon-fenlei:before { content: "\e621"; }
+
+.icon-jiaohuan:before { content: "\e7ad"; }
+
+.icon-weixin1:before { content: "\e646"; }
+
+.icon-xiaotuziCduan-:before { content: "\e603"; }
+
+.icon-xiaotuziCduan_:before { content: "\e60d"; }
+
+.icon-caidan:before { content: "\eaf1"; }
+
+.icon-jiantou_xiangyouliangci:before { content: "\eb09"; }
+
+.icon-jiantou_xiangzuoliangci:before { content: "\eb0a"; }
+
+.icon-download:before { content: "\e609"; }
+
+.icon-pengyouquan1:before { content: "\e60b"; }
+
+.icon-gouwuche1:before { content: "\e60c"; }
+

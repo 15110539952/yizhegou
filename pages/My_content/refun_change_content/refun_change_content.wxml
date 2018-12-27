@@ -1,0 +1,43 @@
+<!--pages/My_content/refun_change_content/refun_change_content.wxml-->
+<view class='container zdw_border_top'>
+  <view class='lineHeight80 zdw_font26 zdw_border_bottom' style='padding:0 40rpx'>订单编号 {{orderDetail.order_sn}}</view>
+  <view class='order_item'>
+    <image class='order_headimg' src='/img_x/success.png'></image>
+    <view class='order_info'>
+      <view class='zdw_font28 lines_ellipsis'>{{orderDetail.activity_name}}</view>
+      <view class='justify-between' style='line-height: 30rpx;'>
+        <view class='zdw_font26 zdw_e31536 zdw_fontbold'>
+          折扣价<text class='zdw_font20' style='margin-left:20rpx;'>¥ </text>{{orderDetail.price}}
+        </view>
+        <view class='zdw_font20 zdw_a5afc5 line-through'>商品原价 ￥{{orderDetail.shop_price}}</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- <picker bindchange="bindQuestionChange" value="{{question_content_index}}" range="{{question_content}}">
+      <view class='list_item justify-between zdw_border_bottom'>
+        <text>申请原因</text><text class='zdw_a5afc5'>{{question_content[question_content_index] || '请选择'}}<text class='iconfont icon-jiantouyou'></text></text>
+      </view>
+  </picker> -->
+  <view class='question_detail'>
+    <view class='lineHeight100 zdw_font30'>申请原因</view>
+    <textarea class='question_content'  bindblur="bindContent" maxlength='1000' maxlength='1000' placeholder='请详细描述申请售后的原因，文字及图片至少添加一项'></textarea>
+  </view>
+
+  <view class='marginT20' style='padding:0 20rpx;'>
+    <view class='img_upload justify-start flex-wrap'>
+      <!-- <image wx:key="index" src='/img_x/user.png' class=''><view bindtap='bindClose' data-index='{{index}}' class='iconfont icon-shanchu close_img'></view></image> -->
+      <image wx:for="{{uploadimg_list}}" wx:key="index" src='{{yizhegou_img+item}}' class=''><view bindtap='bindClose' data-index='{{index}}' class='iconfont icon-shanchu close_img'></view></image>
+    </view>
+    <view class='lineHeight100' bindtap='bindChoose' style='display:inline-block;'><text class='iconfont icon-zhaopianphoto182 marginR20 zdw_font50 zdw_a5afc5'></text><text class='zdw_font24 zdw_a5afc5'>单张照片大小不超过1M</text></view>
+  </view>
+
+  <view class='refun_address_blcok'>
+    <!-- <view class='justify-between lineHeight100'><text class='zdw_font30'>退货方式</text><text class='zdw_font24 zdw_a5afc5'>请将商品包装完整邮寄到以下地址</text></view>
+    <view class='zdw_font26 lineHeight60'>
+      <view class='justify-between'><text>收货人:刘洋</text><text>联系电话: 13620031156</text></view>
+      <view>山西省太原市小店区南内环街234号居然之家对面</view>
+    </view> -->
+    <navigator class='refun_btn' bindtap='submitOrder'>提交申请</navigator>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+/* pages/My_activity/activity_ranking/activity_ranking.wxss */
+.top_block{
+  width:100%;
+  height:122rpx;
+  line-height:122rpx;
+  background:#e31536;
+  border-radius:10rpx;
+  padding: 0 30rpx;
+}
+.list_content{
+  text-align: center;
+  font-size: 24rpx;
+  color: #76829f;
+  line-height: 74rpx;
+}
+.list_header{
+  height: 74rpx;
+  line-height: 74rpx;
+  border-bottom: 1rpx solid #dee0e5;
+  font-size:26rpx;
+  font-weight:500;
+  color: #272f45;
+}
+.win_list_item:nth-child(odd){
+  background: #EDF0FA;
+}
+.win_list_item>view,.list_header>view{
+  padding: 0 20rpx;
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+.text_left{
+  text-align: left;
+}
+.text_right{
+  text-align: right;
+}
