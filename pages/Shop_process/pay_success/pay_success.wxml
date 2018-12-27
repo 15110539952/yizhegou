@@ -9,6 +9,7 @@
     </view>
     <view wx:if="{{!userInfo.mobile}}">
       <view class='zdw_font28 zdw_76829f' style='margin:120rpx 0 30rpx;'>您尚未完善个人信息，为方便兑奖</view>
-      <navigator url='/pages/My_content/real_name/real_name' class='succ_btn'>完善个人信息(5)</navigator>
+      <!-- <navigator url='/pages/My_content/real_name/real_name' class='succ_btn'>完善个人信息(5)</navigator> -->
+      <view class='succ_btn'>完善个人信息(5)<button class='kefu_button' open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button></view>
     </view>
 </view>

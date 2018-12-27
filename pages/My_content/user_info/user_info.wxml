@@ -21,9 +21,12 @@
     </navigator>
 
     <view wx:if="{{userInfo.id_card_validated==1||userInfo.id_card_validated==2}}" class='btn_block'><view>实名认证信息</view><view class='zdw_76829f'>{{userInfo.id_card_validated==1?'审核中':'已实名认证'}}</view></view> -->
-    <navigator url='/pages/My_content/real_name/real_name' class='btn_block'>
+    <!-- <navigator url='/pages/My_content/real_name/real_name' class='btn_block'> -->
+    <view class='btn_block'>
+      <button class='kefu_button' open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
       <view>实名认证信息</view><view class='zdw_76829f'>修改实名认证信息</view>
-    </navigator>
+    </view>
+    <!-- </navigator> -->
 
     <navigator wx:if="{{userInfo.card_count == 0}}" url='/pages/My_content/bind_bank/bind_bank' class='btn_block'><view>银行卡</view><view class='zdw_76829f'>立即绑卡</view></navigator>
     <navigator wx:if="{{userInfo.card_count>0}}" url='/pages/My_content/bank_list/bank_list' class='btn_block'><view>银行卡</view><view class='zdw_76829f'>查看绑定的银行卡</view></navigator>

@@ -47,4 +47,15 @@ Page({
       }
     })
   },
+  getUserInfo() {
+    wx.getUserInfo({
+      success(res) {
+        wx.navigateTo({
+          url: '/pages/My_content/real_name/real_name'
+        })
+        // const userInfo = res.userInfo
+        // const avatarUrl = userInfo.avatarUrl
+      }
+    })
+  }
 })

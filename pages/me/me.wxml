@@ -9,7 +9,12 @@
         <image class='user_headimg' src='{{userInfo.head_pic}}' wx:if="{{userInfo.head_pic}}"></image>
         <view class='user_headimg' style='overflow:hidden;' wx:if="{{!userInfo.head_pic}}"><open-data style="width:100%;height:100%;" type="userAvatarUrl"></open-data></view>
         <view class='justify-center flex-column'>
-          <view class='user_name'><text wx:if="{{userInfo.nickname}}">{{userInfo.nickname}}</text><open-data type="userNickName"  wx:if="{{!userInfo.nickname}}"></open-data> <navigator class='iconfont icon-bianji'  url="/pages/My_content/real_name/real_name?change=1" style='display:inline;'></navigator></view>
+          <view class='user_name justify-start'>
+            <text wx:if="{{userInfo.nickname}}">{{userInfo.nickname}}</text><open-data type="userNickName"  wx:if="{{!userInfo.nickname}}"></open-data> 
+            <!-- <navigator class='iconfont icon-bianji'  url="/pages/My_content/real_name/real_name?change=1" style='display:inline;'></navigator> -->
+            <view class='iconfont icon-bianji'><button class='kefu_button' open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button></view>
+            
+          </view>
           <view class='user_shiming'><text class='iconfont icon-Id zdw_font32'></text><text>{{userInfo.id_card_validated==2?'已实名认证':'未实名认证'}}</text></view>
         </view>
       </view>

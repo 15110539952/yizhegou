@@ -23,6 +23,11 @@ Page({
     date:'',
     address:'',
     realname: '',
+    nickname: '',
+    gender: '', // 性别 0：未知、1：男、2：女
+    province: '', // 省
+    city: '', // 城市
+    country: '', // 国家
     id_card_code:'',
     card_num: '',
     open_bank: '',
@@ -35,9 +40,27 @@ Page({
     is_change: 0
   },
   onLoad: function (options) {
+    var that = this;
+    wx.getUserInfo({
+      success(res) {
+        const userInfo = res.userInfo
+        that.setData({
+          nickname: userInfo.nickName,
+          gender: userInfo.gender,
+          province: userInfo.province,
+          city: userInfo.city,
+          country: userInfo.country
+        })
+      }
+    })
     this.setData({
       is_change: options.change || 0
     })
+  },
+  getPhoneNumber(e){
+    console.log(e)
+    var encryptedData = e.detail.encryptedData;
+    var iv = e.detail.iv;
   },
   bindImgtest(){
     this.setData({
